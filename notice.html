@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객지원센터</title>
+    <!-- CSS 파일 연결 -->
+    <link rel="stylesheet" href="css/header.css"> <!-- header 스타일 -->
+    <link rel="stylesheet" href="css/customer.css">
+</head>
+<body>
+
+    <!-- Header 영역 -->
+    <div id="header-container"></div>
+
+    <div class="content">
+        <h2>고객지원센터</h2>
+    </div>
+
+    <!-- 상단 바 -->
+    <nav class="nav-bar">
+        <button class="tab-link" onclick="showNoticeList()">공지사항</button>
+        <button class="tab-link" onclick="showFAQList()">자주묻는질문</button>
+        <button class="tab-link" onclick="showQAForm()">Q&A</button>
+    </nav>
+
+    <!-- 공지사항 목록 -->
+    <div id="notice" class="tab-content">
+        <h2>공지사항</h2>
+        <ul id="noticeList" class="notice-list">
+            <li class="notice-item" onclick="showNoticeDetail('detail1')">
+                <span class="notice-title">사이트 유지 보수 안내</span>
+                <span class="notice-date">2024-09-30</span>
+            </li>
+            <li class="notice-item" onclick="showNoticeDetail('detail2')">
+                <span class="notice-title">새로운 기능 업데이트</span>
+                <span class="notice-date">2024-09-25</span>
+            </li>
+            <li class="notice-item" onclick="showNoticeDetail('detail3')">
+                <span class="notice-title">서비스 점검 예정</span>
+                <span class="notice-date">2024-09-20</span>
+            </li>
+        </ul>
+
+        <!-- 공지사항 상세 내용 -->
+        <div id="detail1" class="notice-detail">
+            <h3>사이트 유지 보수 안내</h3>
+            <p>2024년 10월 1일 오전 2시부터 오전 6시까지 사이트 유지 보수가 진행됩니다.</p>
+        </div>
+        <div id="detail2" class="notice-detail">
+            <h3>새로운 기능 업데이트</h3>
+            <p>2024년 9월 25일부로 사이트에 새로운 기능이 업데이트되었습니다.</p>
+        </div>
+        <div id="detail3" class="notice-detail">
+            <h3>서비스 점검 예정</h3>
+            <p>2024년 9월 20일에 예정된 정기 서비스 점검이 진행될 예정입니다.</p>
+        </div>
+    </div>
+
+    <!-- 자주묻는질문 목록 -->
+    <div id="faq" class="tab-content" style="display: none;">
+        <h2>자주묻는질문</h2>
+        <ul id="qaList" class="notice-list">
+            <li class="notice-item" onclick="showFAQDetail('faqDetail1')">
+                <span class="notice-title">회원가입은 어떻게 하나요?</span>
+                <span class="notice-date">2024-09-30</span>
+            </li>
+            <li class="notice-item" onclick="showFAQDetail('faqDetail2')">
+                <span class="notice-title">비밀번호를 잊어버렸습니다. 어떻게 해야 하나요?</span>
+                <span class="notice-date">2024-09-25</span>
+            </li>
+            <li class="notice-item" onclick="showFAQDetail('faqDetail3')">
+                <span class="notice-title">결제 오류가 발생했어요. 해결 방법은?</span>
+                <span class="notice-date">2024-09-20</span>
+            </li>
+        </ul>
+
+        <!-- 자주묻는질문 상세 내용 -->
+        <div id="faqDetail1" class="notice-detail">
+            <h3>회원가입은 어떻게 하나요?</h3>
+            <p>회원가입은 홈페이지 상단 메뉴에서 "회원가입" 버튼을 눌러 양식을 작성하시면 됩니다.</p>
+        </div>
+        <div id="faqDetail2" class="notice-detail">
+            <h3>비밀번호를 잊어버렸습니다. 어떻게 해야 하나요?</h3>
+            <p>비밀번호 찾기 페이지에서 이메일 주소를 입력하면 비밀번호를 재설정할 수 있는 링크가 전송됩니다.</p>
+        </div>
+        <div id="faqDetail3" class="notice-detail">
+            <h3>결제 오류가 발생했어요. 해결 방법은?</h3>
+            <p>결제 오류 발생 시, 결제 내역을 확인하고 문제가 지속되면 고객센터로 문의해주세요.</p>
+        </div>
+    </div>
+
+    <!-- Q&A 질문하기 공간 -->
+    <div id="qa" class="tab-content" style="display: none;">
+        <h2>Q&A 질문하기</h2>
+        <form id="qaForm">
+            <label for="question">질문을 입력하세요:</label><br>
+            <textarea id="question" name="question" rows="4" cols="50" placeholder="여기에 질문을 작성하세요"></textarea><br><br>
+            <button type="submit">질문 제출</button>
+        </form>
+    </div>
+
+    <!-- JavaScript 파일 연결 -->
+    <script src="js/customer.js"></script>
+    <script src="js/header.js"></script>
+
+</body>
+</html>
