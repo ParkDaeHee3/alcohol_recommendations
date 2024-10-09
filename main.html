@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tastify 메인 페이지</title>
+  <link rel="stylesheet" href="css/header.css"> <!-- header 스타일 -->
+  <link rel="stylesheet" href="css/main.css">  <!-- 메인 페이지 스타일 -->
+</head>
+<body>
+
+  <!-- Header 영역 -->
+  <div id="header-container"></div>
+
+  <!-- 메인 콘텐츠 영역 -->
+  <main>
+    <!-- 카드 섹션 -->
+    <section class="card-section">
+      <div class="card" onclick="window.location.href='food.html'">
+        <img src="img/icon/food-icon.png" alt="술 추천">
+        <h3>술 추천</h3>
+      </div>
+      <div class="card" onclick="window.location.href='all_drinks.html'">
+        <img src="img/icon/all_drinks-icon.png" alt="술 검색">
+        <h3>술 검색</h3>
+      </div>
+      <div class="card" onclick="window.location.href='popular_drinks.html'">
+        <img src="img/icon/popular_drinks-icon.png" alt="인기 술">
+        <h3>인기 술</h3>
+      </div>
+    </section>
+  </main>
+
+ <!-- header.js 파일 불러오기 -->
+ <script src="js/header.js"></script>
+
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+
+        // 배너 설정이 header.html이 로드된 후에 실행되도록 보장
+        setTimeout(() => {
+          setBanner(
+            true, 
+            'img/banner/main-banner.png', 
+            'Tastify에 오신 걸 환영합니다.', 
+            '해당 사이트의 기능: 음식에 맞는 술 추천 및 술 검색 인기 술 정보 제공', 
+            '*추가예정* 술 이벤트 및 행사 관련 달력 기능'
+          );
+        }, 0); // header가 로드된 직후 배너 설정
+      })
+      .catch(error => console.log('Header 불러오기 에러:', error));
+  });
+</script>
+
+
+</body>
+</html>

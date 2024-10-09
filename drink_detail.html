@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>술 상세 페이지</title>
+  <link rel="stylesheet" href="css/header.css"> <!-- header 스타일 -->
+  <link rel="stylesheet" href="css/drink_detail.css"> <!-- 상세 페이지 스타일 -->
+</head>
+<body>
+
+  <!-- Header 영역 -->
+  <div id="header-container"></div>
+
+  <!-- 술 상세 정보 섹션 -->
+  <div class="product-container">
+
+    <!-- 브레드크럼 -->
+    <!-- 브레드크럼 HTML 수정 -->
+    <div class="breadcrumb">
+      <a href="main.html">홈</a> >
+      <a href="all_drinks.html">술 검색</a> >
+      <a href="#" id="main-category-link">술 종류</a> >
+      <a href="#" id="sub-category-link">세부 종류</a> >
+      <span id="product-name-link">술 이름</span>
+    </div>
+    
+    <!-- 술 상세 정보 -->
+    <div class="product-detail">
+      <!-- 좌측 상품 이미지 영역 -->
+      <div class="product-image" id="product-image">
+        <!-- 이미지가 동적으로 추가됨 -->
+      </div>
+
+      <!-- 우측 상품 정보 영역 -->
+      <div class="product-info">
+        <h1 id="product-name">상품 이름</h1>
+        <p><strong>종류:</strong> <span id="product-type"></span></p>
+        <p><strong>생산지:</strong> <span id="product-origin"></span></p>
+        <p><strong>알코올 도수:</strong> <span id="product-abv"></span></p>
+        <p><strong>상품 설명:</strong> <span id="product-description"></span></p>
+        <p><strong>맛 설명:</strong> <span id="product-flavor"></span></p>
+        <p><strong>가격:</strong> <span id="product-price"></span></p>
+        <p><strong>평점:</strong> <span id="product-rating" class="star-rating"></span></p>
+
+        <!-- 찜 버튼 -->
+        <div class="wishlist-btn" id="wishlist-btn">
+          <img src="img/icon/heart-bin-icon.png" alt="찜하기" id="wishlist-icon">
+        </div>
+      </div>
+    </div>
+  
+    <!-- 팝업 메시지 영역 -->
+    <div id="wishlist-message" class="popup-message"></div>
+
+  </div>
+
+  <script src="js/header.js"></script>
+  <script src="js/drink.js"></script>
+  <script src="js/drink_detail.js"></script>
+
+</body>
+</html>

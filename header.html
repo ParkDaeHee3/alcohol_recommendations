@@ -1,0 +1,169 @@
+<header>
+    <div class="top-bar">
+      <!-- 메뉴 아이콘 (사이드바 연결) -->
+      <div class="menu-icon">
+        <img src="img/icon/menu-icon.png" alt="Menu Icon" onclick="toggleSidebar()">
+      </div>
+      
+      <!-- 로고 (메인 페이지로 이동) -->
+      <div class="logo">
+        <a href="main.html"><img src="img/logo.png" alt="Logo"></a>
+      </div>
+      
+      <!-- 검색 아이콘 -->
+      <div class="search-icon">
+        <img src="img/icon/search-icon.png" alt="Search Icon" onclick="openSearch()">
+      </div>
+      
+      <!-- 유저 아이콘 (로그인 또는 마이페이지로 이동) -->
+      <div class="user-icon">
+        <a href="login.html"><img src="img/icon/user-icon.png" alt="User Icon"></a>
+      </div>
+    </div>
+
+    <!-- 구분선 -->
+    <hr class="header-separator">
+
+     <!-- 배너 영역 -->
+     <div id="banner-container" style="display: none;">
+      <img id="banner-img" src="" alt="배너 이미지">
+      <div class="banner-text">
+        <h1 id="banner-title"></h1>
+        <p id="banner-subtitle"></p>
+        <p id="banner-extra-text"></p>
+      </div>
+    </div>
+
+    <!-- 구분선 (div로 정의) -->
+  <div class="divider"></div>
+  
+      <!-- 검색 오버레이 -->
+<div id="search-overlay" class="search-overlay">
+    <div class="search-box">
+      <span class="close-btn" onclick="closeSearch()">&times;</span>
+      <h2>SEARCH</h2>
+      <form id="search-form" onsubmit="return searchProduct()">
+        <input type="text" id="search-input" placeholder="검색어를 입력해주세요" />
+        <button type="submit">
+          <img src="img/icon/search-icon.png" alt="Search Icon" />
+        </button>
+      </form>
+      <p id="search-message" class="error-message"></p>
+      <div id="no-result" class="no-result">
+        <img src="img/icon/no-result-icon.png" alt="No Result Icon" />
+        <p>해당 제품은 없습니다</p>
+      </div>
+    </div>
+  </div>
+
+<!-- 사이드바 -->
+<div id="sidebar" class="sidebar">
+    <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+    
+<!-- 유저 프로필 영역 -->
+<div id="user-section" style="display:none;">
+    <div class="user-info">
+        <img src="img/icon/user-icon.png" alt="User Icon" class="profile-icon" />
+        <div class="user-details">
+            <h4 id="user-name"></h4>
+            <p id="user-email"></p>
+        </div>
+        <button class="menu-dots-icon" onclick="toggleUserMenu()">
+            <img src="img/icon/menu-dots-icon.png" alt="Menu Icon" />
+        </button>
+    </div>
+    <!-- 유저 메뉴 (Dropdown) -->
+    <ul id="user-menu" class="user-menu" style="display: none;">
+        <li onclick="window.location.href='mypage.html'">마이페이지</li>
+        <li onclick="window.location.href='mypage.html#wishlist'">위시리스트</li>
+        <li onclick="window.location.href='mypage.html#search-history'">검색기록</li>
+        <li onclick="logout()">로그아웃</li>
+    </ul>
+</div>
+
+<!-- 로그인 필요 상태 -->
+<div id="guest-section">
+    <h3>로그인이 필요합니다.</h3>
+    <button class="login-btn" onclick="window.location.href='login.html'">로그인</button>
+</div>
+
+
+    <!-- 로그인 시뮬레이터 -->
+<button onclick="simulateLogin()">시뮬레이터 로그인</button>
+
+
+    <ul class="menu-list">
+      <li onclick="window.location.href='food.html'">술 추천</li>
+      <li onclick="window.location.href='all_drinks.html'">술 검색</li>
+      <li onclick="window.location.href='popular_drinks.html'">인기 술</li>
+
+      <!-- 주류별 카테고리 -->
+      <li class="menu-item">
+        <span>주류별</span>
+        <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-category', this)">
+          <img src="img/icon/small-down-icon.png" alt="Toggle Submenu" />
+        </button>
+        <ul id="submenu-category" class="submenu">
+          <li class="menu-item">
+            <span onclick="applyFilterAndRedirect('양조주')">양조주</span>
+            <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-brew', this)">
+              <img src="img/icon/small-down-icon.png" alt="Toggle Submenu" />
+            </button>
+            <ul id="submenu-brew" class="submenu">
+              <li onclick="applyFilterAndRedirect('양조주', '곡주')">곡주</li>
+              <li onclick="applyFilterAndRedirect('양조주', '과일주')">과일주</li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <span onclick="applyFilterAndRedirect('증류주')">증류주</span>
+            <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-distilled', this)">
+              <img src="img/icon/small-down-icon.png" alt="Toggle Submenu" />
+            </button>
+            <ul id="submenu-distilled" class="submenu">
+              <li onclick="applyFilterAndRedirect('증류주', '브랜디')">브랜디</li>
+              <li onclick="applyFilterAndRedirect('증류주', '럼')">럼</li>
+              <li onclick="applyFilterAndRedirect('증류주', '위스키')">위스키</li>
+              <li onclick="applyFilterAndRedirect('증류주', '보드카')">보드카</li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <span onclick="applyFilterAndRedirect('혼성주')">혼성주</span>
+            <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-mixed', this)">
+              <img src="img/icon/small-down-icon.png" alt="Toggle Submenu" />
+            </button>
+            <ul id="submenu-mixed" class="submenu">
+              <li onclick="applyFilterAndRedirect('혼성주', '하이볼')">하이볼</li>
+              <li onclick="applyFilterAndRedirect('혼성주', '칵테일')">칵테일</li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <span onclick="applyFilterAndRedirect('전통주')">전통주</span>
+            <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-traditional', this)">
+              <img src="img/icon/small-down-icon.png" alt="Toggle Submenu" />
+            </button>
+            <ul id="submenu-traditional" class="submenu">
+              <li onclick="applyFilterAndRedirect('전통주', '일반기업 전통주')">일반기업 전통주</li>
+              <li onclick="applyFilterAndRedirect('전통주', '지역별 전통주')">지역별 전통주</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+  
+      <!-- 고객지원센터 -->
+      <li class="menu-item">
+        <span>고객지원센터</span>
+        <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-support', this)">
+          <img src="img/icon/small-down-icon.png" alt="Toggle Submenu" />
+        </button>
+        <ul id="submenu-support" class="submenu">
+          <li onclick="window.location.href='notice.html'">공지사항</li>
+          <li onclick="window.location.href='faq.html'">Q&A</li>
+        </ul>
+      </li>
+    </ul>
+</div>
+
+  </header>
+
+
+  
