@@ -3,103 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/header.css"> <!-- header 스타일 -->
     <link rel="stylesheet" href="css/mypage.css">
     <title>마이 페이지</title>
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="top-bar">
-            <!-- 메뉴 아이콘 (사이드바 연결) -->
-            <div class="menu-icon">
-                <img src="img/icon/menu-icon.png" alt="Menu Icon" onclick="toggleSidebar()">
-            </div>
-            
-            <!-- 로고 (메인 페이지로 이동) -->
-            <div class="logo">
-                <a href="main.html"><img src="img/logo.png" alt="Logo"></a>
-            </div>
-            
-            <!-- 검색 아이콘 -->
-            <div class="search-icon">
-                <img src="img/icon/search-icon.png" alt="Search Icon" onclick="openSearch()">
-            </div>
-            
-            <!-- 유저 아이콘 (로그인 또는 마이페이지로 이동) -->
-            <div class="user-icon">
-                <a href="login.html"><img src="img/icon/user-icon.png" alt="User Icon"></a>
-            </div>
-        </div>
+    <div id="header-container"></div>
     </header>
-
+    <script src="js/header.js"></script>
     <!-- Main Content -->
-    <main>
-        <div class="container">
-            <h1>마이 페이지</h1>
-            <div class="my-info">
-                <h2>회원 정보</h2>
-                <div class="info-content">
-                    <p>이름: 홍길동</p>
-                    <p>이메일: hong@example.com</p>
-                    <button onclick="editInfo()">정보 수정</button>
+    <body>
+        <div class="mypage-container">
+            <aside class="menu">
+                <h2>마이페이지</h2>
+                <div class="menu-item">
+                    <span>검색기록</span>
+                    <ul class="search-history">
+                        <li>검색 기록 1</li>
+                        <li>검색 기록 2</li>
+                        <li>검색 기록 3</li>
+                        <li>검색 기록 4</li>
+                        <li>검색 기록 5</li>
+                    </ul>
                 </div>
-            </div>
-
-            <div class="order-history">
-                <h2>주문 내역</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>주문번호</th>
-                            <th>상품명</th>
-                            <th>가격</th>
-                            <th>상태</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>#12345</td>
-                            <td>상품 1</td>
-                            <td>₩30,000</td>
-                            <td>배송 중</td>
-                        </tr>
-                        <tr>
-                            <td>#12346</td>
-                            <td>상품 2</td>
-                            <td>₩45,000</td>
-                            <td>배송 완료</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="favorite-products">
-                <h2>즐겨찾기 상품</h2>
-                <ul>
-                    <li>상품 1</li>
-                    <li>상품 2</li>
-                    <li>상품 3</li>
-                </ul>
-            </div>
-
-            <div class="inquiries">
-                <h2>1:1 문의하기</h2>
-                <textarea placeholder="문의 내용을 입력하세요..."></textarea>
-                <button onclick="submitInquiry()">제출</button>
-            </div>
+                <hr>
+                <div class="menu-item">
+                    <a href="wishlist.html">위시리스트</a>
+                </div>
+                <hr>
+                <div class="menu-item">
+                    고객센터
+                    <ul>
+                        <li><a href="inquiry.html">1:1 문의</a></li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="menu-item">
+                    회원정보
+                    <ul>
+                        <li><a href="edit-info.html" class="active">회원정보 변경</a></li>
+                        <li><a href="delete-account.html">회원 탈퇴</a></li>
+                    </ul>
+                </div>
+            </aside>
+            <section class="content">
+                <h1>회원정보 변경</h1>
+                <!-- 회원정보 변경 콘텐츠가 여기 들어갑니다 -->
+            </section>
         </div>
-    </main>
-
-    <!-- Sidebar (Optional) -->
-    <aside id="sidebar" class="sidebar">
-        <button onclick="toggleSidebar()">Close</button>
-        <ul>
-            <li><a href="order.html">주문 내역</a></li>
-            <li><a href="settings.html">설정</a></li>
-            <li><a href="logout.html">로그아웃</a></li>
-        </ul>
-    </aside>
-
+    
     <script src="css/mypage.js"></script>
 </body>
 </html>
