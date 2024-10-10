@@ -104,7 +104,7 @@ function addFoodCard(food) {
   // 카드 뒷면 HTML 구조 (회색 배경에 알코올 도수와 평점 표시)
   const cardBack = `
     <div class="card-back">
-      <h3>알코올 도수: ${food.ingredients}</h3>
+      <h3>음식 재료: ${food.ingredients}</h3>
       <p>평점: ${food.rating} / 5</p>
     </div>
   `;
@@ -126,7 +126,7 @@ function addFoodCard(food) {
 
   // 카드 클릭 시 해당 술의 상세 페이지로 이동
 card.addEventListener('click', function () {
-  window.location.href = `drink_detail.html?product=${encodeURIComponent(food.name)}`;
+  window.location.href = `food_detail.html?product=${encodeURIComponent(food.name)}`;
 });
 
   cardList.appendChild(card);
