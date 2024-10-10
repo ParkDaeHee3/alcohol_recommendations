@@ -1,0 +1,140 @@
+/* 기본 스타일 설정 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+/* 브레드크럼 스타일 수정 */
+.breadcrumb {
+    font-size: 14px;
+    color: #666; /* 페이지와 잘 어울리는 중립적인 색상 */
+    text-align: right;
+    margin-bottom: 10px; /* 브레드크럼과 다른 요소 간의 간격 조정 */
+    padding-right: 20px; /* 페이지와 자연스럽게 간격을 조정 */
+}
+
+.breadcrumb a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease; /* 마우스 오버 시 부드럽게 변화 */
+}
+
+.breadcrumb a:hover {
+    color: #007bff; /* 마우스 오버 시 강조되는 색상 */
+    text-decoration: underline;
+}
+
+/* 상품 정보 컨테이너 */
+.product-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 10px; /* 브레드크럼과 상품 정보 간의 간격을 최소화 */
+    border-bottom: 1px solid #ddd;
+}
+
+/* 상품 정보와 이미지 레이아웃 */
+.product-detail {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+/* 좌측 이미지 영역 */
+.product-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    font-size: 20px;
+    color: #ffffff;
+    border: 1px solid #ddd;
+    width: 500px;  /* 가로 크기를 500px로 고정 */
+    height: 500px; /* 세로 크기를 500px로 고정 */
+}
+
+/* 이미지 크기를 컨테이너에 맞게 조정 */
+.product-image img {
+    max-width: 100%;  /* 이미지가 가로 500px 안에서 맞춰지도록 */
+    max-height: 100%; /* 이미지가 세로 500px 안에서 맞춰지도록 */
+}
+
+/* 우측 상품 정보 영역 */
+.product-info {
+    flex: 1;
+    padding: 0 20px;
+    text-align: center; /* 상품 정보는 중앙 정렬 */
+    border-top: 1.5px solid #333; /* 상품 정보 상단 선 */
+    border-bottom: 1.5px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 상품 정보를 위 아래로 정렬 */
+}
+
+/* 상품 정보 텍스트 조정 */
+.product-info h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* 평점과 찜 버튼이 같은 라인에 위치하도록 설정 */
+.product-info .wishlist-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* 아래로 배치 */
+    padding-top: 20px;
+}
+
+/* 찜 버튼 크기 및 위치 */
+.wishlist-btn img {
+    width: 24px;
+    height: 24px;
+}
+
+.wishlist-btn {
+    position: relative;
+    cursor: pointer;
+}
+
+/* 상품 가격 강조 */
+.product-price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* 비슷한 상품 추천 카드 스타일 */
+.similar-products-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.similar-product-card {
+    width: 150px; /* 카드 크기 */
+    text-align: center;
+}
+
+.similar-product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.similar-product-card p {
+    font-size: 14px;
+    color: #333;
+}
