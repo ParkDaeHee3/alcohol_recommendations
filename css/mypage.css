@@ -35,13 +35,6 @@
   width: 30px;
   cursor: pointer;
 }
-
-/* 구분선 굵기 조정 */
-.header-separator {
-  border: 1.3px solid black; /* 두께 조정 */
-  margin-top: 10px;
-}
-
 /* 배너 스타일 */
 #banner-container {
 position: relative;
@@ -77,14 +70,6 @@ font-weight: bold;
 .banner-text p {
 font-size: 18px; /* 서브 타이틀 및 추가 텍스트 크기 */
 margin-top: 10px;
-}
-
-/* 구분선 스타일 */
-.divider {
-width: 100%;
-height: 1.5px;
-background-color: #000000;
-margin: 10px 0;
 }
 
 /* 검색 오버레이 스타일 */
@@ -404,10 +389,6 @@ aside.menu {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
-}
-
-.thick-line {
-  border-top: 3px solid #333; /* 굵은 선 */
 }
 
 .menu-item {
