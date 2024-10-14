@@ -143,6 +143,93 @@
           </li>
         </ul>
       </li>
+
+       <!-- 음식별 카테고리 -->
+       <li class="menu-item">
+        <span>음식별</span>
+        <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-category-food', this)">
+          <img src="img/icon/small-down-icon.png" alt="Toggle Submenu" />
+        </button>
+        <ul id="submenu-category-food" class="submenu">
+          <li class="menu-item">
+            <span onclick="applyFilterAndRedirect('한식')">한식</span>
+            <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-korean', this)">
+              <img src="img/icon/small-down-icon.png" alt="Toggle Submenu2" />
+            </button>
+            <ul id="submenu-korean" class="submenu">
+              <li onclick="applyFilterAndRedirect('한식', '고기 요리')">고기 요리</li>
+              <li onclick="applyFilterAndRedirect('한식', '밥 요리')">밥 요리</li>
+              <li onclick="applyFilterAndRedirect('한식', '찌개 요리')">찌개 요리</li>
+              <li onclick="applyFilterAndRedirect('한식', '볶음 요리')">볶음 요리</li>
+              <li onclick="applyFilterAndRedirect('한식', '탕 요리')">탕 요리</li>
+              <li onclick="applyFilterAndRedirect('한식', '전 요리')">전 요리</li>
+              <li onclick="applyFilterAndRedirect('한식', '분식')">분식</li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <span onclick="applyFilterAndRedirect('일식')">일식</span>
+            <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-japanese', this)">
+              <img src="img/icon/small-down-icon.png" alt="Toggle Submenu" />
+            </button>
+            <ul id="submenu-japanese" class="submenu">
+              <li onclick="applyFilterAndRedirect('일식', '스시')">스시</li>
+              <li onclick="applyFilterAndRedirect('일식', '면 요리')">면 요리</li>
+              <li onclick="applyFilterAndRedirect('일식', '전 요리')">전 요리</li>
+              <li onclick="applyFilterAndRedirect('일식', '덮밥 요리')">덮밥 요리</li>
+              <li onclick="applyFilterAndRedirect('일식', '튀김 요리')">튀김 요리</li>
+              <li onclick="applyFilterAndRedirect('일식', '전골 요리')">전골 요리</li>
+              <li onclick="applyFilterAndRedirect('일식', '분식')">분식</li>
+              
+            </ul>
+          </li>
+          <li class="menu-item">
+            <span onclick="applyFilterAndRedirect('중식')">중식</span>
+            <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-chinese', this)">
+              <img src="img/icon/small-down-icon.png" alt="Toggle Submenu" />
+            </button>
+            <ul id="submenu-chinese" class="submenu">
+              <li onclick="applyFilterAndRedirect('중식', '면 요리')">면 요리</li>
+              <li onclick="applyFilterAndRedirect('중식', '고기 요리')">고기 요리</li>
+              <li onclick="applyFilterAndRedirect('중식', '두부 요리')">두부 요리</li>
+              <li onclick="applyFilterAndRedirect('중식', '밥 요리')">밥 요리</li>
+              <li onclick="applyFilterAndRedirect('중식', '샐러드')">샐러드</li>
+          
+            </ul>
+          </li>
+          <li class="menu-item">
+            <span onclick="applyFilterAndRedirect('약식')">양식</span>
+            <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-western', this)">
+              <img src="img/icon/small-down-icon.png" alt="Toggle Submenu2" />
+            </button>
+            <ul id="submenu-western" class="submenu">
+              <li onclick="applyFilterAndRedirect('양식', '피자')">피자</li>
+              <li onclick="applyFilterAndRedirect('양식', '파스타')">파스타</li>
+              <li onclick="applyFilterAndRedirect('양식', '버거')">버거</li>
+              <li onclick="applyFilterAndRedirect('양식', '고기 요리')">고기 요리</li>
+              <li onclick="applyFilterAndRedirect('양식', '샐러드')">샐러드</li>
+              <li onclick="applyFilterAndRedirect('양식', '샌드위치')">샌드위치</li>
+              <li onclick="applyFilterAndRedirect('양식', '해산물 요리')">해산물 요리</li>
+              <li onclick="applyFilterAndRedirect('양식', '타코')">타코</li>
+            </ul>
+          </li>
+          <li class="menu-item">
+            <span onclick="applyFilterAndRedirect('디저트')">디저트</span>
+            <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-dessert', this)">
+              <img src="img/icon/small-down-icon.png" alt="Toggle Submenu2" />
+            </button>
+            <ul id="submenu-dessert" class="submenu">
+              <li onclick="applyFilterAndRedirect('디저트', '케이크')">케이크</li>
+              <li onclick="applyFilterAndRedirect('디저트', '과자')">과자</li>
+              <li onclick="applyFilterAndRedirect('디저트', '크레페')">크레페</li>
+              <li onclick="applyFilterAndRedirect('디저트', '무스')">무스</li>
+              <li onclick="applyFilterAndRedirect('디저트', '파이')">파이</li>
+              <li onclick="applyFilterAndRedirect('디저트', '패스트리')">패스트리</li>
+              <li onclick="applyFilterAndRedirect('디저트', '베이커리')">베이커리</li>
+              <li onclick="applyFilterAndRedirect('디저트', '젤리')">젤리</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
   
       <!-- 고객지원센터 -->
       <li class="menu-item">
