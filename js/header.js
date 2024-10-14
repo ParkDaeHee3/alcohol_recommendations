@@ -151,6 +151,18 @@ function applyFilterAndRedirect(category, subCategory = '') {
   // 필터가 적용된 URL로 이동
   window.location.href = url;
 }
+// 필터 적용 후 all_food.html로 이동 (카테고리와 서브카테고리 모두 적용)
+function applyFilterAndRedirect(category, subCategory = '') {
+  let url = `all_food.html?category=${encodeURIComponent(category)}`;
+  
+  // 서브카테고리가 있으면 URL에 추가
+  if (subCategory) {
+      url += `&subCategory=${encodeURIComponent(subCategory)}`;
+  }
+  
+  // 필터가 적용된 URL로 이동
+  window.location.href = url;
+}
 
 
 // 드롭다운 메뉴 보이기/숨기기
