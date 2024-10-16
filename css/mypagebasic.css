@@ -1,0 +1,101 @@
+/* 마이페이지 기본 스타일 */
+.mypage-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 50px;
+  }
+  
+  aside.menu {
+    width: 250px;
+    background-color: #fff;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+  }
+  
+  /* 각 메뉴의 스타일 및 옅은 회색 선으로 구분 */
+  .menu-item {
+    margin-bottom: 20px;
+    padding-bottom: 10px; /* 메뉴 간 여백 추가 */
+  }
+  
+  .menu-item a {
+    display: block; /* 블록 요소로 변경하여 가로로 메뉴를 표시 */
+    font-size: 18px; /* 메뉴 글씨 크기 */
+    text-decoration: none; /* 밑줄 제거 */
+    color: #000; /* 기본 글자색 */
+  }
+  
+  .menu-item a.active {
+    font-weight: bold;
+    color: #00aaff; /* 활성화된 메뉴는 하늘색 */
+  }
+  
+  .content {
+    flex-grow: 1;
+    max-width: 800px;
+    padding: 20px;
+  }
+  
+  .content h1 {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+.thin-black-line {
+    border: 0;
+    border-top: 1px solid #000;
+}
+
+.gray-line {
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.cancel-btn, .submit-btn {
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+.submit-btn {
+    background-color: #00aaff;
+    color: #fff;
+}

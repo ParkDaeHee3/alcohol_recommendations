@@ -131,24 +131,30 @@ card.addEventListener('click', function () {
 
   cardList.appendChild(card);
 
-  // 찜 버튼 이벤트 처리 (클릭 시 상세 페이지로 이동하는 것을 방지)
-  const wishlistBtn = card.querySelector('.wishlist-btn img');
-  wishlistBtn.addEventListener('click', function (event) {
-    event.stopPropagation();  // 찜 버튼 클릭 시 카드 이동 이벤트 중지
+// 찜 버튼 이벤트 처리 (클릭 시 상세 페이지로 이동하는 것을 방지)
+const wishlistBtn = card.querySelector('.wishlist-btn img');
+wishlistBtn.addEventListener('click', function (event) {
+  event.stopPropagation();  // 찜 버튼 클릭 시 카드 이동 이벤트 중지
 
-    if (!isLoggedIn) {
-      showPopupMessage('로그인 후 눌러주세요.');
-      return;
-    }
+  if (!isLoggedIn) {
+    showPopupMessage('로그인 후 눌러주세요.');
+    return;
+  }
 
-    if (wishlistBtn.src.includes('heart-bin-icon')) {
-      wishlistBtn.src = 'img/icon/heart-icon.png'; // 찜 상태로 변경
-      showPopupMessage('위시리스트에 등록되었습니다.');
-    } else {
-      wishlistBtn.src = 'img/icon/heart-bin-icon.png'; // 찜 취소 상태로 변경
-      showPopupMessage('위시리스트에서 삭제되었습니다.');
-    }
-  });
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+  if (wishlistBtn.src.includes('heart-bin-icon')) {
+    wishlistBtn.src = 'img/icon/heart-icon.png'; // 찜 상태로 변경
+    wishlist.push(drink.name); // 술 이름을 위시리스트에 추가
+    localStorage.setItem('wishlist', JSON.stringify(wishlist)); // 로컬스토리지에 저장
+    showPopupMessage('위시리스트에 등록되었습니다.');
+  } else {
+    wishlistBtn.src = 'img/icon/heart-bin-icon.png'; // 찜 취소 상태로 변경
+    const updatedWishlist = wishlist.filter(item => item !== drink.name); // 위시리스트에서 음식 제거
+    localStorage.setItem('wishlist', JSON.stringify(updatedWishlist)); // 로컬스토리지에 업데이트
+    showPopupMessage('위시리스트에서 삭제되었습니다.');
+  }
+});
 }
 
 // 팝업 메시지를 표시하는 함수

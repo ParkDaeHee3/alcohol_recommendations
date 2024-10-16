@@ -1,0 +1,148 @@
+/* 마이페이지 기본 스타일 */
+.mypage-container {
+    display: flex;
+    justify-content: center;
+    padding: 0 50px;
+  }
+  
+  aside.menu {
+    width: 250px;
+    background-color: #fff;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+  }
+  
+  /* 각 메뉴의 스타일 및 옅은 회색 선으로 구분 */
+  .menu-item {
+    margin-bottom: 20px;
+    padding-bottom: 10px; /* 메뉴 간 여백 추가 */
+  }
+  
+  .menu-item a {
+    display: block; /* 블록 요소로 변경하여 가로로 메뉴를 표시 */
+    font-size: 18px; /* 메뉴 글씨 크기 */
+    text-decoration: none; /* 밑줄 제거 */
+    color: #000; /* 기본 글자색 */
+  }
+  
+  .menu-item a.active {
+    font-weight: bold;
+    color: #00aaff; /* 활성화된 메뉴는 하늘색 */
+  }
+  
+  .content {
+    flex-grow: 1;
+    max-width: 800px;
+    padding: 20px;
+  }
+  
+  .content h1 {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 및 구분선 스타일 */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* 섹션 제목(굵은 글씨) */
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* 굵은 검은 선 */
+.black-line {
+    border: none;
+    border-top: 2px solid black;
+    margin: 10px 0;
+}
+
+/* 얇은 회색 선 */
+.gray-line {
+    border: none;
+    border-top: 1px solid gray;
+    margin: 10px 0;
+}
+
+/* 안내 텍스트 박스 */
+.info-box {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* 폼 그룹 스타일 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* 입력 필드 스타일 (비밀번호, 남기실 말씀 등) */
+input[type="password"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* 체크박스 그룹 스타일 */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 버튼 그룹 스타일 */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* 취소 버튼 스타일 */
+.cancel-btn {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+/* 탈퇴 버튼 스타일 */
+.withdraw-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+/* 비밀번호, 탈퇴사유, 남기실 말씀 글씨를 두껍게 표시 */
+input[type="password"] {
+    font-weight: bold;
+}
+
+textarea {
+    font-weight: bold;
+}

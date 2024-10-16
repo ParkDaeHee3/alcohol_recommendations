@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <link rel="stylesheet" href="css/header2.css"> <!-- header 스타일 -->
+    <link rel="stylesheet" href="css/delete-account.css"> <!-- 마이페이지 스타일 -->
+</head>
+<body>
+
+    <!-- Header -->
+    <div id="header-container"></div>
+    <script src="js/header.js"></script>
+
+    <!-- 마이페이지 영역 -->
+    <div class="mypage-container">
+        <aside class="menu">
+            <h2>마이페이지</h2>
+            <hr> <!-- 메뉴와 검색 기록 사이의 구분선 -->
+            <h3>검색기록</h3>
+            <ul id="searchHistoryList">
+                <!-- 검색 기록이 여기에 추가됩니다 -->
+            </ul>
+            <hr> <!-- 메뉴와 위시리스트 사이의 구분선 -->
+            <div class="menu-item">
+                <a href="wishlist.html">위시리스트</a>
+            </div>
+            <hr>
+            <div class="menu-item">
+                고객센터
+                <ul>
+                    <li><a href="faq.html">1:1 문의</a></li>
+                </ul>
+            </div>
+            <hr>
+            <div class="menu-item">
+                회원정보
+                <ul>
+                    <li><a href="css/mypage.html" class="active">회원정보 변경</a></li>
+                    <li><a href="css/delete-account.html">회원 탈퇴</a></li>
+                </ul>
+            </div>
+        </aside>
+
+    <div class="container">
+        <!-- 회원탈퇴 페이지 타이틀 -->
+        <h1 class="title">회원탈퇴</h1>
+        <hr class="black-line">
+
+        <!-- 01. 회원탈퇴 안내 -->
+        <div class="section">
+            <h2 class="section-title">01. 회원탈퇴 안내</h2>
+            <div class="info-box">
+                <p>테이스티파이 탈퇴안내 <br><br>
+                    
+                    회원님께서 회원 탈퇴를 원하신다니 저희 사이트의 서비스가 많이 부족하고 미흡했나 봅니다.<br>
+                    불편하셨던 점이나 불만사항을 알려주시면 적극 반영해서 고객님의 불편함을 해결해 드리도록 노력하겠습니다.</p>
+            </div>
+        </div>
+
+        <hr class="black-line">
+
+        <!-- 02. 회원탈퇴 하기 -->
+        <div class="section">
+            <h2 class="section-title">02. 회원탈퇴 하기</h2>
+            <hr class="gray-line">
+
+            <!-- 비밀번호 입력 -->
+            <div class="form-group">
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <hr class="gray-line">
+
+            <!-- 탈퇴사유 체크박스 -->
+            <div class="form-group">
+                <label for="reason">탈퇴사유<br></label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="reason" value="고객서비스 불만"> 고객서비스 불만</label>
+                    <label><input type="checkbox" name="reason" value="방문빈도가 낮음"> 방문빈도가 낮음</label>
+                    <label><input type="checkbox" name="reason" value="개인 정보유출 우려"> 개인 정보유출 우려</label>
+                    <label><input type="checkbox" name="reason" value="사이트의 신뢰도 불만"> 사이트의 신뢰도 불만</label>
+                </div>
+            </div>
+            <hr class="gray-line">
+
+            <!-- 남기실 말씀 -->
+            <div class="form-group">
+                <label for="message">남기실 말씀</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+        </div>
+
+        <!-- 버튼 그룹: 이전으로, 탈퇴 -->
+        <div class="button-group">
+            <button class="cancel-btn">이전으로</button>
+            <button class="withdraw-btn">탈퇴</button>
+        </div>
+    </div>
+
+    <script src="js/delete-account.js"></script>
+</body>
+</html>
