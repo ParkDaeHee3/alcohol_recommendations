@@ -104,45 +104,45 @@
         </button>
         <ul id="submenu-category" class="submenu">
           <li class="menu-item">
-            <span onclick="applyFilterAndRedirect('양조주')">양조주</span>
+            <span onclick="applyDrinkFilterAndRedirect('양조주')">양조주</span>
             <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-brew', this)">
               <img src="img/icon/small-down-icon.png" alt="Toggle Submenu" />
             </button>
             <ul id="submenu-brew" class="submenu">
-              <li onclick="applyFilterAndRedirect('양조주', '곡주')">곡주</li>
-              <li onclick="applyFilterAndRedirect('양조주', '과일주')">과일주</li>
+              <li onclick="applyDrinkFilterAndRedirect('양조주', '곡주')">곡주</li>
+              <li onclick="applyDrinkFilterAndRedirect('양조주', '과일주')">과일주</li>
             </ul>
           </li>
           <li class="menu-item">
-            <span onclick="applyFilterAndRedirect('증류주')">증류주</span>
+            <span onclick="applyDrinkFilterAndRedirect('증류주')">증류주</span>
             <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-distilled', this)">
               <img src="img/icon/small-down-icon.png" alt="Toggle Submenu" />
             </button>
             <ul id="submenu-distilled" class="submenu">
-              <li onclick="applyFilterAndRedirect('증류주', '브랜디')">브랜디</li>
-              <li onclick="applyFilterAndRedirect('증류주', '럼')">럼</li>
-              <li onclick="applyFilterAndRedirect('증류주', '위스키')">위스키</li>
-              <li onclick="applyFilterAndRedirect('증류주', '보드카')">보드카</li>
+              <li onclick="applyDrinkFilterAndRedirect('증류주', '브랜디')">브랜디</li>
+              <li onclick="applyDrinkFilterAndRedirect('증류주', '럼')">럼</li>
+              <li onclick="applyDrinkFilterAndRedirect('증류주', '위스키')">위스키</li>
+              <li onclick="applyDrinkFilterAndRedirect('증류주', '보드카')">보드카</li>
             </ul>
           </li>
           <li class="menu-item">
-            <span onclick="applyFilterAndRedirect('혼성주')">혼성주</span>
+            <span onclick="applyDrinkFilterAndRedirect('혼성주')">혼성주</span>
             <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-mixed', this)">
               <img src="img/icon/small-down-icon.png" alt="Toggle Submenu" />
             </button>
             <ul id="submenu-mixed" class="submenu">
-              <li onclick="applyFilterAndRedirect('혼성주', '하이볼')">하이볼</li>
-              <li onclick="applyFilterAndRedirect('혼성주', '칵테일')">칵테일</li>
+              <li onclick="applyDrinkFilterAndRedirect('혼성주', '하이볼')">하이볼</li>
+              <li onclick="applyDrinkFilterAndRedirect('혼성주', '칵테일')">칵테일</li>
             </ul>
           </li>
           <li class="menu-item">
-            <span onclick="applyFilterAndRedirect('전통주')">전통주</span>
+            <span onclick="applyDrinkFilterAndRedirect('전통주')">전통주</span>
             <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-traditional', this)">
               <img src="img/icon/small-down-icon.png" alt="Toggle Submenu" />
             </button>
             <ul id="submenu-traditional" class="submenu">
-              <li onclick="applyFilterAndRedirect('전통주', '일반기업 전통주')">일반기업 전통주</li>
-              <li onclick="applyFilterAndRedirect('전통주', '지역별 전통주')">지역별 전통주</li>
+              <li onclick="applyDrinkFilterAndRedirect('전통주', '일반기업 전통주')">일반기업 전통주</li>
+              <li onclick="applyDrinkFilterAndRedirect('전통주', '지역별 전통주')">지역별 전통주</li>
             </ul>
           </li>
         </ul>
@@ -156,80 +156,80 @@
         </button>
         <ul id="submenu-category-food" class="submenu">
           <li class="menu-item">
-            <span onclick="applyFilterAndRedirect('한식')">한식</span>
+            <span onclick="applyFoodFilterAndRedirect('한식')">한식</span>
             <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-korean', this)">
               <img src="img/icon/small-down-icon.png" alt="Toggle Submenu2" />
             </button>
             <ul id="submenu-korean" class="submenu">
-              <li onclick="applyFilterAndRedirect('한식', '고기 요리')">고기 요리</li>
-              <li onclick="applyFilterAndRedirect('한식', '밥 요리')">밥 요리</li>
-              <li onclick="applyFilterAndRedirect('한식', '찌개 요리')">찌개 요리</li>
-              <li onclick="applyFilterAndRedirect('한식', '볶음 요리')">볶음 요리</li>
-              <li onclick="applyFilterAndRedirect('한식', '탕 요리')">탕 요리</li>
-              <li onclick="applyFilterAndRedirect('한식', '전 요리')">전 요리</li>
-              <li onclick="applyFilterAndRedirect('한식', '분식')">분식</li>
+              <li onclick="applyFoodFilterAndRedirect('한식', '고기 요리')">고기 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('한식', '밥 요리')">밥 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('한식', '찌개 요리')">찌개 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('한식', '볶음 요리')">볶음 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('한식', '탕 요리')">탕 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('한식', '전 요리')">전 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('한식', '분식')">분식</li>
             </ul>
           </li>
           <li class="menu-item">
-            <span onclick="applyFilterAndRedirect('일식')">일식</span>
+            <span onclick="applyFoodFilterAndRedirect('일식')">일식</span>
             <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-japanese', this)">
               <img src="img/icon/small-down-icon.png" alt="Toggle Submenu" />
             </button>
             <ul id="submenu-japanese" class="submenu">
-              <li onclick="applyFilterAndRedirect('일식', '스시')">스시</li>
-              <li onclick="applyFilterAndRedirect('일식', '면 요리')">면 요리</li>
-              <li onclick="applyFilterAndRedirect('일식', '전 요리')">전 요리</li>
-              <li onclick="applyFilterAndRedirect('일식', '덮밥 요리')">덮밥 요리</li>
-              <li onclick="applyFilterAndRedirect('일식', '튀김 요리')">튀김 요리</li>
-              <li onclick="applyFilterAndRedirect('일식', '전골 요리')">전골 요리</li>
-              <li onclick="applyFilterAndRedirect('일식', '분식')">분식</li>
+              <li onclick="applyFoodFilterAndRedirect('일식', '스시')">스시</li>
+              <li onclick="applyFoodFilterAndRedirect('일식', '면 요리')">면 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('일식', '전 요리')">전 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('일식', '덮밥 요리')">덮밥 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('일식', '튀김 요리')">튀김 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('일식', '전골 요리')">전골 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('일식', '분식')">분식</li>
               
             </ul>
           </li>
           <li class="menu-item">
-            <span onclick="applyFilterAndRedirect('중식')">중식</span>
+            <span onclick="applyFoodFilterAndRedirect('중식')">중식</span>
             <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-chinese', this)">
               <img src="img/icon/small-down-icon.png" alt="Toggle Submenu" />
             </button>
             <ul id="submenu-chinese" class="submenu">
-              <li onclick="applyFilterAndRedirect('중식', '면 요리')">면 요리</li>
-              <li onclick="applyFilterAndRedirect('중식', '고기 요리')">고기 요리</li>
-              <li onclick="applyFilterAndRedirect('중식', '두부 요리')">두부 요리</li>
-              <li onclick="applyFilterAndRedirect('중식', '밥 요리')">밥 요리</li>
-              <li onclick="applyFilterAndRedirect('중식', '샐러드')">샐러드</li>
+              <li onclick="applyFoodFilterAndRedirect('중식', '면 요리')">면 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('중식', '고기 요리')">고기 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('중식', '두부 요리')">두부 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('중식', '밥 요리')">밥 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('중식', '샐러드')">샐러드</li>
           
             </ul>
           </li>
           <li class="menu-item">
-            <span onclick="applyFilterAndRedirect('약식')">양식</span>
+            <span onclick="applyFoodFilterAndRedirect('약식')">양식</span>
             <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-western', this)">
               <img src="img/icon/small-down-icon.png" alt="Toggle Submenu2" />
             </button>
             <ul id="submenu-western" class="submenu">
-              <li onclick="applyFilterAndRedirect('양식', '피자')">피자</li>
-              <li onclick="applyFilterAndRedirect('양식', '파스타')">파스타</li>
-              <li onclick="applyFilterAndRedirect('양식', '버거')">버거</li>
-              <li onclick="applyFilterAndRedirect('양식', '고기 요리')">고기 요리</li>
-              <li onclick="applyFilterAndRedirect('양식', '샐러드')">샐러드</li>
-              <li onclick="applyFilterAndRedirect('양식', '샌드위치')">샌드위치</li>
-              <li onclick="applyFilterAndRedirect('양식', '해산물 요리')">해산물 요리</li>
-              <li onclick="applyFilterAndRedirect('양식', '타코')">타코</li>
+              <li onclick="applyFoodFilterAndRedirect('양식', '피자')">피자</li>
+              <li onclick="applyFoodFilterAndRedirect('양식', '파스타')">파스타</li>
+              <li onclick="applyFoodFilterAndRedirect('양식', '버거')">버거</li>
+              <li onclick="applyFoodFilterAndRedirect('양식', '고기 요리')">고기 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('양식', '샐러드')">샐러드</li>
+              <li onclick="applyFoodFilterAndRedirect('양식', '샌드위치')">샌드위치</li>
+              <li onclick="applyFoodFilterAndRedirect('양식', '해산물 요리')">해산물 요리</li>
+              <li onclick="applyFoodFilterAndRedirect('양식', '타코')">타코</li>
             </ul>
           </li>
           <li class="menu-item">
-            <span onclick="applyFilterAndRedirect('디저트')">디저트</span>
+            <span onclick="applyFoodFilterAndRedirect('디저트')">디저트</span>
             <button class="toggle-btn right-align" onclick="toggleSubMenu('submenu-dessert', this)">
               <img src="img/icon/small-down-icon.png" alt="Toggle Submenu2" />
             </button>
             <ul id="submenu-dessert" class="submenu">
-              <li onclick="applyFilterAndRedirect('디저트', '케이크')">케이크</li>
-              <li onclick="applyFilterAndRedirect('디저트', '과자')">과자</li>
-              <li onclick="applyFilterAndRedirect('디저트', '크레페')">크레페</li>
-              <li onclick="applyFilterAndRedirect('디저트', '무스')">무스</li>
-              <li onclick="applyFilterAndRedirect('디저트', '파이')">파이</li>
-              <li onclick="applyFilterAndRedirect('디저트', '패스트리')">패스트리</li>
-              <li onclick="applyFilterAndRedirect('디저트', '베이커리')">베이커리</li>
-              <li onclick="applyFilterAndRedirect('디저트', '젤리')">젤리</li>
+              <li onclick="applyFoodFilterAndRedirect('디저트', '케이크')">케이크</li>
+              <li onclick="applyFoodFilterAndRedirect('디저트', '과자')">과자</li>
+              <li onclick="applyFoodFilterAndRedirect('디저트', '크레페')">크레페</li>
+              <li onclick="applyFoodFilterAndRedirect('디저트', '무스')">무스</li>
+              <li onclick="applyFoodFilterAndRedirect('디저트', '파이')">파이</li>
+              <li onclick="applyFoodFilterAndRedirect('디저트', '패스트리')">패스트리</li>
+              <li onclick="applyFoodFilterAndRedirect('디저트', '베이커리')">베이커리</li>
+              <li onclick="applyFoodFilterAndRedirect('디저트', '젤리')">젤리</li>
             </ul>
           </li>
         </ul>
