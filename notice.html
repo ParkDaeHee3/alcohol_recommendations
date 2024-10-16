@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>고객지원센터</title>
     <!-- CSS 파일 연결 -->
-    <link rel="stylesheet" href="css/header.css"> <!-- header 스타일 -->
+    <link rel="stylesheet" href="css/header2.css"> <!-- header 스타일 -->
     <link rel="stylesheet" href="css/customer.css">
+
 </head>
 <body>
 
@@ -16,6 +17,15 @@
     <div class="content">
         <h2>고객지원센터</h2>
     </div>
+
+   <!-- 검색창을 감싸는 div에 class="search-wrapper" 추가 -->
+    <div class="search-wrapper">
+        <input type="text" id="search-input" placeholder="검색어를 입력하세요...">
+        <button type="submit" id="search-button">검색</button>
+    </div>
+
+
+
 
     <!-- 상단 바 -->
     <nav class="nav-bar">
@@ -93,12 +103,26 @@
     <!-- Q&A 질문하기 공간 -->
     <div id="qa" class="tab-content" style="display: none;">
         <h2>Q&A 질문하기</h2>
-        <form id="qaForm">
-            <label for="question">질문을 입력하세요:</label><br>
-            <textarea id="question" name="question" rows="4" cols="50" placeholder="여기에 질문을 작성하세요"></textarea><br><br>
-            <button type="submit">질문 제출</button>
-        </form>
+        <div class="qa-container">
+            <!-- 왼쪽: 질문 입력 폼 -->
+            <div class="qa-left">
+                <form id="qaForm" onsubmit="submitQuestion(event)">
+                    <label for="question">질문을 입력하세요:</label><br>
+                    <textarea id="question" name="question" rows="4" cols="50" placeholder="여기에 질문을 작성하세요"></textarea><br><br>
+                    <button type="submit">질문 제출</button>
+                </form>
+            </div>
+
+            <!-- 오른쪽: 제출된 질문 리스트 -->
+            <div class="qa-right">
+                <h3>제출된 질문</h3>
+                <ul id="submittedQuestionList" class="submitted-questions">
+                    <!-- 제출된 질문 목록이 여기에 표시됩니다 -->
+                </ul>
+            </div>
+        </div>
     </div>
+
 
     <!-- JavaScript 파일 연결 -->
     <script src="js/customer.js"></script>
