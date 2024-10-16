@@ -3,56 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
     <link rel="stylesheet" href="css/header2.css"> <!-- header 스타일 -->
-    <link rel="stylesheet" href="css/mypage.css">
-    <title>마이 페이지</title>
+    <link rel="stylesheet" href="css/mypage.css"> <!-- 마이페이지 스타일 -->
 </head>
 <body>
+
     <!-- Header -->
     <div id="header-container"></div>
-    </header>
     <script src="js/header.js"></script>
-    <!-- Main Content -->
-    <body>
-        <div class="mypage-container">
-            <aside class="menu">
-                <h2>마이페이지</h2>
-                <div class="menu-item">
-                    <span>검색기록</span>
-                    <ul class="search-history">
-                        <li>검색 기록 1</li>
-                        <li>검색 기록 2</li>
-                        <li>검색 기록 3</li>
-                        <li>검색 기록 4</li>
-                        <li>검색 기록 5</li>
-                    </ul>
+
+    <!-- 마이페이지 영역 -->
+    <div class="mypage-container">
+        <aside class="menu">
+            <h2>마이페이지</h2>
+            <hr> <!-- 메뉴와 검색 기록 사이의 구분선 -->
+            <h3>검색기록</h3>
+            <ul id="searchHistoryList">
+                <!-- 검색 기록이 여기에 추가됩니다 -->
+            </ul>
+            <hr> <!-- 메뉴와 위시리스트 사이의 구분선 -->
+            <div class="menu-item">
+                <a href="wishlist.html">위시리스트</a>
+            </div>
+            <hr> <!-- 위시리스트와 고객센터 사이의 구분선 -->
+            <div class="menu-item">
+                고객센터
+                <ul>
+                    <li><a href="faq.html">1:1 문의</a></li>
+                </ul>
+            </div>
+            <hr> <!-- 고객센터와 회원정보 사이의 구분선 -->
+            <div class="menu-item">
+                회원정보
+                <ul>
+                    <li><a href="mypage.html" class="active">회원정보 변경</a></li>
+                    <li><a href="delete-account.html">회원 탈퇴</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- 회원정보 변경 섹션 -->
+        <section class="content">
+            <h1>회원정보 변경</h1>
+            <hr class="section-divider"> <!-- 검은색 얇은 선 추가 -->
+            <p class="security-notice"><strong>회원님의 정보를 안전하게 보호하기 위해 비밀번호를 다시 한번 확인해 주세요.</strong></p>
+            
+            <div class="auth-box">
+                <div class="input-group">
+                    <label for="username">아이디</label>
+                    <input type="text" id="username" value="UserID123" readonly>
                 </div>
-                <hr>
-                <div class="menu-item">
-                    <a href="wishlist.html">위시리스트</a>
+                <div class="input-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" placeholder="">
                 </div>
-                <hr>
-                <div class="menu-item">
-                    고객센터
-                    <ul>
-                        <li><a href="inquiry.html">1:1 문의</a></li>
-                    </ul>
-                </div>
-                <hr>
-                <div class="menu-item">
-                    회원정보
-                    <ul>
-                        <li><a href="edit-info.html" class="active">회원정보 변경</a></li>
-                        <li><a href="delete-account.html">회원 탈퇴</a></li>
-                    </ul>
-                </div>
-            </aside>
-            <section class="content">
-                <h1>회원정보 변경</h1>
-                <!-- 회원정보 변경 콘텐츠가 여기 들어갑니다 -->
-            </section>
-        </div>
-    
-    <script src="css/mypage.js"></script>
+            </div>
+        
+            <div class="button-group">
+                <button class="cancel-btn">취소</button>
+                <button class="confirm-btn">인증하기</button>
+            </div>
+        </section>
+        
+    </div>
+
+    <script src="js/mypage.js"></script>
 </body>
 </html>

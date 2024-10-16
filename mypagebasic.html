@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Page</title>
+    <link rel="stylesheet" href="css/header2.css"> <!-- header 스타일 -->
+    <link rel="stylesheet" href="css/mypage.css"> <!-- 마이페이지 스타일 -->
+</head>
+<body>
+
+    <!-- Header -->
+    <div id="header-container"></div>
+    <script src="js/header.js"></script>
+
+    <!-- 마이페이지 영역 -->
+    <div class="mypage-container">
+        <aside class="menu">
+            <h2>마이페이지</h2>
+            <hr> <!-- 메뉴와 검색 기록 사이의 구분선 -->
+            <h3>검색기록</h3>
+            <ul id="searchHistoryList">
+                <!-- 검색 기록이 여기에 추가됩니다 -->
+            </ul>
+            <hr> <!-- 메뉴와 위시리스트 사이의 구분선 -->
+            <div class="menu-item">
+                <a href="wishlist.html">위시리스트</a>
+            </div>
+            <hr>
+            <div class="menu-item">
+                고객센터
+                <ul>
+                    <li><a href="faq.html">1:1 문의</a></li>
+                </ul>
+            </div>
+            <hr>
+            <div class="menu-item">
+                회원정보
+                <ul>
+                    <li><a href="mypage.html" class="active">회원정보 변경</a></li>
+                    <li><a href="delete-account.html">회원 탈퇴</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <section class="content">
+            <h1>회원정보 변경</h1>
+            <hr class="thin-black-line">
+            
+            <h2>기본정보</h2>
+            <hr class="thin-black-line">
+
+            <form id="infoForm">
+
+                <div class="form-group">
+                    <label for="user-id">아이디</label>
+                    <input type="text" id="user-id" name="user-id" value="your_id" readonly>
+                </div>
+                <hr class="gray-line">
+
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <hr class="gray-line">
+
+                <div class="form-group">
+                    <label for="name">이름</label>
+                    <input type="text" id="name" name="name" value="">
+                </div>
+                <hr class="gray-line">
+
+                <div class="form-group">
+                    <label for="nickname">닉네임</label>
+                    <input type="text" id="nickname" name="nickname" value="">
+                </div>
+                <hr class="gray-line">
+
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" value="">
+                </div>
+                <hr class="gray-line">
+
+                <div class="form-group">
+                    <label for="phone">휴대폰번호</label>
+                    <input type="tel" id="phone" name="phone" value="010-1234-5678">
+                </div>
+                <hr class="gray-line">
+
+                <div class="form-group">
+                    <label for="telephone">전화번호</label>
+                    <input type="tel" id="telephone" name="telephone" value="02-123-4567">
+                </div>
+                <hr class="gray-line">
+
+                <div class="form-group">
+                    <label for="address">주소</label>
+                    <input type="text" id="address" name="address" value="서울시 강남구 역삼동">
+                </div>
+                <hr class="gray-line">
+
+                <div class="button-group">
+                    <button type="reset" class="cancel-btn">취소</button>
+                    <button type="submit" class="submit-btn">정보수정</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <script src="js/mypage.js"></script>
+</body>
+</html>

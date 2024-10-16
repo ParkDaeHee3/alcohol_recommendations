@@ -1,154 +1,161 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Header 불러오기
-    fetch('header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('header-container').innerHTML = data;
-  
-        // 배너 설정이 header.html이 로드된 후에 실행되도록 보장
-        setTimeout(() => {
-          setBanner(
-            true, 
-            'img/banner/all_food-banner.gif', 
-            'Tastify의 음식 추천 페이지.', 
-            '다양한 음식 찾기 및 검색 기능', 
-            '카드에 포인터를 올려보세요.'
-          );
-        }, 0); // header가 로드된 직후 배너 설정
-      })
-      .catch(error => console.log('Header 불러오기 에러:', error));
-  
-    // 카드 리스트 및 페이지네이션 로드
-    let currentPage = 1;
-    const cardsPerPage = 48; // 12줄, 4개씩
-    const food = getFoodData();
-    loadFoodCards(food, currentPage, cardsPerPage);
-  
-    // 정렬 기준 변경 시
-    document.getElementById('sort-order').addEventListener('change', function() {
-      const sortOrder = this.value;
-      const sortedFood = sortFood(food, sortOrder);
-      loadFoodCards(sortedFood, currentPage, cardsPerPage);
-    });
-  
-    // 페이지네이션 이벤트
-    document.getElementById('prev-page').addEventListener('click', function() {
-      if (currentPage > 1) {
-        currentPage--;
-        loadFoodCards(food, currentPage, cardsPerPage);
-      }
-    });
-  
-    document.getElementById('next-page').addEventListener('click', function() {
-      const maxPage = Math.ceil(food.length / cardsPerPage);
-      if (currentPage < maxPage) {
-        currentPage++;
-        loadFoodCards(food, currentPage, cardsPerPage);
-      }
-    });
+  // Header 불러오기
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+
+      // 배너 설정이 header.html이 로드된 후에 실행되도록 보장
+      setTimeout(() => {
+        setBanner(
+          true, 
+          'img/banner/all_food-banner.gif', 
+          'Tastify의 음식 추천 페이지.', 
+          '다양한 음식 찾기 및 검색 기능', 
+          '카드에 포인터를 올려보세요.'
+        );
+      }, 0); // header가 로드된 직후 배너 설정
+    })
+    .catch(error => console.log('Header 불러오기 에러:', error));
+
+  // 카드 리스트 및 페이지네이션 로드
+  let currentPage = 1;
+  const cardsPerPage = 48; // 12줄, 4개씩
+  const food = getFoodData();
+  loadFoodCards(food, currentPage, cardsPerPage);
+
+  // 정렬 기준 변경 시
+  document.getElementById('sort-order').addEventListener('change', function() {
+    const sortOrder = this.value;
+    const sortedFood = sortFood(food, sortOrder);
+    loadFoodCards(sortedFood, currentPage, cardsPerPage);
   });
-  
-  // 정렬 함수
-  function sortfood(food, order) {
-    if (order === 'low-price') {
-      return food.sort((a, b) => a.price - b.price);
-    } else if (order === 'high-price') {
-      return food.sort((a, b) => b.price - a.price);
-    } else {
-      // 인기순: 평점 기준 내림차순
-      return food.sort((a, b) => b.rating - a.rating);
+
+  // 페이지네이션 이벤트
+  document.getElementById('prev-page').addEventListener('click', function() {
+    if (currentPage > 1) {
+      currentPage--;
+      loadFoodCards(food, currentPage, cardsPerPage);
     }
+  });
+
+  document.getElementById('next-page').addEventListener('click', function() {
+    const maxPage = Math.ceil(food.length / cardsPerPage);
+    if (currentPage < maxPage) {
+      currentPage++;
+      loadFoodCards(food, currentPage, cardsPerPage);
+    }
+  });
+});
+
+// 정렬 함수
+function sortfood(food, order) {
+  if (order === 'low-price') {
+    return food.sort((a, b) => a.price - b.price);
+  } else if (order === 'high-price') {
+    return food.sort((a, b) => b.price - a.price);
+  } else {
+    // 인기순: 평점 기준 내림차순
+    return food.sort((a, b) => b.rating - a.rating);
   }
+}
 
 // 데이터 로드 및 카드 리스트 확인
 function loadFoodCards(food, page, cardsPerPage) {
-    console.log("loadFoodCards 실행됨"); // 함수가 실행되는지 확인
-    console.log(food); // 로드된 데이터가 제대로 가져와졌는지 확인
-  
-    const cardList = document.getElementById('food-card-list');
-    cardList.innerHTML = ''; // 기존 카드 초기화
-  
-    const start = (page - 1) * cardsPerPage;
-    const end = start + cardsPerPage;
-    const paginatedfood = food.slice(start, end);
-  
-    paginatedfood.forEach(food => {
-      console.log(food); // 각 카드의 데이터가 제대로 넘어오는지 확인
-      addFoodCard(food);
-    });
-  
-    document.getElementById('current-page').textContent = page;
-  }
+  console.log("loadFoodCards 실행됨"); // 함수가 실행되는지 확인
+  console.log(food); // 로드된 데이터가 제대로 가져와졌는지 확인
 
- // 카드 리스트에 제품을 동적으로 추가하는 함수
-function addFoodCard(food) {
   const cardList = document.getElementById('food-card-list');
-  const card = document.createElement('div');
-  card.className = 'card';
+  cardList.innerHTML = ''; // 기존 카드 초기화
 
-  const isLoggedIn = checkLoginStatus();
-  const wishlistIcon = isLoggedIn ? 'img/icon/heart-bin-icon.png' : 'img/icon/heart-bin-icon.png';
+  const start = (page - 1) * cardsPerPage;
+  const end = start + cardsPerPage;
+  const paginatedfood = food.slice(start, end);
 
-  // 카드 앞면 HTML 구조
-  const cardFront = `
-    <div class="card-front">
-      <img src="${food.image}" alt="${food.name}">
-      <h3>${food.name}</h3>
-      <p class="price">${food.price}원</p>
-      <div class="wishlist-btn">
-        <img src="${wishlistIcon}" alt="찜하기" class="wishlist-icon" />
-      </div>
-    </div>
-  `;
-
-  // 카드 뒷면 HTML 구조 (회색 배경에 알코올 도수와 평점 표시)
-  const cardBack = `
-    <div class="card-back">
-      <h3>음식 재료: ${food.ingredients}</h3>
-      <p>평점: ${food.rating} / 5</p>
-    </div>
-  `;
-
-  card.innerHTML = cardFront + cardBack;
-
-  // 1.5초 동안 포인터가 머물렀을 때 카드 뒤집기
-  let flipTimeout;
-  card.addEventListener('mouseenter', function() {
-    flipTimeout = setTimeout(() => {
-      card.classList.add('flipped');
-    }, 1500);
+  paginatedfood.forEach(food => {
+    console.log(food); // 각 카드의 데이터가 제대로 넘어오는지 확인
+    addFoodCard(food);
   });
 
-  card.addEventListener('mouseleave', function() {
-    clearTimeout(flipTimeout);
-    card.classList.remove('flipped');
-  });
+  document.getElementById('current-page').textContent = page;
+}
 
-  // 카드 클릭 시 해당 술의 상세 페이지로 이동
+// 카드 리스트에 제품을 동적으로 추가하는 함수
+function addFoodCard(food) {
+const cardList = document.getElementById('food-card-list');
+const card = document.createElement('div');
+card.className = 'card';
+
+const isLoggedIn = checkLoginStatus();
+const wishlistIcon = isLoggedIn ? 'img/icon/heart-bin-icon.png' : 'img/icon/heart-bin-icon.png';
+
+
+// 카드 앞면 HTML 구조
+const cardFront = `
+  <div class="card-front">
+    <img src="${food.image}" alt="${food.name}">
+    <h3>${food.name}</h3>
+    <p class="price">${food.price}원</p>
+    <div class="wishlist-btn">
+      <img src="${wishlistIcon}" alt="찜하기" class="wishlist-icon" />
+    </div>
+  </div>
+`;
+
+// 카드 뒷면 HTML 구조 (회색 배경에 알코올 도수와 평점 표시)
+const cardBack = `
+  <div class="card-back">
+    <h3>음식 재료: ${food.ingredients}</h3>
+    <p>평점: ${food.rating} / 5</p>
+  </div>
+`;
+
+card.innerHTML = cardFront + cardBack;
+
+// 1.5초 동안 포인터가 머물렀을 때 카드 뒤집기
+let flipTimeout;
+card.addEventListener('mouseenter', function() {
+  flipTimeout = setTimeout(() => {
+    card.classList.add('flipped');
+  }, 1500);
+});
+
+card.addEventListener('mouseleave', function() {
+  clearTimeout(flipTimeout);
+  card.classList.remove('flipped');
+});
+
+// 카드 클릭 시 해당 음식의 상세 페이지로 이동
 card.addEventListener('click', function () {
   window.location.href = `food_detail.html?product=${encodeURIComponent(food.name)}`;
 });
 
-  cardList.appendChild(card);
+cardList.appendChild(card);
 
-  // 찜 버튼 이벤트 처리 (클릭 시 상세 페이지로 이동하는 것을 방지)
-  const wishlistBtn = card.querySelector('.wishlist-btn img');
-  wishlistBtn.addEventListener('click', function (event) {
-    event.stopPropagation();  // 찜 버튼 클릭 시 카드 이동 이벤트 중지
+// 찜 버튼 이벤트 처리 (클릭 시 상세 페이지로 이동하는 것을 방지)
+const wishlistBtn = card.querySelector('.wishlist-btn img');
+wishlistBtn.addEventListener('click', function (event) {
+  event.stopPropagation();  // 찜 버튼 클릭 시 카드 이동 이벤트 중지
 
-    if (!isLoggedIn) {
-      showPopupMessage('로그인 후 눌러주세요.');
-      return;
-    }
+  if (!isLoggedIn) {
+    showPopupMessage('로그인 후 눌러주세요.');
+    return;
+  }
 
-    if (wishlistBtn.src.includes('heart-bin-icon')) {
-      wishlistBtn.src = 'img/icon/heart-icon.png'; // 찜 상태로 변경
-      showPopupMessage('위시리스트에 등록되었습니다.');
-    } else {
-      wishlistBtn.src = 'img/icon/heart-bin-icon.png'; // 찜 취소 상태로 변경
-      showPopupMessage('위시리스트에서 삭제되었습니다.');
-    }
-  });
+  const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+  if (wishlistBtn.src.includes('heart-bin-icon')) {
+    wishlistBtn.src = 'img/icon/heart-icon.png'; // 찜 상태로 변경
+    wishlist.push(food.name); // 음식 이름을 위시리스트에 추가
+    localStorage.setItem('wishlist', JSON.stringify(wishlist)); // 로컬스토리지에 저장
+    showPopupMessage('위시리스트에 등록되었습니다.');
+  } else {
+    wishlistBtn.src = 'img/icon/heart-bin-icon.png'; // 찜 취소 상태로 변경
+    const updatedWishlist = wishlist.filter(item => item !== food.name); // 위시리스트에서 음식 제거
+    localStorage.setItem('wishlist', JSON.stringify(updatedWishlist)); // 로컬스토리지에 업데이트
+    showPopupMessage('위시리스트에서 삭제되었습니다.');
+  }
+});
 }
 
 // 팝업 메시지를 표시하는 함수
@@ -244,8 +251,8 @@ function loadFoodCards(food, page, cardsPerPage) {
   document.getElementById('current-page').textContent = page;
 }
 
-// 로그인 여부 확인 (임의로 false로 설정)
+
+// 로그인 여부 확인 (임의로 true로 설정)
 function checkLoginStatus() {
-  // 실제 로그인 상태 확인 로직을 넣으세요. 지금은 테스트로 false 리턴
-  return true; // 로그아웃 상태, true일 경우 로그인 상태
+return true; // 실제 로그인 상태 확인 로직 필요
 }
