@@ -3,36 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>인기 술 순위</title>
-    <link rel="stylesheet" href="../css/drinks.css">
+    <title>인기 술 페이지</title>
+    <link rel="stylesheet" href="css/header.css"> <!-- 헤더 스타일 -->
+    <link rel="stylesheet" href="css/popular_drink.css"> <!-- 인기 술 페이지 스타일 -->
 </head>
 <body>
-    <header>
-        <h1>인기 술 순위</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">메인</a></li>
-                <li><a href="all_drinks.html">술 검색</a></li>
-                <li><a href="../customer/support.html">고객지원</a></li>
-            </ul>
-        </nav>
-    </header>
+   <!-- Header 영역 -->
+  <div id="header-container"></div>
 
-    <main>
-        <section>
-            <h2>가장 인기 있는 술</h2>
-            <ul>
-                <li>1. 위스키</li>
-                <li>2. 와인</li>
-                <li>3. 전통주</li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2024 Your Company Name</p>
-    </footer>
-
-    <script src="../js/drinks.js"></script>
+  <!-- 콘텐츠 영역 -->
+  <!-- 탭 메뉴 영역 -->
+<div class="tab-container">
+    <button class="tab-button active" data-target="rating-rank">평점 랭킹</button>
+    <button class="tab-button" data-target="wish-rank">찜 랭킹</button>
+  </div>
+  
+  <!-- 랭킹 콘텐츠 영역 -->
+  <div class="ranking-container">
+    <div id="rating-rank" class="ranking-content active">
+      <!-- 평점 랭킹 콘텐츠 -->
+      <div class="top-three-container"></div> <!-- 상단 1위 ~ 3위 -->
+      <div class="other-drinks-container"></div> <!-- 나머지 4위 ~ 20위 -->
+    </div>
+    
+    <div id="wish-rank" class="ranking-content">
+      <!-- 찜 랭킹 콘텐츠 (추가 구현 가능) -->
+      <div class="top-three-container"></div> <!-- 상단 1위 ~ 3위 -->
+      <div class="other-drinks-container"></div> <!-- 나머지 4위 ~ 20위 -->
+    </div>
+  </div>
+  
+  <script src="js/header.js"></script> <!-- 헤더 불러오기 스크립트 -->
+  <script src="js/drink.js"></script> <!-- 술 정보 불러오기 -->
+  <script src="js/popular_drink.js"></script> <!-- 인기 술 페이지 스크립트 -->
 </body>
 </html>
