@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+  <link rel="stylesheet" href="css/user.css">
+  <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+  <!-- 상단 바 -->
+  <header>
+    <div class="top-bar">
+      <!-- 메뉴 아이콘 (사이드바 연결) -->
+      <div class="menu-icon">
+        <img src="img/icon/menu-icon.png" alt="메뉴 아이콘" onclick="toggleSidebar()">
+      </div>
+      
+      <!-- 로고 (메인 페이지로 이동) -->
+      <div class="logo">
+        <a href="main.html"><img src="img/logo.png" alt="로고"></a>
+      </div>
+      
+      <!-- 검색 아이콘 -->
+      <div class="search-icon">
+        <img src="img/icon/search-icon.png" alt="검색 아이콘" onclick="openSearch()">
+      </div>
+      
+      <!-- 유저 아이콘 (로그인 또는 마이페이지로 이동) -->
+      <div class="user-icon">
+        <a href="login.html"><img src="img/icon/user-icon.png" alt="유저 아이콘"></a>
+      </div>
+    </div>
+  
+    <!-- 구분선 -->
+    <hr class="header-separator">
+  </header>
+
+  <div class="login-form">
+    <h1>회원가입</h1>
+    <hr>
+    <div class="container">
+      <div class="main">
+        <div class="content">
+          <!-- 중복된 h2 삭제 -->
+          <form id="register-form">
+            <input type="text" id="name" placeholder="이름" required>
+            <input type="text" id="nickname" placeholder="별명" required>
+            <input type="email" id="email" placeholder="이메일" required>
+            <input type="password" id="password" placeholder="비밀번호 (8자 이상)" minlength="8" required>
+            <input type="text" id="birthdate" placeholder="생년월일 (YYMMDD)" pattern="\d{6}" required>
+            <button class="btn" type="submit">회원가입</button>
+          </form>
+          <p class="account">이미 계정이 있으신가요? <a href="login.html">로그인</a></p>
+        </div>
+        <div class="form-img">
+          <img src="img/logo.png" alt="Tastify 로고">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="js/user.js"></script>
+</body>
+</html>

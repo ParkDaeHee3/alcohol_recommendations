@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인</title>
+  <link rel="stylesheet" href="css/user.css">
+  <link rel="stylesheet" href="css/header.css">
+</head>
+<body>
+  <!-- 상단 바 -->
+  <header>
+    <div class="top-bar">
+      <!-- 메뉴 아이콘 (사이드바 연결) -->
+      <div class="menu-icon">
+        <img src="img/icon/menu-icon.png" alt="메뉴 아이콘" onclick="toggleSidebar()">
+      </div>
+      
+      <!-- 로고 (메인 페이지로 이동) -->
+      <div class="logo">
+        <a href="main.html"><img src="img/logo.png" alt="로고"></a>
+      </div>
+      
+      <!-- 검색 아이콘 -->
+      <div class="search-icon">
+        <img src="img/icon/search-icon.png" alt="검색 아이콘" onclick="openSearch()">
+      </div>
+      
+      <!-- 유저 아이콘 (로그인 또는 마이페이지로 이동) -->
+      <div class="user-icon">
+        <a href="login.html"><img src="img/icon/user-icon.png" alt="유저 아이콘"></a>
+      </div>
+    </div>
+  
+    <!-- 구분선 -->
+    <hr class="header-separator">
+  </header>
+
+  <div class="login-form">
+    <h1>로그인</h1>
+    <hr>
+    <div class="container">
+      <div class="main">
+        <div class="content">
+          <!-- 중복된 h2 삭제 -->
+          <form id="login-form">
+            <input type="email" id="login-email" placeholder="이메일" required>
+            <input type="password" id="login-password" placeholder="비밀번호" required>
+            <button class="btn" type="submit">로그인</button>
+          </form>
+          <p class="account">계정이 없으신가요? <a href="register.html">회원가입</a></p>
+        </div>
+        <div class="form-img">
+          <img src="img/logo.png" alt="Tastify 로고">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script src="js/user.js"></script>
+</body>
+</html>
