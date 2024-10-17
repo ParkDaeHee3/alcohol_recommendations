@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // 구분선 숨기기
       const divider = document.querySelector('.divider');
       if (divider) {
-        divider.style.display = 'none'; // drink_detail.html에서는 구분선 숨기기
+        divider.style.display = 'none'; // popultar.html에서는 구분선 숨기기
       }
     })
     .catch(error => console.log('Header 불러오기 에러:', error));
