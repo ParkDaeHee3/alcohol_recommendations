@@ -249,3 +249,46 @@ function checkLoginStatus() {
   // 실제 로그인 상태 확인 로직을 넣으세요. 지금은 테스트로 false 리턴
   return true; // 로그아웃 상태, true일 경우 로그인 상태
 }
+
+let showSubCategoryTimeout;  // 타이머를 저장할 변수
+
+// 상위 카테고리에 마우스를 올리면 1초 뒤 하위 카테고리 보이기
+function showSubCategoryWithDelay(category) {
+  showSubCategoryTimeout = setTimeout(function() {
+    document.getElementById(`${category}-sub`).style.display = 'block';
+  }, 500);  // 0.5초 후에 하위 카테고리 보이기
+}
+
+// 상위 카테고리에서 마우스를 떼면 타이머 취소 및 하위 카테고리 숨기기
+function hideSubCategory(category) {
+  clearTimeout(showSubCategoryTimeout);  // 타이머 취소
+  document.getElementById(`${category}-sub`).style.display = 'none';  // 하위 카테고리 숨기기
+}
+
+// 하위 카테고리에서 마우스를 이동해도 하위 카테고리 유지
+function keepSubCategoryVisible(category) {
+  clearTimeout(showSubCategoryTimeout);  // 타이머 취소
+  document.getElementById(`${category}-sub`).style.display = 'block';  // 하위 카테고리 유지
+}
+
+// 하위 카테고리 클릭 시 필터링된 제품 표시
+function filterBySubCategory(category, subCategory) {
+  const drinks = getDrinkData(); // drink.js에서 데이터를 가져옴
+  const filteredDrinks = drinks.filter(drink => 
+    drink.category === category && drink.subCategory === subCategory
+  );
+  
+  // 필터링된 결과를 카드 리스트에 로드
+  loadDrinkCards(filteredDrinks, 1, 48); // 1페이지에 48개씩 로드
+}
+
+// 상위 카테고리 클릭 시 해당 카테고리 제품만 필터링
+function openCategory(evt, category) {
+  const drinks = getDrinkData(); // drink.js에서 데이터를 가져옴
+
+  // 카테고리에 맞게 필터링
+  const filteredDrinks = drinks.filter(drink => drink.category === category);
+
+  // 필터링된 결과를 카드 리스트에 로드
+  loadDrinkCards(filteredDrinks, 1, 48); // 1페이지에 48개씩 로드
+}
