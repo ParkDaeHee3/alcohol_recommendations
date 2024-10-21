@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
 }
 
 main {
@@ -54,9 +54,9 @@ main {
 /* 달력을 아래로 내리기 위해 margin-top 추가 */
 #calendar {
   margin-top: 40px; /* 달력을 더 아래로 내려서 페이지 이동 카드와 겹치지 않도록 설정 */
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 50%; /* 달력의 크기 조정 */
 }
@@ -115,7 +115,7 @@ main {
 #today-recommendations {
   display: flex;
   justify-content: space-between;
-  gap: 0px; /* 카드 간 간격 */
+  gap: 8px; /* 카드 간 간격 */
   width: 100%;
 }
 
@@ -127,10 +127,10 @@ main {
   padding: 20px;
   text-align: center;
   transition: transform 0.2s ease-in-out;
-  flex: 1;
-  max-width: 350px;
+  width: 100%; /* 화면 크기에 맞춰 너비 자동 조절 */
   height: 500px; /* 카드의 높이를 세로로 더 길게 설정 */
   overflow: hidden;
+  flex-basis: 100%; /* 플렉스 아이템의 기본 너비를 100%로 설정 */
 }
 
 .polaroid-card:hover {
