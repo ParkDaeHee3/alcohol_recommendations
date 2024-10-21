@@ -23,76 +23,138 @@ document.addEventListener('DOMContentLoaded', function() {
       })
       .catch(error => console.log('Header 불러오기 에러:', error));
   }
+
+// 술 추천 카드를 업데이트하는 함수
+function updateRecommendationCard(cardId, product) {
+  const card = document.getElementById(cardId);
+  card.innerHTML = `
+    <img src="${product.image}" alt="${product.name}" class="drink-image">
+    <h4>${product.name}</h4>
+    <p>${product.tasteDescription}</p>
+  `;
+
+  // 클릭 시 상세 페이지로 이동
+  card.addEventListener('click', function () {
+    window.location.href = `drink_detail.html?product=${encodeURIComponent(product.name)}`;
+  });
+}
+
+// 오늘의 술 추천 함수
+function recommendDrinks() {
+  const drinks = getDrinkData(); // drink.js 파일에서 데이터 가져옴
+
+  // 카테고리별 추천 술 필터링
+  const brewing = drinks.filter(drink => drink.category === '양조주');
+  const distilled = drinks.filter(drink => drink.category === '증류주');
+  const mixed = drinks.filter(drink => drink.category === '혼성주');
+  const traditional = drinks.filter(drink => drink.category === '전통주');
+
+  // 랜덤으로 각 카테고리에서 하나씩 추천
+  const recommendation1 = brewing[Math.floor(Math.random() * brewing.length)];
+  const recommendation2 = distilled[Math.floor(Math.random() * distilled.length)];
+  const recommendation3 = mixed[Math.floor(Math.random() * mixed.length)];
+  const recommendation4 = traditional[Math.floor(Math.random() * traditional.length)];
+
+  // 추천 카드에 데이터 삽입
+  updateRecommendation('recommendation1', recommendation1);
+  updateRecommendation('recommendation2', recommendation2);
+  updateRecommendation('recommendation3', recommendation3);
+  updateRecommendation('recommendation4', recommendation4);
+}
+
+function updateRecommendation(id, product) {
+  const card = document.getElementById(id);
   
-  // 달력 생성 함수
-  function generateCalendar() {
-    const calendarBody = document.getElementById('calendar-body');
-    const currentDate = new Date();
-    const currentMonth = currentDate.toLocaleString('ko-KR', { month: 'long', year: 'numeric' });
-    const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
-    const startDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay();
+  if (!product) {
+    card.innerHTML = '<p>해당 카테고리에 제품이 없습니다.</p>';
+    return;
+  }
+
+  card.innerHTML = `
+      <img src="${product.image}" alt="${product.name}" class="drink-image">
+      <h4>${product.name}</h4>
+      <p>${product.description}</p>
+  `;
+
+  // 카드 클릭 시 상세 페이지로 이동
+  card.addEventListener('click', function () {
+      window.location.href = `drink_detail.html?product=${encodeURIComponent(product.name)}`;
+  });
+}
+
+// 달력과 해당 달의 이벤트 목록을 생성하는 함수
+function generateCalendar() {
+  const today = new Date();
+  const month = today.getMonth(); // 현재 월
+  const year = today.getFullYear();
+  const currentDay = today.getDate();
+
+  // 달력 생성
+  const calendarBody = document.getElementById('calendar-body');
+  const eventList = document.getElementById('events');
   
-    document.getElementById('currentMonth').textContent = currentMonth;
+  // 달력 헤더 표시
+  const monthNames = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
+  document.getElementById('currentMonth').textContent = `${year}년 ${monthNames[month]}`;
+
+  // 날짜와 요일 계산
+  const firstDayOfMonth = new Date(year, month, 1).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate(); // 해당 월의 일 수
+
+  // 빈 달력 초기화
+  calendarBody.innerHTML = '';
   
-    const events = {
-      3: '개천절',
-      9: '한글날',
-      25: '독도의 날'
-      // 여기에 이벤트를 추가
-    };
+  let dayCounter = 1;
   
-    let day = 1;
-    for (let i = 0; i < 6; i++) {
-      let row = document.createElement('tr');
-      for (let j = 0; j < 7; j++) {
-        let cell = document.createElement('td');
-        if (i === 0 && j < startDay) {
-          cell.textContent = '';
-        } else if (day <= daysInMonth) {
-          const eventText = events[day] ? `<div class="event">${events[day]}</div>` : '';
-          cell.innerHTML = `${day}${eventText}`;
-          if (j === 0) {
-            cell.style.color = 'red'; // 일요일 빨간색
-          }
-          if (j === 6) {
-            cell.style.color = 'red'; // 토요일 빨간색
-          }
-          day++;
-        } else {
-          cell.textContent = '';
+  // 달력 생성 (6주까지 표시)
+  for (let week = 0; week < 6; week++) {
+    const row = document.createElement('tr');
+    
+    for (let day = 0; day < 7; day++) {
+      const cell = document.createElement('td');
+      
+      if (week === 0 && day < firstDayOfMonth) {
+        // 첫 주의 빈 칸 채우기
+        cell.innerHTML = '';
+      } else if (dayCounter > daysInMonth) {
+        // 마지막 주 이후 빈 칸 채우기
+        cell.innerHTML = '';
+      } else {
+        // 날짜 입력
+        cell.innerHTML = dayCounter;
+        
+        // 오늘 날짜 강조
+        if (dayCounter === currentDay) {
+          cell.classList.add('today');
         }
-        row.appendChild(cell);
+
+        // 주말 스타일 추가
+        if (day === 6) {
+          cell.classList.add('saturday');
+        } else if (day === 0) {
+          cell.classList.add('weekend');
+        }
+
+        dayCounter++;
       }
-      calendarBody.appendChild(row);
+      row.appendChild(cell);
+    }
+    calendarBody.appendChild(row);
+    
+    if (dayCounter > daysInMonth) {
+      break; // 모든 날짜를 채우면 종료
     }
   }
-  
-  // 오늘의 술 추천 함수
-  function recommendDrinks() {
-    const drinks = getDrinkData(); // drink.js 파일에서 데이터 가져옴
-  
-    // 첫 번째 카드: 양조주 또는 증류주
-    const brewingOrDistilled = drinks.filter(drink => drink.category === '양조주' || drink.category === '증류주');
-    const recommendation1 = brewingOrDistilled[Math.floor(Math.random() * brewingOrDistilled.length)];
-    document.getElementById('recommendation1-img').src = recommendation1.image;
-    document.getElementById('recommendation1-name').textContent = recommendation1.name;
-    document.getElementById('recommendation1-desc').textContent = recommendation1.description;
-  
-    // 카드 클릭 시 상세 페이지로 이동
-    document.getElementById('recommendation1').addEventListener('click', function() {
-      window.location.href = `drink_detail.html?product=${encodeURIComponent(recommendation1.name)}`;
-    });
-  
-    // 두 번째 카드: 혼성주 또는 전통주
-    const mixedOrTraditional = drinks.filter(drink => drink.category === '혼성주' || drink.category === '전통주');
-    const recommendation2 = mixedOrTraditional[Math.floor(Math.random() * mixedOrTraditional.length)];
-    document.getElementById('recommendation2-img').src = recommendation2.image;
-    document.getElementById('recommendation2-name').textContent = recommendation2.name;
-    document.getElementById('recommendation2-desc').textContent = recommendation2.description;
-  
-    // 카드 클릭 시 상세 페이지로 이동
-    document.getElementById('recommendation2').addEventListener('click', function() {
-      window.location.href = `drink_detail.html?product=${encodeURIComponent(recommendation2.name)}`;
-    });
-  }
-  
+}
+
+  // 이벤트 목록 생성 (내용 생략 가능)
+  Object.keys(events).forEach(day => {
+    const listItem = document.createElement('li');
+    listItem.textContent = `${day}일: ${events[day].join(', ')}`;
+    eventList.appendChild(listItem);
+  });
+
+document.addEventListener('DOMContentLoaded', function() {
+  recommendDrinks();
+  generateCalendar();
+});

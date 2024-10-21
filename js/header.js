@@ -29,7 +29,6 @@ function setBanner(useBanner, bannerImage, bannerTitle, bannerSubtitle, bannerEx
   }
 }
 
-  
 // 검색 오버레이 열기
 function openSearch() {
     document.getElementById("search-overlay").style.display = "flex";
