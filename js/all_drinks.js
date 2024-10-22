@@ -292,3 +292,4 @@ function openCategory(evt, category) {
   // 필터링된 결과를 카드 리스트에 로드
   loadDrinkCards(filteredDrinks, 1, 48); // 1페이지에 48개씩 로드
 }
+

@@ -31,43 +31,55 @@ function setBanner(useBanner, bannerImage, bannerTitle, bannerSubtitle, bannerEx
 
 // 검색 오버레이 열기
 function openSearch() {
-    document.getElementById("search-overlay").style.display = "flex";
-  }
+  document.getElementById("search-overlay").style.display = "flex";
+}
+
+// 검색 오버레이 닫기
+function closeSearch() {
+  document.getElementById("search-overlay").style.display = "none";
+  document.getElementById("search-message").textContent = ""; // 오류 메시지 초기화
+  document.getElementById("no-result").style.display = "none"; // 결과 없음 메시지 숨기기
+}
+
+// 검색 유효성 검사 및 결과 처리
+function searchProduct() {
+  console.log("searchProduct 함수 호출됨");
+
+  const searchInput = document.getElementById("search-input").value.trim().toLowerCase();
+  console.log("검색어 입력됨: ", searchInput);
   
-  // 검색 오버레이 닫기
-  function closeSearch() {
-    document.getElementById("search-overlay").style.display = "none";
-    document.getElementById("search-message").textContent = ""; // 오류 메시지 초기화
-    document.getElementById("no-result").style.display = "none"; // no result 숨김
-  }
-  
-  // 검색 유효성 검사 및 결과 처리
-  function searchProduct() {
-    const searchInput = document.getElementById("search-input").value.trim();
-    const searchMessage = document.getElementById("search-message");
-    const noResult = document.getElementById("no-result");
-  
-    // 검색어가 입력되지 않았을 때
-    if (searchInput === "") {
-      searchMessage.textContent = "검색어를 입력해주세요.";
-      noResult.style.display = "none"; // no-result 숨김
-      return false; // 폼 제출 막기
-    }
-  
-    // 예시 검색어 배열 (실제 제품 데이터에 맞춰 변경)
-    const products = ["wine", "beer", "whisky"]; // 실제 제품 데이터 배열로 대체
-  
-    // 검색 결과 없을 때
-    if (!products.includes(searchInput.toLowerCase())) {
-      searchMessage.textContent = ""; // 오류 메시지 초기화
-      noResult.style.display = "block"; // no-result 표시
-    } else {
-      // 검색 결과가 있으면 all_drinks.html로 이동
-      window.location.href = "all_drinks.html?search=" + encodeURIComponent(searchInput);
-    }
-  
+  const searchMessage = document.getElementById("search-message"); // 오류 메시지 요소
+  const noResult = document.getElementById("no-result"); // 결과 없음 메시지 요소
+
+  // 검색어가 입력되지 않았을 때
+  if (searchInput === "") {
+    console.log("검색어가 입력되지 않음");
+    searchMessage.textContent = "검색어를 입력해주세요."; // 오류 메시지 출력
+    noResult.style.display = "none"; // no-result 숨김
     return false; // 폼 제출 막기
   }
+
+  // drink.js에서 데이터 불러오기
+  const drinks = getDrinkData(); // drink.js에서 데이터 가져오기
+
+  // 데이터가 제대로 불러와지는지 확인
+  console.log("불러온 drinks: ", drinks);
+
+  // 검색어와 음료 데이터에서 일치 확인
+  const foundDrink = drinks.find(drink => drink.name.toLowerCase().trim() === searchInput);
+
+  if (foundDrink) {
+    console.log("음료가 검색됨: ", foundDrink);
+    // 검색된 제품이 있으면 drink_detail.html로 이동하면서 제품명 전달
+    window.location.href = `drink_detail.html?product=${encodeURIComponent(foundDrink.name)}`;
+  } else {
+    console.log("검색 결과 없음");
+    searchMessage.textContent = ""; // 검색어 입력 메시지 초기화
+    noResult.style.display = "block"; // no-result 표시
+  }
+
+  return false; // 폼 제출 막기
+}
 
   document.addEventListener('DOMContentLoaded', function() {
     checkLoginStatus(); // 로그인 상태 확인
@@ -75,18 +87,25 @@ function openSearch() {
 
 // 로그인 상태 확인 함수
 function checkLoginStatus() {
+  const guestSection = document.getElementById('guest-section');
+  const userSection = document.getElementById('user-section');
+
+  if (guestSection && userSection) {  // 요소가 존재하는지 확인
     const isLoggedIn = true;  // 예시로 로그인 상태를 항상 true로 설정
     if (isLoggedIn) {
-        document.getElementById('guest-section').style.display = 'none';
-        document.getElementById('user-section').style.display = 'flex';
+      guestSection.style.display = 'none';
+      userSection.style.display = 'flex';
 
-        // 사용자 정보 설정 (예시)
-        document.getElementById('user-name').textContent = '임수현';
-        document.getElementById('user-email').textContent = 'eoehtjrhks06@naver.com';
+      // 사용자 정보 설정 (예시)
+      document.getElementById('user-name').textContent = '임수현';
+      document.getElementById('user-email').textContent = 'eoehtjrhks06@naver.com';
     } else {
-        document.getElementById('guest-section').style.display = 'flex';
-        document.getElementById('user-section').style.display = 'none';
+      guestSection.style.display = 'flex';
+      userSection.style.display = 'none';
     }
+  } else {
+    console.error("필요한 요소가 존재하지 않습니다. 'guest-section' 또는 'user-section'을 확인하세요.");
+  }
 }
 
 // 드롭다운 메뉴 보이기/숨기기

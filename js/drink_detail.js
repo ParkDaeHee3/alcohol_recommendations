@@ -59,3 +59,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// URL 파라미터에서 검색어 추출
+function getSearchParameter() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('product'); // 'product' 파라미터 추출
+}
+
+// 페이지 로드 시 검색된 제품을 표시
+document.addEventListener('DOMContentLoaded', function() {
+  const searchParam = getSearchParameter();
+  
+  if (searchParam) {
+    const drinks = getDrinkData(); // drink.js에서 데이터 가져오기
+    const foundDrink = drinks.find(drink => drink.name === searchParam);
+    
+    if (foundDrink) {
+      // 해당 제품을 페이지에 표시하는 로직
+      displayProduct(foundDrink);
+    } else {
+      console.log("해당 제품이 없습니다.");
+    }
+  }
+});
+
+// 제품을 페이지에 표시하는 함수 예시
+function displayProduct(product) {
+  const productContainer = document.getElementById('product-container'); // 제품을 표시할 요소
+  productContainer.innerHTML = `
+    <div class="product-card">
+      <img src="${product.image}" alt="${product.name}">
+      <h4>${product.name}</h4>
+      <p>${product.tasteDescription}</p>
+    </div>
+  `;
+}
