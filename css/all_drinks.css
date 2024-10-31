@@ -119,16 +119,21 @@
   margin: 0 auto; /* 찜 버튼을 중앙으로 정렬 */
 }
 
-/* 팝업 메시지 스타일 */
+/* 팝업 메시지 스타일 (화면 상단 중앙에 위치) */
 .popup-message {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: rgba(0, 0, 0, 0.8);
+  top: 20px; /* 화면 상단에서 20px 떨어진 위치 */
+  left: 50%; /* 화면의 좌우 중앙 */
+  transform: translateX(-50%); /* 중앙 정렬 */
+  background-color: rgba(0, 0, 0, 0.85); /* 더 진한 배경색 */
   color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 15px 30px; /* 더 큰 패딩으로 팝업 크기를 키움 */
+  border-radius: 8px; /* 둥근 테두리 */
+  font-size: 18px; /* 텍스트 크기 확대 */
+  font-weight: bold; /* 텍스트를 굵게 표시 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* 그림자를 추가해 강조 */
   display: none; /* 기본적으로 숨김 */
+  z-index: 1000; /* 팝업이 다른 요소 위에 나타나도록 설정 */
 }
 
   /* 페이지네이션 */

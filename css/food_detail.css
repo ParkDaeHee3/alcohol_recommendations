@@ -138,3 +138,23 @@ body {
     font-size: 14px;
     color: #333;
 }
+
+/* 모바일 환경에서 레이아웃 수정 */
+@media (max-width: 768px) {
+    .product-detail {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .product-image {
+      width: 100%; /* 모바일 화면에서는 이미지가 화면 너비에 맞춰지도록 설정 */
+      height: auto;
+    }
+  
+    .product-info {
+      width: 100%;
+      padding: 20px;
+      text-align: left; /* 모바일에서는 왼쪽 정렬 */
+    }
+  }
