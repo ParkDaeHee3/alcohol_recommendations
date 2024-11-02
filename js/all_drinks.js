@@ -80,76 +80,100 @@ function loadDrinkCards(drinks, page, cardsPerPage) {
     document.getElementById('current-page').textContent = page;
   }
 
- // 카드 리스트에 제품을 동적으로 추가하는 함수
-function addDrinkCard(drink) {
-  const cardList = document.getElementById('drink-card-list');
-  const card = document.createElement('div');
-  card.className = 'card';
-
-  const isLoggedIn = checkLoginStatus();
-  const wishlistIcon = isLoggedIn ? 'img/icon/heart-bin-icon.png' : 'img/icon/heart-bin-icon.png';
-
-  // 카드 앞면 HTML 구조
-  const cardFront = `
-    <div class="card-front">
-      <img src="${drink.image}" alt="${drink.name}">
-      <h3>${drink.name}</h3>
-      <p class="price">${drink.price}원</p>
-      <div class="wishlist-btn">
-        <img src="${wishlistIcon}" alt="찜하기" class="wishlist-icon" />
-      </div>
-    </div>
-  `;
-
-  // 카드 뒷면 HTML 구조 (회색 배경에 알코올 도수와 평점 표시)
-  const cardBack = `
-    <div class="card-back">
-      <h3>알코올 도수: ${drink.alcohol}%</h3>
-      <p>평점: ${drink.rating} / 5</p>
-    </div>
-  `;
-
-  card.innerHTML = cardFront + cardBack;
-
-  // 1.5초 동안 포인터가 머물렀을 때 카드 뒤집기
-  let flipTimeout;
-  card.addEventListener('mouseenter', function() {
-    flipTimeout = setTimeout(() => {
-      card.classList.add('flipped');
-    }, 1500);
-  });
-
-  card.addEventListener('mouseleave', function() {
-    clearTimeout(flipTimeout);
-    card.classList.remove('flipped');
-  });
-
-  // 카드 클릭 시 해당 술의 상세 페이지로 이동
-card.addEventListener('click', function () {
-  window.location.href = `drink_detail.html?product=${encodeURIComponent(drink.name)}`;
-});
-
-  cardList.appendChild(card);
-
-  // 찜 버튼 이벤트 처리 (클릭 시 상세 페이지로 이동하는 것을 방지)
-  const wishlistBtn = card.querySelector('.wishlist-btn img');
-  wishlistBtn.addEventListener('click', function (event) {
-    event.stopPropagation();  // 찜 버튼 클릭 시 카드 이동 이벤트 중지
-
-    if (!isLoggedIn) {
-      showPopupMessage('로그인 후 눌러주세요.');
-      return;
+  function addDrinkCard(drink) {
+    const cardList = document.getElementById('drink-card-list');
+    const card = document.createElement('div');
+    card.className = 'card';
+  
+    const isLoggedIn = checkLoginStatus();
+    const wishlistIcon = isLoggedIn ? 'img/icon/heart-bin-icon.png' : 'img/icon/heart-bin-icon.png';
+  
+    function updateLayout() {
+      if (window.innerWidth <= 768) {
+        // 목록형 레이아웃 (모바일)
+        card.innerHTML = `
+          <img src="${drink.image}" alt="${drink.name}" class="drink-image">
+          <div class="card-info">
+            <h3>${drink.name}</h3>
+            <p class="price">${drink.price}원</p>
+            <p class="details">알코올 도수: ${drink.alcohol}%</p>
+            <p class="details">평점: ${drink.rating} / 5</p>
+          </div>
+          <div class="wishlist-btn">
+            <img src="${wishlistIcon}" alt="찜하기" class="wishlist-icon" />
+          </div>
+        `;
+        card.classList.remove('flipped'); // 목록형일 때 뒤집기 효과 제거
+        card.style.flexDirection = 'row'; // 가로 정렬
+      } else {
+        // 카드형 레이아웃 (데스크톱)
+        const cardFront = `
+          <div class="card-front">
+            <img src="${drink.image}" alt="${drink.name}">
+            <h3>${drink.name}</h3>
+            <p class="price">${drink.price}원</p>
+            <div class="wishlist-btn">
+              <img src="${wishlistIcon}" alt="찜하기" class="wishlist-icon" />
+            </div>
+          </div>
+        `;
+  
+        const cardBack = `
+          <div class="card-back">
+            <h3>알코올 도수: ${drink.alcohol}%</h3>
+            <p>평점: ${drink.rating} / 5</p>
+          </div>
+        `;
+  
+        card.innerHTML = cardFront + cardBack;
+        card.style.flexDirection = ''; // 기본 세로 정렬
+  
+        // 카드 뒤집기 효과
+        let flipTimeout;
+        card.addEventListener('mouseenter', function() {
+          if (window.innerWidth > 768) { // 768px 이상일 때만 뒤집기 효과 적용
+            flipTimeout = setTimeout(() => {
+              card.classList.add('flipped');
+            }, 1500);
+          }
+        });
+  
+        card.addEventListener('mouseleave', function() {
+          clearTimeout(flipTimeout);
+          card.classList.remove('flipped');
+        });
+      }
     }
-
-    if (wishlistBtn.src.includes('heart-bin-icon')) {
-      wishlistBtn.src = 'img/icon/heart-icon.png'; // 찜 상태로 변경
-      showPopupMessage('위시리스트에 등록되었습니다.');
-    } else {
-      wishlistBtn.src = 'img/icon/heart-bin-icon.png'; // 찜 취소 상태로 변경
-      showPopupMessage('위시리스트에서 삭제되었습니다.');
-    }
-  });
-}
+  
+    // 초기 레이아웃 설정
+    updateLayout();
+  
+    // 화면 크기 변경 시 레이아웃 업데이트
+    window.addEventListener('resize', updateLayout);
+  
+    card.addEventListener('click', function () {
+      window.location.href = `drink_detail.html?product=${encodeURIComponent(drink.name)}`;
+    });
+  
+    cardList.appendChild(card);
+  
+    const wishlistBtn = card.querySelector('.wishlist-btn img');
+    wishlistBtn.addEventListener('click', function (event) {
+      event.stopPropagation();
+      if (!isLoggedIn) {
+        showPopupMessage('로그인 후 눌러주세요.');
+        return;
+      }
+  
+      if (wishlistBtn.src.includes('heart-bin-icon')) {
+        wishlistBtn.src = 'img/icon/heart-icon.png';
+        showPopupMessage('위시리스트에 등록되었습니다.');
+      } else {
+        wishlistBtn.src = 'img/icon/heart-bin-icon.png';
+        showPopupMessage('위시리스트에서 삭제되었습니다.');
+      }
+    });
+  }
 
 // 팝업 메시지를 표시하는 함수
 function showPopupMessage(message) {

@@ -224,3 +224,79 @@
 .sub-category[style="display: block;"] {
   opacity: 1;
 }
+
+/* 카드 스타일 (모바일 화면) */
+@media (max-width: 768px) {
+  .card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 95%;
+    max-width: 700px;
+    height: auto;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  /* 이미지가 왼쪽에 위치하며 크기를 크게 설정 */
+  .card img.drink-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-right: 20px;
+  }
+  
+  /* 텍스트 정보는 이미지 오른쪽에 위치하며 왼쪽 정렬 */
+  .card .card-info {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 160px);
+    text-align: left; /* 왼쪽 정렬 */
+  }
+  
+  .card .card-info h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0 0 5px;
+  }
+  
+  .card .card-info .price {
+    font-size: 1rem;
+    color: #333;
+    margin: 5px 0;
+  }
+  
+  .card .card-info .details {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 3px 0; /* 텍스트 간격 추가 */
+  }
+  
+  /* 평점을 텍스트 아래에 추가 */
+  .card .card-info .rating {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 8px;
+  }
+  
+  /* 찜 버튼을 카드의 오른쪽 중앙에 위치 */
+  .card .wishlist-btn {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .card .wishlist-btn img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
