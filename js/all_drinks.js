@@ -79,7 +79,6 @@ function loadDrinkCards(drinks, page, cardsPerPage) {
   
     document.getElementById('current-page').textContent = page;
   }
-
   function addDrinkCard(drink) {
     const cardList = document.getElementById('drink-card-list');
     const card = document.createElement('div');
@@ -105,6 +104,13 @@ function loadDrinkCards(drinks, page, cardsPerPage) {
         `;
         card.classList.remove('flipped'); // 목록형일 때 뒤집기 효과 제거
         card.style.flexDirection = 'row'; // 가로 정렬
+  
+        // 찜 버튼 클릭 시 이벤트 전파 방지
+        const wishlistBtn = card.querySelector('.wishlist-btn img');
+        wishlistBtn.addEventListener('click', function (event) {
+          event.stopPropagation(); // 이벤트 전파 방지
+          handleWishlistClick(wishlistBtn, isLoggedIn); // 찜 클릭 처리
+        });
       } else {
         // 카드형 레이아웃 (데스크톱)
         const cardFront = `
@@ -130,7 +136,7 @@ function loadDrinkCards(drinks, page, cardsPerPage) {
   
         // 카드 뒤집기 효과
         let flipTimeout;
-        card.addEventListener('mouseenter', function() {
+        card.addEventListener('mouseenter', function () {
           if (window.innerWidth > 768) { // 768px 이상일 때만 뒤집기 효과 적용
             flipTimeout = setTimeout(() => {
               card.classList.add('flipped');
@@ -138,9 +144,16 @@ function loadDrinkCards(drinks, page, cardsPerPage) {
           }
         });
   
-        card.addEventListener('mouseleave', function() {
+        card.addEventListener('mouseleave', function () {
           clearTimeout(flipTimeout);
           card.classList.remove('flipped');
+        });
+  
+        // 데스크탑 레이아웃에서도 찜 버튼 클릭 시 전파 방지
+        const wishlistBtn = card.querySelector('.wishlist-btn img');
+        wishlistBtn.addEventListener('click', function (event) {
+          event.stopPropagation(); // 이벤트 전파 방지
+          handleWishlistClick(wishlistBtn, isLoggedIn); // 찜 클릭 처리
         });
       }
     }
@@ -156,25 +169,24 @@ function loadDrinkCards(drinks, page, cardsPerPage) {
     });
   
     cardList.appendChild(card);
-  
-    const wishlistBtn = card.querySelector('.wishlist-btn img');
-    wishlistBtn.addEventListener('click', function (event) {
-      event.stopPropagation();
-      if (!isLoggedIn) {
-        showPopupMessage('로그인 후 눌러주세요.');
-        return;
-      }
-  
-      if (wishlistBtn.src.includes('heart-bin-icon')) {
-        wishlistBtn.src = 'img/icon/heart-icon.png';
-        showPopupMessage('위시리스트에 등록되었습니다.');
-      } else {
-        wishlistBtn.src = 'img/icon/heart-bin-icon.png';
-        showPopupMessage('위시리스트에서 삭제되었습니다.');
-      }
-    });
   }
-
+  
+  // 찜 버튼 클릭 시 동작을 처리하는 함수
+  function handleWishlistClick(wishlistBtn, isLoggedIn) {
+    if (!isLoggedIn) {
+      showPopupMessage('로그인 후 눌러주세요.');
+      return;
+    }
+  
+    if (wishlistBtn.src.includes('heart-bin-icon')) {
+      wishlistBtn.src = 'img/icon/heart-icon.png';
+      showPopupMessage('위시리스트에 등록되었습니다.');
+    } else {
+      wishlistBtn.src = 'img/icon/heart-bin-icon.png';
+      showPopupMessage('위시리스트에서 삭제되었습니다.');
+    }
+  }
+  
 // 팝업 메시지를 표시하는 함수
 function showPopupMessage(message) {
   const popup = document.getElementById('popup-message');
