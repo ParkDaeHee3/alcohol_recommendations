@@ -250,3 +250,17 @@ body {
 #search-button:hover {
     color: #007BFF;
 }
+
+.beer-mug-rimage {
+    width: 100px; /* 이미지의 너비 설정 */
+    height: auto; /* 비율에 맞춰 높이 자동 설정 */
+    float: right; /* 이미지를 오른쪽으로 플로팅 */
+    margin: 0 0 20px 20px; /* 오른쪽과 아래 간격 조정 */
+}
+
+.beer-mug-limage {
+    width: 100px; /* 이미지의 너비 설정 */
+    height: auto; /* 비율에 맞춰 높이 자동 설정 */
+    float: left; /* 이미지를 오른쪽으로 플로팅 */
+    margin: 0 0 20px 20px; /* 오른쪽과 아래 간격 조정 */
+}
