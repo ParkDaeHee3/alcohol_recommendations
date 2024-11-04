@@ -256,3 +256,62 @@ function loadFoodCards(food, page, cardsPerPage) {
 function checkLoginStatus() {
 return true; // 실제 로그인 상태 확인 로직 필요
 }
+
+
+
+
+
+// 카테고리 메뉴 탭 
+document.addEventListener('DOMContentLoaded', function () {
+
+// URL에서 카테고리 파라미터를 가져옴
+const urlParams = new URLSearchParams(window.location.search);
+const selectedCategory = urlParams.get('category') || 'all';  // 기본값은 '전체'
+
+  // 탭 링크들 가져오기
+  const tabLinks = document.querySelectorAll('.tab-link');
+
+  // 해당 카테고리의 탭을 찾아서 활성화
+  tabLinks.forEach(tab => {
+    const category = tab.getAttribute('data-category');
+    
+    if (category === selectedCategory) {
+      tab.classList.add('active');
+    } else {
+      tab.classList.remove('active');
+    }
+  });
+
+  // 선택한 카테고리에 맞는 음식 필터링 및 표시
+  filterFoodByCategory(selectedCategory);
+
+  // 각 탭에 클릭 이벤트 추가
+  tabLinks.forEach(tab => {
+    tab.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      // 모든 탭에서 'active' 클래스 제거 후 클릭한 탭에 추가
+      tabLinks.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      // 클릭한 탭에서 카테고리 가져오기
+      const selectedCategory = tab.getAttribute('data-category');
+
+      // 카테고리에 맞는 음식 필터링 및 표시
+      filterFoodByCategory(selectedCategory);
+    });
+  });
+
+  // 카테고리에 따라 음식 필터링하는 함수
+  function filterFoodByCategory(category) {
+    const foodData = getFoodData(); // 모든 음식 데이터 가져오기
+
+    // 선택한 카테고리에 맞게 음식 필터링 (전체인 경우 모든 음식 표시)
+    const filteredFood = category === 'all' ? foodData : foodData.filter(food => food.category === category);
+
+    // 필터링된 음식 카드 불러오기
+    loadFoodCards(filteredFood, 1, 48);
+  }
+});
+
+// 카테고리 메뉴 탭 
