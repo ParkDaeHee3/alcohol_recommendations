@@ -7,7 +7,6 @@
     <!-- CSS 파일 연결 -->
     <link rel="stylesheet" href="css/header2.css"> <!-- header 스타일 -->
     <link rel="stylesheet" href="css/customer.css">
-
 </head>
 <body>
 
@@ -15,17 +14,16 @@
     <div id="header-container"></div>
 
     <div class="content">
+        <img src="img/icon/beer-mug.png" alt="맥주잔" class="beer-mug-rimage">
+        <img src="img/icon/beer-mug.png" alt="맥주잔" class="beer-mug-limage">
         <h2>고객지원센터</h2>
     </div>
 
-   <!-- 검색창을 감싸는 div에 class="search-wrapper" 추가 -->
+    <!-- 검색창을 감싸는 div에 class="search-wrapper" 추가 -->
     <div class="search-wrapper">
         <input type="text" id="search-input" placeholder="검색어를 입력하세요...">
         <button type="submit" id="search-button">검색</button>
     </div>
-
-
-
 
     <!-- 상단 바 -->
     <nav class="nav-bar">
@@ -38,15 +36,15 @@
     <div id="notice" class="tab-content">
         <h2>공지사항</h2>
         <ul id="noticeList" class="notice-list">
-            <li class="notice-item" onclick="showNoticeDetail('detail1')">
+            <li class="notice-item" data-detail-id="detail1" onclick="showNoticeDetail('detail1')">
                 <span class="notice-title">사이트 유지 보수 안내</span>
                 <span class="notice-date">2024-09-30</span>
             </li>
-            <li class="notice-item" onclick="showNoticeDetail('detail2')">
+            <li class="notice-item" data-detail-id="detail2" onclick="showNoticeDetail('detail2')">
                 <span class="notice-title">새로운 기능 업데이트</span>
                 <span class="notice-date">2024-09-25</span>
             </li>
-            <li class="notice-item" onclick="showNoticeDetail('detail3')">
+            <li class="notice-item" data-detail-id="detail3" onclick="showNoticeDetail('detail3')">
                 <span class="notice-title">서비스 점검 예정</span>
                 <span class="notice-date">2024-09-20</span>
             </li>
@@ -71,15 +69,15 @@
     <div id="faq" class="tab-content" style="display: none;">
         <h2>자주묻는질문</h2>
         <ul id="qaList" class="notice-list">
-            <li class="notice-item" onclick="showFAQDetail('faqDetail1')">
+            <li class="notice-item" data-detail-id="faqDetail1" onclick="showFAQDetail('faqDetail1')">
                 <span class="notice-title">회원가입은 어떻게 하나요?</span>
                 <span class="notice-date">2024-09-30</span>
             </li>
-            <li class="notice-item" onclick="showFAQDetail('faqDetail2')">
+            <li class="notice-item" data-detail-id="faqDetail2" onclick="showFAQDetail('faqDetail2')">
                 <span class="notice-title">비밀번호를 잊어버렸습니다. 어떻게 해야 하나요?</span>
                 <span class="notice-date">2024-09-25</span>
             </li>
-            <li class="notice-item" onclick="showFAQDetail('faqDetail3')">
+            <li class="notice-item" data-detail-id="faqDetail3" onclick="showFAQDetail('faqDetail3')">
                 <span class="notice-title">결제 오류가 발생했어요. 해결 방법은?</span>
                 <span class="notice-date">2024-09-20</span>
             </li>
@@ -123,10 +121,6 @@
         </div>
     </div>
 
-
     <!-- JavaScript 파일 연결 -->
     <script src="js/customer.js"></script>
     <script src="js/header.js"></script>
-
-</body>
-</html>
