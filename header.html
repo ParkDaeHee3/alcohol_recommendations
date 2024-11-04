@@ -35,25 +35,25 @@
 
     <!-- 구분선 (div로 정의) -->
   <div class="divider"></div>
-  
-      <!-- 검색 오버레이 -->
+
+<!-- 검색 오버레이 -->
 <div id="search-overlay" class="search-overlay">
-    <div class="search-box">
-      <span class="close-btn" onclick="closeSearch()">&times;</span>
-      <h2>SEARCH</h2>
-      <form id="search-form" onsubmit="return searchProduct()">
-        <input type="text" id="search-input" placeholder="검색어를 입력해주세요" />
-        <button type="submit">
-          <img src="img/icon/search-icon.png" alt="Search Icon" />
-        </button>
-      </form>
-      <p id="search-message" class="error-message"></p>
-      <div id="no-result" class="no-result">
-        <img src="img/icon/no-result-icon.png" alt="No Result Icon" />
-        <p>해당 제품은 없습니다</p>
-      </div>
+  <div class="search-box">
+    <span class="close-btn" onclick="closeSearch()">&times;</span>
+    <h2>SEARCH</h2>
+    <form id="search-form" onsubmit="return searchProduct()">
+      <input type="text" id="search-input" placeholder="검색어를 입력해주세요" />
+      <button type="submit">
+        <img src="img/icon/search-icon.png" alt="Search Icon" />
+      </button>
+    </form>
+    <p id="search-message" class="error-message"></p> <!-- 검색 결과 없음 메시지 -->
+    <div id="no-result" class="no-result">
+      <img src="img/icon/no-result-icon.png" alt="No Result Icon" />
+      <p>해당 제품은 없습니다</p>
     </div>
   </div>
+</div>
 
 <!-- 사이드바 -->
 <div id="sidebar" class="sidebar">

@@ -80,6 +80,8 @@ function loadDrinkCards(drinks, page, cardsPerPage) {
     document.getElementById('current-page').textContent = page;
   }
 
+  // pc화면 카드형
+
  // 카드 리스트에 제품을 동적으로 추가하는 함수
 function addDrinkCard(drink) {
   const cardList = document.getElementById('drink-card-list');
@@ -156,6 +158,117 @@ wishlistBtn.addEventListener('click', function (event) {
   }
 });
 }
+
+// 모바일 목록형
+  function addDrinkCard(drink) {
+    const cardList = document.getElementById('drink-card-list');
+    const card = document.createElement('div');
+    card.className = 'card';
+  
+    const isLoggedIn = checkLoginStatus();
+    const wishlistIcon = isLoggedIn ? 'img/icon/heart-bin-icon.png' : 'img/icon/heart-bin-icon.png';
+  
+    function updateLayout() {
+      if (window.innerWidth <= 768) {
+        // 목록형 레이아웃 (모바일)
+        card.innerHTML = `
+          <img src="${drink.image}" alt="${drink.name}" class="drink-image">
+          <div class="card-info">
+            <h3>${drink.name}</h3>
+            <p class="price">${drink.price}원</p>
+            <p class="details">알코올 도수: ${drink.alcohol}%</p>
+            <p class="details">평점: ${drink.rating} / 5</p>
+          </div>
+          <div class="wishlist-btn">
+            <img src="${wishlistIcon}" alt="찜하기" class="wishlist-icon" />
+          </div>
+        `;
+        card.classList.remove('flipped'); // 목록형일 때 뒤집기 효과 제거
+        card.style.flexDirection = 'row'; // 가로 정렬
+  
+        // 찜 버튼 클릭 시 이벤트 전파 방지
+        const wishlistBtn = card.querySelector('.wishlist-btn img');
+        wishlistBtn.addEventListener('click', function (event) {
+          event.stopPropagation(); // 이벤트 전파 방지
+          handleWishlistClick(wishlistBtn, isLoggedIn); // 찜 클릭 처리
+        });
+      } else {
+        // 카드형 레이아웃 (데스크톱)
+        const cardFront = `
+          <div class="card-front">
+            <img src="${drink.image}" alt="${drink.name}">
+            <h3>${drink.name}</h3>
+            <p class="price">${drink.price}원</p>
+            <div class="wishlist-btn">
+              <img src="${wishlistIcon}" alt="찜하기" class="wishlist-icon" />
+            </div>
+          </div>
+        `;
+  
+        const cardBack = `
+          <div class="card-back">
+            <h3>알코올 도수: ${drink.alcohol}%</h3>
+            <p>평점: ${drink.rating} / 5</p>
+          </div>
+        `;
+  
+        card.innerHTML = cardFront + cardBack;
+        card.style.flexDirection = ''; // 기본 세로 정렬
+  
+        // 카드 뒤집기 효과
+        let flipTimeout;
+        card.addEventListener('mouseenter', function () {
+          if (window.innerWidth > 768) { // 768px 이상일 때만 뒤집기 효과 적용
+            flipTimeout = setTimeout(() => {
+              card.classList.add('flipped');
+            }, 1500);
+          }
+        });
+  
+        card.addEventListener('mouseleave', function () {
+          clearTimeout(flipTimeout);
+          card.classList.remove('flipped');
+        });
+  
+        // 데스크탑 레이아웃에서도 찜 버튼 클릭 시 전파 방지
+        const wishlistBtn = card.querySelector('.wishlist-btn img');
+        wishlistBtn.addEventListener('click', function (event) {
+          event.stopPropagation(); // 이벤트 전파 방지
+          handleWishlistClick(wishlistBtn, isLoggedIn); // 찜 클릭 처리
+        });
+      }
+    }
+  
+    // 초기 레이아웃 설정
+    updateLayout();
+  
+    // 화면 크기 변경 시 레이아웃 업데이트
+    window.addEventListener('resize', updateLayout);
+  
+    card.addEventListener('click', function () {
+      window.location.href = `drink_detail.html?product=${encodeURIComponent(drink.name)}`;
+    });
+  
+    cardList.appendChild(card);
+  }
+  
+  // 찜 버튼 클릭 시 동작을 처리하는 함수
+  function handleWishlistClick(wishlistBtn, isLoggedIn) {
+    if (!isLoggedIn) {
+      showPopupMessage('로그인 후 눌러주세요.');
+      return;
+    }
+  
+    if (wishlistBtn.src.includes('heart-bin-icon')) {
+      wishlistBtn.src = 'img/icon/heart-icon.png';
+      showPopupMessage('위시리스트에 등록되었습니다.');
+    } else {
+      wishlistBtn.src = 'img/icon/heart-bin-icon.png';
+      showPopupMessage('위시리스트에서 삭제되었습니다.');
+    }
+  }
+  
+// 팝업 메시지창
 
 // 팝업 메시지를 표시하는 함수
 function showPopupMessage(message) {
@@ -255,3 +368,47 @@ function checkLoginStatus() {
   // 실제 로그인 상태 확인 로직을 넣으세요. 지금은 테스트로 false 리턴
   return true; // 로그아웃 상태, true일 경우 로그인 상태
 }
+
+let showSubCategoryTimeout;  // 타이머를 저장할 변수
+
+// 상위 카테고리에 마우스를 올리면 1초 뒤 하위 카테고리 보이기
+function showSubCategoryWithDelay(category) {
+  showSubCategoryTimeout = setTimeout(function() {
+    document.getElementById(`${category}-sub`).style.display = 'block';
+  }, 500);  // 0.5초 후에 하위 카테고리 보이기
+}
+
+// 상위 카테고리에서 마우스를 떼면 타이머 취소 및 하위 카테고리 숨기기
+function hideSubCategory(category) {
+  clearTimeout(showSubCategoryTimeout);  // 타이머 취소
+  document.getElementById(`${category}-sub`).style.display = 'none';  // 하위 카테고리 숨기기
+}
+
+// 하위 카테고리에서 마우스를 이동해도 하위 카테고리 유지
+function keepSubCategoryVisible(category) {
+  clearTimeout(showSubCategoryTimeout);  // 타이머 취소
+  document.getElementById(`${category}-sub`).style.display = 'block';  // 하위 카테고리 유지
+}
+
+// 하위 카테고리 클릭 시 필터링된 제품 표시
+function filterBySubCategory(category, subCategory) {
+  const drinks = getDrinkData(); // drink.js에서 데이터를 가져옴
+  const filteredDrinks = drinks.filter(drink => 
+    drink.category === category && drink.subCategory === subCategory
+  );
+  
+  // 필터링된 결과를 카드 리스트에 로드
+  loadDrinkCards(filteredDrinks, 1, 48); // 1페이지에 48개씩 로드
+}
+
+// 상위 카테고리 클릭 시 해당 카테고리 제품만 필터링
+function openCategory(evt, category) {
+  const drinks = getDrinkData(); // drink.js에서 데이터를 가져옴
+
+  // 카테고리에 맞게 필터링
+  const filteredDrinks = drinks.filter(drink => drink.category === category);
+
+  // 필터링된 결과를 카드 리스트에 로드
+  loadDrinkCards(filteredDrinks, 1, 48); // 1페이지에 48개씩 로드
+}
+
