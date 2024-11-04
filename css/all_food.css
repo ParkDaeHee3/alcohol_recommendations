@@ -142,3 +142,71 @@
     width: 24px;
     height: 24px;
   }
+
+
+  /*카테고리 탭 메뉴*/ 
+ /* 탭 컨테이너 스타일 */
+.tabs ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* 개별 탭 스타일 */
+.tabs ul li {
+  flex-grow: 1;
+}
+
+.tabs ul li a {
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
+  text-align: center;
+  color: #333;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #f5f5f5, #ddd);
+}
+
+/* 탭 호버 시 스타일 */
+.tabs ul li a:hover {
+  background: linear-gradient(135deg, #ffe259, #ffa751);
+  color: white;
+}
+
+/* 선택된 탭(active) 스타일 */
+.tabs ul li a.active {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: white;
+  box-shadow: 0 4px 8px rgba(255, 126, 95, 0.5);
+}
+
+/* 탭의 전환 애니메이션 추가 */
+.tabs ul li a {
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.tabs ul li a:hover, .tabs ul li a.active {
+  transform: scale(1.05);
+}
+
+/* 모바일 화면에서의 탭 디자인 */
+@media (max-width: 768px) {
+  .tabs ul {
+    flex-direction: column;
+  }
+  
+  .tabs ul li a {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
+
+  

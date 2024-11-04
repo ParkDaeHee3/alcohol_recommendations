@@ -23,6 +23,7 @@
 
   <!-- 메인 콘텐츠 영역 -->
   <main>
+
     <!-- 정렬 기준 드롭다운 -->
     <div class="sort-dropdown">
       <select id="sort-order">
@@ -31,6 +32,20 @@
         <option value="high-price">높은 가격순</option>
       </select>
     </div>
+
+    <!--카테고리 탭 메뉴 -->
+    <div class="tabs">
+      <ul>
+        <li><a href="#" class="tab-link" data-category="all">전체</a></li>
+        <li><a href="#" class="tab-link" data-category="한식">한식</a></li>
+        <li><a href="#" class="tab-link" data-category="일식">일식</a></li>
+        <li><a href="#" class="tab-link" data-category="중식">중식</a></li>
+        <li><a href="#" class="tab-link" data-category="양식">양식</a></li>
+        <li><a href="#" class="tab-link" data-category="디저트">디저트</a></li>
+      </ul>
+    </div>
+
+
 
     <!-- 카드 리스트 영역 -->
     <div class="card-list" id="food-card-list">
@@ -53,5 +68,6 @@
   <script src="js/food.js"></script> 
   <script src="js/all_food.js"></script>
 
+  
 </body>
 </html>

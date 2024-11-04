@@ -12,7 +12,7 @@ function getFoodData() {
       description: "다양한 나물과 고추장이 어우러진 한국 전통 음식.",
       price: 10000,
       tasteDescription: "매콤하고 고소한 맛",
-      image: "https://image.url/bibimbap.jpg"
+      image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDEwMDJfOCAg%2FMDAxNzI3ODQwNzM0NTQ2.BjEpOc-aVfPm3eYtvBTr-Ehfdv9E2cU0pfrqPnHIpo8g.SHD5hWkSMSVzpktYuYl5ZGr91MZ9v40jnKCp0ITCeBgg.JPEG%2Foutput_2697903449.jpg&type=a340"
     },
     {
       name: "김치찌개",
@@ -25,7 +25,7 @@ function getFoodData() {
       description: "김치와 돼지고기로 끓인 한국의 대표 찌개.",
       price: 9000,
       tasteDescription: "매콤하고 칼칼한 맛",
-      image: "https://image.url/kimchijjigae.jpg"
+      image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMjFfNDAg%2FMDAxNzEwOTkyMDUwNzIy.mptnk4LN5hYNRkyQTZxCi08Ae8MWZGXmjQrgV6BTTdgg.PytnxQ7L-BaE1DLJUxjZDgBvTigsmzNf_RTMAr5TZlUg.JPEG%2F%25B7%25F9%25BC%25F6%25BF%25B5%25B1%25E8%25C4%25A1%25C2%25EE%25B0%25B3-%25BD%25E6%25B3%25D7%25C0%25CF.jpg&type=a340"
     },
     {
       name: "불고기",
@@ -38,7 +38,7 @@ function getFoodData() {
       description: "달콤한 간장 양념에 재운 소고기를 구운 한국 전통 요리.",
       price: 18000,
       tasteDescription: "달콤하고 짭조름한 맛",
-      image: "https://image.url/bulgogi.jpg"
+      image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAyMTdfMTkz%2FMDAxNzA4MTIyODY1Njgy.JoUHTo-zQOUy1F4DElUwHsYluS7Li9X1EhSuBI19EWIg.dxJ-NwNs3mk8PFz57bjUdyhAttL2oZYWgh-cnvRT8MEg.JPEG.white289700%2F20240216%25A3%25DF115236.jpg&type=a340"
     },
     {
       name: "된장찌개",
@@ -51,7 +51,7 @@ function getFoodData() {
       description: "된장으로 끓인 구수한 한국 전통 찌개.",
       price: 8000,
       tasteDescription: "구수한 된장 맛",
-      image: "https://image.url/soybeanstew.jpg"
+      image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA0MDNfMTkz%2FMDAxNzEyMTUwMTM3MjI2.Y9eTH6BCejmBcJRDfwLRqoNJ-DtEU1U3_YwOJ564yhsg.kZSnT-ctEB7DKPCTSAC7c_QraqEEwQDO6FQ15ZPyRR4g.JPEG%2F1712150135904.jpg&type=a340"
     },
     {
       name: "닭갈비",
@@ -64,7 +64,7 @@ function getFoodData() {
       description: "매콤달콤한 양념에 볶아낸 닭고기 요리.",
       price: 17000,
       tasteDescription: "매콤하고 달콤한 맛",
-      image: "https://image.url/dakgalbi.jpg"
+      image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MzBfNzEg%2FMDAxNzI1MDAxMjA5NTEz.5nPU-qO8SExLWoS9VPgHLs8nSqf2PDdIqpp87OulIKAg.7ozNYnE8XukhHxY--1IibWN55dil8kDzgKbfKrRxjaYg.JPEG%2FIMG_5145.JPG&type=sc960_832"
     },
     {
       name: "잡채",
@@ -77,7 +77,7 @@ function getFoodData() {
       description: "당면과 채소를 간장 소스로 볶아낸 요리.",
       price: 13000,
       tasteDescription: "달콤하고 짭조름한 맛",
-      image: "https://image.url/japchae.jpg"
+      image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAyMDVfMTU0%2FMDAxNzA3MTEzMzA0NTA2.-LyrXfKhUCrkv9D8friGrygULu2Rwe2dgs7OzhtZxNEg.EilT6c6kCMrG28VpUojwUZ2rvFNfAK-gGG7seAhkYuog.JPEG.goldfishsung%2F20240204%25A3%25DF141156.jpg&type=a340"
     },
     {
       name: "떡볶이",
@@ -90,7 +90,7 @@ function getFoodData() {
       description: "매콤달콤한 소스에 떡을 볶아 만든 한국 대표 간식.",
       price: 5000,
       tasteDescription: "매콤하고 달콤한 맛",
-      image: "https://image.url/tteokbokki.jpg"
+      image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20160220_223%2Fmiashdhw3_1455977725101dYL7t_JPEG%2Fjgdsokdsj51_%25288%2529.jpg&type=a340"
     },
     {
       name: "삼계탕",
@@ -103,7 +103,7 @@ function getFoodData() {
       description: "건강식으로 유명한 닭 한 마리를 푹 고아 만든 탕 요리.",
       price: 15000,
       tasteDescription: "담백하고 영양가 있는 맛",
-      image: "https://image.url/samgyetang.jpg"
+      image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA3MTNfNDIg%2FMDAxNzIwODUwMTYzMjE3.FfpLoZlHQz7KcryJXe8cepmQAF83siAT2IgbcFSNwfYg.l9AAo3fT0LahmCLqkXEPwd-KCaJvXwxMWYKIR_DuMMIg.JPEG%2F20240712%25A3%25DF193618.jpg&type=a340"
     },
     {
       name: "파전",
@@ -116,7 +116,7 @@ function getFoodData() {
       description: "파와 해물을 넣어 부쳐낸 한국식 전 요리.",
       price: 12000,
       tasteDescription: "바삭하고 고소한 맛",
-      image: "https://image.url/pajeon.jpg"
+      image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA0MDRfMTM2%2FMDAxNzEyMjE2NDkwMTU2.sOEEOImOucAK7mLz42nKhOoCT8fOpvKeS_3ytuzGU1Ug.qGy6MLDb_LqHD0ss2d1ZR5GQbO-RWBN4UFuHUj8IS1sg.PNG%2F%25C4%25B8%25C3%25B3.PNG&type=a340"
     },
 
       {
@@ -130,7 +130,7 @@ function getFoodData() {
         description: "부드러운 소갈비에 짭조름한 간장 양념이 배어든 한국 전통 요리.",
         price: 35000,
         tasteDescription: "짭짤하고 달콤한 간장 양념",
-        image: "https://image.url/galbijjim.jpg"
+        image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA1MDhfMTMy%2FMDAxNzE1MTQ1NzU2NTA3._Ldp7qewVl0ZzUVtp4wSXr2ZiCrvUoa1ykZUeyNvpk8g.P1G6JnZKvAFXVxBuxoudZ8hZKeVXRagL8H27hHYJnaMg.JPEG%2F%25C7%25D1%25C0%25D4%25B0%25A5%25BA%25F1%25C2%25F2%25B7%25B1%25C4%25AA1.jpg&type=a340"
       },
 
       //일식 11 items
@@ -145,7 +145,7 @@ function getFoodData() {
   description: "신선한 생선과 부드러운 밥이 어우러진 일식 스시 세트.",
   price: 25000,
   tasteDescription: "신선한 생선과 간장의 감칠맛",
-  image: "https://image.url/sushi.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEwMTZfMjU5%2FMDAxNjM0MzgzMTA1NzM4.dn5RsreeAaYT-OywbJvM2JhIsq-JYpPwhVA6TjJJsKcg.dn8iCG9zyioOFAwWotKEBArh0TlGeB-bPwgU4jbAMwcg.JPEG.koscandle%2Foutput_1182532273.jpg&type=a340"
 },
 {
   name: "라멘",
@@ -158,7 +158,7 @@ function getFoodData() {
   description: "간장 베이스 국물과 돼지고기가 어우러진 일본 전통 라멘.",
   price: 15000,
   tasteDescription: "짭짤한 간장 국물과 부드러운 고기",
-  image: "https://image.url/ramen.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MDVfMyAg%2FMDAxNzIyODU0Mzk0Mzc4.T7zVBOkWnkCdUuLLdUe6T7JcBGWoQdSbPUNBFxNOhJgg.0iibO_6FvuQejThM57BIlClDa--KYpdMD-J0usVH1gsg.JPEG%2F2024%25A3%25AD08%25A3%25AD02%25A3%25AD18%25A3%25AD58%25A3%25AD20%25A3%25AD999.jpg&type=a340"
 },
 {
   name: "오코노미야끼",
@@ -171,7 +171,7 @@ function getFoodData() {
   description: "일본식 부침개로, 다양한 재료를 섞어 구워낸 요리.",
   price: 12000,
   tasteDescription: "짭짤하고 고소한 맛",
-  image: "https://image.url/okonomiyaki.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAyMThfMjcg%2FMDAxNzA4MjUxMDU4Mzk4.4Hgv_kKGA12X72jrvxxAU6uQpSO8IBKgiI65f4rv6acg.wf8olAC6mnLwS7utRGhcVMpyUkC1o0xwSASR_pgGzIkg.JPEG.jam8725904%2F1708251057374.jpg&type=a340"
 },
 {
   name: "가츠동",
@@ -184,7 +184,7 @@ function getFoodData() {
   description: "돈까스와 계란을 간장 소스에 졸여 만든 일본식 덮밥.",
   price: 12000,
   tasteDescription: "짭짤하고 고소한 돈까스와 밥의 조화",
-  image: "https://image.url/katsudon.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTAzMjBfMTQ5%2FMDAxNjE2MjUwODI3Mzc2.9cl6kceZQ0EoaQi3d6sihGYpannoPtbEH7DHJbnlCr4g.ViMj6TjOc9wQ1on8iPyzmVD3vyACv_bKNcgYTpvCfVkg.JPEG.son8199%2FIMG_4600.JPG&type=a340"
 },
 {
   name: "돈부리",
@@ -197,7 +197,7 @@ function getFoodData() {
   description: "간장 소스에 졸인 소고기를 밥 위에 얹어낸 덮밥 요리.",
   price: 13000,
   tasteDescription: "짭짤하고 달콤한 맛",
-  image: "https://image.url/donburi.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAyMDNfMTkx%2FMDAxNjc1NDMyMzcxNjcw.gee78Mil_AdKioqkuFhSAyGB2EkV8VlybGDi2KjVBlgg.M0LA5dsDLH4Zo1-43bxBBX30mnzbCiTQBN_q11xgLbEg.PNG.j_trazom%2Fimage.png&type=a340"
 },
 {
   name: "우동",
@@ -210,7 +210,7 @@ function getFoodData() {
   description: "굵은 면발과 깊은 국물 맛이 어우러진 일본식 면 요리.",
   price: 10000,
   tasteDescription: "담백한 국물과 쫄깃한 면발",
-  image: "https://image.url/udon.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA1MDNfMjA0%2FMDAxNzE0NzE0NTcyOTM1.76YZiHNKTfQDXpKn4UGqKoeIx8llIUsq3Y0AUJVnb4Ug.qdQXnMw0HFAoG-gwxVm3Www-UX-Yy6XUlf_DIMunHy4g.JPEG%2Ffile%25A3%25ADMEe7xdXgtk5jp9q6lx9KdTTe.jpg&type=a340"
 },
 {
   name: "덴푸라",
@@ -223,7 +223,7 @@ function getFoodData() {
   description: "바삭하게 튀긴 새우와 채소를 곁들인 튀김 요리.",
   price: 14000,
   tasteDescription: "바삭하고 고소한 맛",
-  image: "https://image.url/tempura.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA0MDlfNDUg%2FMDAxNjgxMDQwNjE3NjI4.gYPx4QfXWv2yjUTxME7_IsX9O12HOzNO2wfMXreXJUIg.arjhWBhgbTVL00OiPz4D9wpI3Z-ULfsV349BlhBopukg.JPEG.danbiworld75%2FIMG_8211.jpg&type=a340"
 },
 {
   name: "타코야끼",
@@ -236,7 +236,7 @@ function getFoodData() {
   description: "문어와 반죽을 구워내어 소스를 얹은 일본 대표 간식.",
   price: 8000,
   tasteDescription: "짭짤하고 고소한 맛",
-  image: "https://image.url/takoyaki.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA5MjlfNyAg%2FMDAxNzI3NjE4MTU1NTg5.RPQ9P0ZhAkyJsuwXJ27GjMtbmYI7clq2_UqzxOdTjXog.bO6DxJ4s61wQpeBx-4Nb3lgmGSKcFVukFDNm06OA_Kog.JPEG%2FIMG_5794.JPG&type=a340"
 },
 {
   name: "규동",
@@ -249,7 +249,7 @@ function getFoodData() {
   description: "얇게 썬 소고기를 양파와 함께 간장 소스에 조린 일본식 덮밥.",
   price: 11000,
   tasteDescription: "짭짤하고 달콤한 맛",
-  image: "https://image.url/gyudon.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA1MTFfMjc4%2FMDAxNzE1Mzg4NjAwODYw.POXwLBwCd86wkCtjY1N97d2DZLxSZA0xHhBJitY72Qsg.wAkuVsWlZvsJGiytJb8WyuMWufi0988CrzNd1B3hX5og.JPEG%2FIMG_1593.JPG&type=a340"
 },
 {
   name: "스키야키",
@@ -262,7 +262,7 @@ function getFoodData() {
   description: "얇게 썬 소고기와 채소를 달콤한 간장 소스에 졸인 전골 요리.",
   price: 20000,
   tasteDescription: "달콤하고 짭짤한 맛",
-  image: "https://image.url/sukiyaki.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MTVfMjcy%2FMDAxNzIzNjg5MzA5MzQ4.QrztMlUg0j2Z4tU8U998Yw8PxWVfOzIKbU59SK55AsAg.IV0qCrw40-e8ezkNxC0mWYWGZJ1Pc-WZ7KTI3aRFhokg.JPEG%2Foutput_3259130540.jpg&type=a340"
 },
 
 // 중식 - 10 items
@@ -277,7 +277,7 @@ function getFoodData() {
   description: "춘장을 베이스로 만든 달콤한 중국식 면 요리.",
   price: 6000,
   tasteDescription: "달콤하고 짭짤한 춘장 소스",
-  image: "https://image.url/jjajangmyeon.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA5MTJfMjEw%2FMDAxNzI2MTAwMTE0MDUz.ADT3OzofT7Wlul24Bm-obna_2U70Q84O9L2FnRQ4Y94g.LOc790JJCVOzKQC3xHS1sPvJAQI1o96RkP3ZEHch1xIg.PNG%2Fimage.png&type=a340"
 },
 {
   name: "탕수육",
@@ -290,7 +290,7 @@ function getFoodData() {
   description: "바삭한 돼지고기에 새콤달콤한 소스를 얹은 중식 요리.",
   price: 15000,
   tasteDescription: "새콤달콤하고 바삭한 식감",
-  image: "https://image.url/tangsuyuk.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA1MzBfMjQ5%2FMDAxNzE3MDI1NTk0ODAy.XFz8EcJiqRReHmKYTe1xhBIsRfJkyX_kHPDJiaH2-uMg.Qm-GVhwdxikPpD1QmaGkyjNPWY94FqJIdMPkwW-uVXog.PNG%2Fimage.png&type=a340"
 },
 {
   name: "꿔바로우",
@@ -303,7 +303,7 @@ function getFoodData() {
   description: "바삭하게 튀긴 돼지고기에 새콤달콤한 소스를 얹은 요리.",
   price: 20000,
   tasteDescription: "새콤달콤하고 바삭한 식감",
-  image: "https://image.url/guobaorou.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMjRfMTI2%2FMDAxNzExMjU3ODc4MzYz.4fnTeVEnnpaU3UOZzkSOMuNNbX3dgEHI02eUxK8kIwgg.uk_G59FNmNpkBEeuuRvMkcDUNh8cJfv_hCBDBnalY8Ag.JPEG%2Foutput_726362789.jpg&type=a340"
 },
 {
   name: "짬뽕",
@@ -316,7 +316,7 @@ function getFoodData() {
   description: "매콤한 국물에 해산물이 어우러진 중국식 면 요리.",
   price: 7000,
   tasteDescription: "매콤하고 시원한 맛",
-  image: "https://image.url/jjamppong.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA4MDRfMTQ1%2FMDAxNzIyNzQ0OTUxMjYw.oUft1s-ul6f27XCy3EDY7iYrS6GbvNzPs61Z2oY5xtEg.fRGZxziqYr4d4zXQ32vPUASjFF_xCF_IvuwFlICmdBcg.JPEG%2FIMG_7631.jpg&type=a340"
 },
 {
   name: "마파두부",
@@ -329,7 +329,7 @@ function getFoodData() {
   description: "두부와 다진 돼지고기를 매콤하게 볶아낸 중식 요리.",
   price: 12000,
   tasteDescription: "매콤하고 고소한 맛",
-  image: "https://image.url/mapotofu.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA2MjdfMjMw%2FMDAxNzE5NDc0MjM5Mjg2.vl7k9x1jr_OX3F_VM2fu4yZuo_RE6vCc9fbkwSl7WPog.V4U5yTO-nyjT4gfEh0NI5pqG9mV2e4uQkh6i8rkMa28g.JPEG%2FIMG_4882.jpg&type=a340"
 },
 {
   name: "볶음밥",
@@ -342,7 +342,7 @@ function getFoodData() {
   description: "밥을 계란과 함께 간장 소스에 볶아낸 중식 요리.",
   price: 8000,
   tasteDescription: "고소하고 담백한 맛",
-  image: "https://image.url/friedrice.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20150701_59%2Fwnddkliii_1435742808659TP77P_JPEG%2FIMG_1633.JPG&type=a340"
 },
 {
   name: "양장피",
@@ -355,7 +355,7 @@ function getFoodData() {
   description: "해산물과 채소를 겨자소스로 버무려낸 중식 샐러드.",
   price: 18000,
   tasteDescription: "매콤하고 새콤한 맛",
-  image: "https://image.url/yangjangpi.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAyMDdfMjg0%2FMDAxNzA3MjM0NTEwOTE2.l_72RMiJ6OmjZdNInnVjkulPePXPSiYttDzGlPUU3Bgg.haMKl3tPVokS-QWr_TJJFXqwmSIaKgGQA7l71-apZsgg.JPEG.evakim79%2F20240202%25A3%25DF155957.jpg&type=a340"
 },
 {
   name: "깐풍기",
@@ -368,7 +368,7 @@ function getFoodData() {
   description: "바삭하게 튀긴 닭고기를 매콤한 소스에 버무린 중식 요리.",
   price: 19000,
   tasteDescription: "매콤하고 바삭한 맛",
-  image: "https://image.url/kanpunggi.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEwMTlfMTg2%2FMDAxNjk3NzEyNzk5MDQ2.Fj8ROBbKeTjtcPOR7tU-vK4HUq45Hes0ixzuMIn0YRgg.uEM4hrsDywa7CA0KPcBaQYCpfj5U2yY8pj6lJpyaRx8g.JPEG.jacqysjh%2FIMG_9308.JPG&type=a340"
 },
 {
   name: "고추잡채",
@@ -381,7 +381,7 @@ function getFoodData() {
   description: "돼지고기와 고추를 간장 소스로 볶아낸 중식 요리.",
   price: 17000,
   tasteDescription: "짭짤하고 매콤한 맛",
-  image: "https://image.url/pepperstirfry.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA3MTlfNTQg%2FMDAxNzIxMzg4MzQwNTg4.tSG9V0hqp3VVgHwTTcHL_1wJgZrHPW8Di0S_wVvgF9Ag.pHp74REpJ1fRjvksnp_oeDGYIOo6e67YbIvXZdA8g2Ug.JPEG%2FP20240628_181721078_797C4BD1-43BC-46E3-8C7A-FE8BB093089D.jpg&type=a340"
 },
 {
   name: "유린기",
@@ -394,7 +394,7 @@ function getFoodData() {
   description: "바삭한 닭고기에 새콤달콤한 소스를 얹은 중식 요리.",
   price: 20000,
   tasteDescription: "새콤달콤하고 바삭한 맛",
-  image: "https://image.url/yurinji.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMDlfOTcg%2FMDAxNzA5OTU5NDcyMDI5.dBH-Ql09IZ0Za6eqeR-UQBsPOMtekcuodijP0RsNSfgg.UNEmD4L9Ar0Kb1hTtVlbO5kql9Vi8WXmxBZuUvm_HnIg.JPEG%2FIMG_6090.jpg&type=a340"
 },
 
 // 양식 (Western) - 10 items
@@ -409,7 +409,7 @@ function getFoodData() {
   description: "신선한 토마토와 모차렐라 치즈, 바질로 만든 전통 피자.",
   price: 18000,
   tasteDescription: "신선한 토마토와 치즈의 조화",
-  image: "https://image.url/margherita.jpg"
+  image: "https://search.pstatic.net/sunny/?src=https%3A%2F%2Fst2.depositphotos.com%2F1005524%2F7219%2Fi%2F450%2Fdepositphotos_72191659-stock-photo-pizza-margherita.jpg&type=a340"
 },
 {
   name: "파스타 카르보나라",
@@ -422,7 +422,7 @@ function getFoodData() {
   description: "크림 없이 계란과 치즈로 만든 이탈리안 전통 파스타.",
   price: 16000,
   tasteDescription: "고소한 치즈와 베이컨의 풍미",
-  image: "https://image.url/carbonara.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA1MjZfMjg1%2FMDAxNjIyMDMzNDU0NjQ2.8lSl5FpK-eJwCyHL23npZywoI58cymZmO25HzBQmktQg.ji2_fDH8ebEnqQWUzHDvyAMkj1NgMYEWsq95LWPYLK0g.JPEG.apple094%2F1622031222096.jpg&type=a340"
 },
 {
   name: "햄버거",
@@ -435,7 +435,7 @@ function getFoodData() {
   description: "신선한 재료로 만든 미국의 대표 패스트푸드.",
   price: 13000,
   tasteDescription: "고소한 패티와 신선한 채소의 조화",
-  image: "https://image.url/burger.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzEyMjdfMzAw%2FMDAxNzAzNjU0MjU4Mzkz.9QJ-NNanDIp1XwsK8F6KnHfp_82ex3IjjzaqIbuRTAcg.ElLEpztlu6C2twZ5P-ASWLjB-bgIfeAKP42a_ABtWb4g.JPEG.holidaybeer%2Ffront-view-burger-on-a-stand.jpg&type=a340"
 },
 {
   name: "스테이크",
@@ -448,7 +448,7 @@ function getFoodData() {
   description: "고급 소고기를 소금과 후추로 간단하게 구워낸 요리.",
   price: 45000,
   tasteDescription: "고소하고 풍미 가득한 소고기",
-  image: "https://image.url/steak.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20220713_173%2F16576817043000Ks2I_JPEG%2F58817538072243702_765385740.jpg&type=a340"
 },
 {
   name: "파스타 볼로네제",
@@ -461,7 +461,7 @@ function getFoodData() {
   description: "풍부한 토마토 소스와 고기가 어우러진 이탈리안 파스타.",
   price: 15000,
   tasteDescription: "상큼한 토마토와 고소한 고기의 조화",
-  image: "https://image.url/bolognese.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MzBfMjg0%2FMDAxNjg1NDE3MDM1MjI2.XgTa_ktu0QnXzqwhiCyFn0uXUZSE3Iwk29TTTO9EI3Ig.Nhv7HIOO20_FmDh0wybCgPsZY4CJ6x8PtylUllclQqYg.JPEG.yullees1%2F%25C6%25F7%25B8%25CB%25BA%25AF%25C8%25AFKakaoTalk_20230529_163305127_13.jpg&type=a340"
 },
 {
   name: "치킨 시저 샐러드",
@@ -474,7 +474,7 @@ function getFoodData() {
   description: "담백한 닭가슴살과 신선한 채소로 만든 샐러드.",
   price: 12000,
   tasteDescription: "고소하고 상큼한 드레싱의 맛",
-  image: "https://image.url/caesarsalad.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTEyMTZfMTEx%2FMDAxNjM5NjI3MTQyMDg0.us_wI-zPyuPfqUjWWd1VLE0vdI-5LTl98zvjHo4Xvvwg.BfMsE3g5iLH2u0njzpkbATGsAj7PpTLxIqB-NJLEN0kg.JPEG.junmu0925%2FIMG_20211216_125101_572.jpg&type=a340"
 },
 {
   name: "클럽 샌드위치",
@@ -487,7 +487,7 @@ function getFoodData() {
   description: "토스트에 신선한 재료를 곁들인 미국식 샌드위치.",
   price: 13000,
   tasteDescription: "고소한 닭가슴살과 베이컨의 조화",
-  image: "https://image.url/clubsandwich.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20110307_150%2Fcafemamas_12994343512477kBrQ_JPEG%2Fclub_sandwich.jpg&type=a340"
 },
 {
   name: "감바스 알 아히요",
@@ -500,7 +500,7 @@ function getFoodData() {
   description: "올리브유에 마늘과 함께 새우를 볶아낸 스페인 요리.",
   price: 18000,
   tasteDescription: "향긋한 마늘과 새우의 풍미",
-  image: "https://image.url/gambas.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20240406_178%2F1712344355911IaE7p_JPEG%2F41435527167010622_461680795.jpg&type=a340"
 },
 {
   name: "로스트 비프",
@@ -513,7 +513,7 @@ function getFoodData() {
   description: "오븐에 구워낸 소고기와 채소를 곁들인 영국 요리.",
   price: 40000,
   tasteDescription: "고소하고 담백한 맛",
-  image: "https://image.url/roastbeef.jpg"
+  image: "https://search.pstatic.net/sunny/?src=https%3A%2F%2Ft1.daumcdn.net%2Fcafeattach%2F1YmK3%2Fff6dedfb110f3f666a7134c9ece670b82e9b7d1b&type=a340"
 },
 {
   name: "퀘사디아",
@@ -526,7 +526,7 @@ function getFoodData() {
   description: "바삭한 토르티야에 치즈와 닭고기를 넣고 구운 멕시코 음식.",
   price: 13000,
   tasteDescription: "고소하고 매콤한 맛",
-  image: "https://image.url/quesadilla.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzA1MjdfMjcw%2FMDAxNjg1MTk3MDMzNjE3.32SQZ1VpF7wQgcDhtXBMBm4baK9QXcO9b9GMbhRS0Igg.M5dkwlBHo-JWNqfCiM1XLcMwsxnCxRIUbsRyjrf0toEg.JPEG.h755101%2F29035_29735_step7_1.jpg&type=a340"
 },
 
 // 디저트 (Dessert) - 10 items
@@ -541,7 +541,7 @@ function getFoodData() {
   description: "커피와 치즈가 어우러진 달콤한 이탈리안 디저트.",
   price: 7000,
   tasteDescription: "달콤하고 커피의 풍미가 느껴지는 맛",
-  image: "https://image.url/tiramisu.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMDZfMjE2%2FMDAxNzA5Njk3NDU3MDYw.eiwbrRjaEeZjZm-CPiE75S8-GEDKRtDsj-GR80SNmyAg.7uFofQ1eSfcsVRKwn1hq8cRF_gj4FZOgZKWPMYqfhOAg.JPEG%2Foutput_4034661134.jpg&type=a340"
 },
 {
   name: "마카롱",
@@ -554,7 +554,7 @@ function getFoodData() {
   description: "아몬드 가루로 만든 부드럽고 달콤한 프랑스식 과자.",
   price: 4000,
   tasteDescription: "달콤하고 부드러운 식감",
-  image: "https://image.url/macaroon.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAxMTVfNzgg%2FMDAxNzA1MjUwODMzNjgz.8EsZnI6X1YkZ8KkipBa2syUiHSsiZTMx7byDVb_hRpIg.rXLh8olVSch8tRNkPe8H2Cbd8qjM_oBV4mRMn09FuJog.PNG.youngnongtr%2FKakaoTalk_Snapshot_20240115_010404.png&type=a340"
 },
 {
   name: "크레페",
@@ -567,7 +567,7 @@ function getFoodData() {
   description: "얇고 부드러운 프랑스식 팬케이크에 달콤한 소스가 더해진 디저트.",
   price: 8000,
   tasteDescription: "달콤하고 부드러운 크레페와 소스",
-  image: "https://image.url/crepe.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDEwMDJfMTAw%2FMDAxNzI3ODczMjU2Njkz.MD9O2BlvdhzkRbVlXqjOBNl4Js4qbofb5GCKL4l7slMg.r6mMNNFQE6j9b7p-ScJKb4dKpRhpCbL5B6nsYfryiNEg.PNG%2Fimage.png&type=a340"
 },
 {
   name: "초콜릿 무스",
@@ -580,7 +580,7 @@ function getFoodData() {
   description: "부드럽고 진한 초콜릿 맛이 일품인 프랑스 디저트.",
   price: 8000,
   tasteDescription: "달콤하고 부드러운 초콜릿의 풍미",
-  image: "https://image.url/chocolate_mousse.jpg"
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8jV6iR1RT3jhJ4bL9A7hOFl42yvd3e42QVQ&s"
 },
 {
   name: "애플파이",
@@ -593,7 +593,7 @@ function getFoodData() {
   description: "버터와 밀가루 반죽에 달콤한 사과를 넣어 구운 미국식 파이.",
   price: 9000,
   tasteDescription: "달콤한 사과와 바삭한 파이의 조화",
-  image: "https://image.url/applepie.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA5MjdfMTQw%2FMDAxNzI3NDExNTI4MzAz.qbJftighYk0w_LHncM9UjD0YWzkkzHCIP-1zd6U3B4wg.doxhHdoeeLkiifj4lTeMTlpZYDGKxO8-U6gBasjPW20g.JPEG%2FIMG_6629.JPG&type=a340"
 },
 {
   name: "바클라바",
@@ -606,7 +606,7 @@ function getFoodData() {
   description: "바삭한 반죽 사이에 견과류와 시럽을 넣어 만든 터키 디저트.",
   price: 10000,
   tasteDescription: "달콤하고 바삭한 맛",
-  image: "https://image.url/baklava.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTEyMjhfNjIg%2FMDAxNTc3NTE4MDg2MjUy.VKT3TZBYQnk76oce9Tf2FtYyi6TunsCz-c8MfCOHzuwg.L4iUSXO1-V2576Lzp1z6KNnq2NgyTDTwoEFGAwFB8bog.JPEG.tulipbusan%2FKakaoTalk_20191228_162517336.jpg&type=a340"
 },
 {
   name: "도너츠",
@@ -619,7 +619,7 @@ function getFoodData() {
   description: "바삭하게 튀긴 반죽에 설탕을 입힌 달콤한 디저트.",
   price: 3000,
   tasteDescription: "달콤하고 바삭한 식감",
-  image: "https://image.url/doughnut.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA1MDJfNzMg%2FMDAxNzE0NjMzODE2MjI1.U7biY8Fjy8bNrvliGpeFE30AWIWGuGBLlvNAmbuj9oUg.9VIn0RVFr7sFWtPS8TYFBXtVjv4SXyd--ZsN81Wy1swg.JPEG%2FKakaoTalk_20240501_220727773_03.jpg&type=a340"
 },
 {
   name: "에끌레어",
@@ -632,7 +632,7 @@ function getFoodData() {
   description: "얇은 반죽 안에 달콤한 크림을 채우고 초콜릿을 덮은 디저트.",
   price: 5000,
   tasteDescription: "달콤하고 부드러운 크림과 초콜릿",
-  image: "https://image.url/eclair.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA0MDFfMjMx%2FMDAxNzExOTUyNzA0MDU5.-oUpHfJ9Nzpc4f_sxarxsrjpUBeJ10_pfF9sEeAPvxwg.VbftCLeO8_WXxniGHOKiRKVzZ3cLU8wnwS5FX6_pN8Ig.JPEG%2FKakaoTalk_20240401_151051327.jpg&type=a340"
 },
 {
   name: "판나코타",
@@ -645,7 +645,7 @@ function getFoodData() {
   description: "부드럽고 달콤한 크림으로 만든 이탈리안 젤리 디저트.",
   price: 8000,
   tasteDescription: "부드럽고 달콤한 크림 맛",
-  image: "https://image.url/pannacotta.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fpost.phinf.naver.net%2FMjAyMDA1MDZfMjYy%2FMDAxNTg4NzUzMTgyODc1.PeLkZjofDfbA57m1DaCZ_fXT_nhB2MdatXg-rJjPB7Qg.4X806nyCHsyoJJsH01-5YAy7OXqov-fx3KgaS-5ztNsg.JPEG%2FI4nF3PeUiZIOvdxnTGUe17valyLY.jpg&type=a340"
 },
 {
   name: "치즈케이크",
@@ -658,7 +658,7 @@ function getFoodData() {
   description: "크림치즈와 설탕으로 만든 달콤하고 부드러운 케이크.",
   price: 10000,
   tasteDescription: "고소하고 부드러운 치즈의 맛",
-  image: "https://image.url/cheesecake.jpg"
+  image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA5MjRfMjM2%2FMDAxNzI3MTgwMDY5MTg2.v5ktOn0ayO0GVG4R-FuS3rNC11jweDXxEa7HiivjsLsg.oguBSvoxvJFlEBI6vVHSf8cvwc0E9IubFG9fvUvtzHcg.JPEG%2F20240924_205848.jpg&type=a340"
 },
     ];
   }
