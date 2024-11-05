@@ -7,6 +7,8 @@ body {
 }
 
 main {
+  max-width: 1200px; /* 메인 콘텐츠의 최대 너비 설정 */
+  margin: 0 auto; /* 콘텐츠를 중앙에 배치 */
   padding: 20px;
 }
 
