@@ -23,59 +23,21 @@
 
   <!-- 메인 콘텐츠 영역 -->
   <main>
-<!-- 탭 메뉴 영역 -->
-<div class="tab-menu-container">
-<!-- 상위 카테고리 클릭 시 openCategory 함수 호출, 마우스 올리면 하위 카테고리 표시 (1초 딜레이) -->
-<ul class="tab-menu">
-  <li class="tab-item" onmouseover="showSubCategoryWithDelay('brew')" onmouseout="hideSubCategory('brew')" onclick="openCategory(event, '양조주')">양조주</li>
-  <li class="tab-item" onmouseover="showSubCategoryWithDelay('distilled')" onmouseout="hideSubCategory('distilled')" onclick="openCategory(event, '증류주')">증류주</li>
-  <li class="tab-item" onmouseover="showSubCategoryWithDelay('mixed')" onmouseout="hideSubCategory('mixed')" onclick="openCategory(event, '혼성주')">혼성주</li>
-  <li class="tab-item" onmouseover="showSubCategoryWithDelay('traditional')" onmouseout="hideSubCategory('traditional')" onclick="openCategory(event, '전통주')">전통주</li>
-</ul>
-
-<!-- 하위 카테고리 (양조주) -->
-<div id="brew-sub" class="sub-category" onmouseover="keepSubCategoryVisible('brew')" onmouseout="hideSubCategory('brew')">
-  <div class="category-column">
-    <button class="sub-link" onclick="filterBySubCategory('양조주', '곡주')">곡주</button>
-    <button class="sub-link" onclick="filterBySubCategory('양조주', '과일주')">과일주</button>
+<div class="tabs-and-dropdown">
+  <div class="tab-menu">
+    <div class="tab-item" onclick="openCategory(event, '양조주')">양조주</div>
+    <div class="tab-item" onclick="openCategory(event, '증류주')">증류주</div>
+    <div class="tab-item" onclick="openCategory(event, '혼성주')">혼성주</div>
+    <div class="tab-item" onclick="openCategory(event, '전통주')">전통주</div>
+  </div>
+  <div class="sort-dropdown">
+    <select id="sort-order">
+      <option value="popularity">인기순</option>
+      <option value="low-price">낮은가격순</option>
+      <option value="high-price">높은가격순</option>
+    </select>
   </div>
 </div>
-
-<!-- 하위 카테고리 (증류주) -->
-<div id="distilled-sub" class="sub-category" onmouseover="keepSubCategoryVisible('distilled')" onmouseout="hideSubCategory('distilled')">
-  <div class="category-column">
-    <button class="sub-link" onclick="filterBySubCategory('증류주', '브랜디')">브랜디</button>
-    <button class="sub-link" onclick="filterBySubCategory('증류주', '럼')">럼</button>
-    <button class="sub-link" onclick="filterBySubCategory('증류주', '위스키')">위스키</button>
-    <button class="sub-link" onclick="filterBySubCategory('증류주', '보드카')">보드카</button>
-  </div>
-</div>
-
-<!-- 하위 카테고리 (혼성주) -->
-<div id="mixed-sub" class="sub-category" onmouseover="keepSubCategoryVisible('mixed')" onmouseout="hideSubCategory('mixed')">
-  <div class="category-column">
-    <button class="sub-link" onclick="filterBySubCategory('혼성주', '칵테일')">칵테일</button>
-    <button class="sub-link" onclick="filterBySubCategory('혼성주', '하이볼')">하이볼</button>
-  </div>
-</div>
-
-<!-- 하위 카테고리 (전통주) -->
-<div id="traditional-sub" class="sub-category" onmouseover="keepSubCategoryVisible('traditional')" onmouseout="hideSubCategory('traditional')">
-  <div class="category-column">
-    <button class="sub-link" onclick="filterBySubCategory('전통주', '일반기업 전통주')">일반기업 전통주</button>
-    <button class="sub-link" onclick="filterBySubCategory('전통주', '지역별 전통주')">지역별 전통주</button>
-  </div>
-</div>
-
-
-    <!-- 정렬 기준 드롭다운 -->
-    <div class="sort-dropdown">
-      <select id="sort-order">
-        <option value="popular">인기순</option>
-        <option value="low-price">낮은 가격순</option>
-        <option value="high-price">높은 가격순</option>
-      </select>
-    </div>
 
     <!-- 카드 리스트 영역 -->
     <div class="card-list" id="drink-card-list">

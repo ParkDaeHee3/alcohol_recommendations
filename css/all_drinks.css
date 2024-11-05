@@ -1,124 +1,3 @@
-/* 드롭다운을 배너 아래, 메인 콘텐츠 오른쪽에 배치 */
-.sort-dropdown {
-    display: flex;
-    justify-content: flex-end; /* 오른쪽 정렬 */
-    margin-top: 20px; /* 배너 아래 적절한 여백 */
-    margin-right: 10px; /* 오른쪽으로 이동 */
-  }
-  
-  .sort-dropdown label {
-    margin-right: 10px;
-    font-size: 16px;
-  }
-  
-  .sort-dropdown select {
-    padding: 8px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: white;
-    cursor: pointer;
-  }
-  
-  /* 카드 리스트 중앙 배치 및 카드 크기 키우기 */
-.card-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* 중앙에 배치 */
-  gap: 20px; /* 카드 사이 간격 */
-  margin: 20px 0;
-}
-
-/* 카드 스타일 */
-.card {
-  position: relative;
-  width: 300px;  /* 카드 크기 */
-  height: 400px;  /* 카드 높이 */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  box-sizing: border-box;
-  transition: transform 0.6s;
-  transform-style: preserve-3d; /* 3D 공간에서 회전 */
-  perspective: 1000px; /* 3D 효과를 위한 perspective */
-}
-
-.card img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-.card.flipped {
-  transform: rotateY(180deg); /* 카드 뒤집기 */
-}
-
-/* 카드 앞면 */
-.card-front {
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden; /* 카드가 뒤집힐 때 뒷면 보이지 않게 */
-}
-
-/* 카드 뒷면 */
-.card-back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #f8f8f8; /* 회색 배경 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  backface-visibility: hidden; /* 카드가 뒤집힐 때 보이지 않게 */
-  transform: rotateY(180deg);  /* 카드 뒷면 뒤집기 */
-}
-
-/* 카드 뒷면 내용 */
-.card-back h3 {
-  font-size: 18px;
-  color: #333;
-}
-
-.card-back p {
-  font-size: 16px;
-  color: #777;
-}
-
-
-.card h3 {
-  font-size: 18px;
-  text-align: center;
-}
-
-.card .price {
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 10px;
-  text-align: center;
-}
-
-/* 찜 버튼 중앙 배치 */
-.card .wishlist-btn {
-  margin-top: 0px; /* 가격 밑에 여백 추가 */
-  text-align: center;
-}
-
-.card .wishlist-btn img {
-  width: 30px;  /* 아이콘의 크기 */
-  height: 30px;
-  cursor: pointer;
-  display: block;
-  margin: 0 auto; /* 찜 버튼을 중앙으로 정렬 */
-}
-
 /* 팝업 메시지 스타일 (화면 상단 중앙에 위치) */
 .popup-message {
   position: fixed;
@@ -148,150 +27,234 @@
     height: 24px;
   }
 
-/* 탭 메뉴 전체 스타일 */
-.tab-menu-container {
-  width: 100%;
-  border-bottom: 1px solid #ddd;
+/* 전체 레이아웃 정렬을 위한 부모 컨테이너 */
+.tabs-and-dropdown {
+  display: flex;
+  justify-content: space-between; /* 탭 메뉴와 드롭다운을 양쪽에 배치 */
+  align-items: center; /* 수직 정렬 */
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd; /* 구분선 */
+  font-size: 16px;
+  text-align: center;
+  max-width: 1200px; /* 배너 크기를 넘지 않도록 설정 */
+  margin: 0 auto 20px auto; /* 아래에 40px 간격 추가 */
 }
 
+/* 탭 메뉴 스타일 */
 .tab-menu {
   display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  justify-content: space-around; /* 탭을 화면 너비에 맞춰 분배 */
+  flex-grow: 1;
+  gap: 20px;
 }
 
 .tab-item {
-  padding: 10px 20px;
   cursor: pointer;
-  color: #333;
-  font-weight: bold;
+  color: #666;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 15px;
   position: relative;
-  transition: color 0.3s ease;
 }
 
 .tab-item:hover {
-  color: #e74c3c;
+  color: #3498db;
 }
 
 .tab-item.active {
-  color: #e74c3c;
+  color: #3498db;
+  font-weight: bold;
 }
 
 .tab-item.active::after {
-  content: "";
+  content: '';
   position: absolute;
-  bottom: -2px;
-  left: 0;
   width: 100%;
   height: 2px;
-  background-color: #e74c3c;
-}
-
-/* 하위 카테고리 스타일 */
-.sub-category {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  width: 100%;
+  background-color: #3498db;
   left: 0;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: opacity 0.3s ease-in-out;
+  bottom: -5px;
 }
 
-.category-column {
+/* 드롭다운 정렬 */
+.sort-dropdown {
+  margin-left: 20px;
+}
+
+.sort-dropdown select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sort-dropdown select:hover {
+  border-color: #ababab; /* 호버 시 테두리 색상 변경 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 호버 시 그림자 추가 */
+}
+
+.sort-dropdown select:focus {
+  outline: none;
+  border-color: #ababab; /* 포커스 시 테두리 색상 */
+}
+
+/* 카드 리스트 중앙 배치 및 카드 크기 조정 */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 1280px; /* 한 줄에 4개의 카드가 맞도록 너비 설정 */
+}
+
+/* 카드 스타일 */
+.card {
+  position: relative;
+  width: calc(25% - 20px);  /* 한 줄에 4개의 카드가 나오도록 설정 (4개 배치) */
+  height: auto; /* 높이는 콘텐츠에 맞춰 자동 조정 */
   display: flex;
   flex-direction: column;
-  gap: 10px; /* 각 항목 간격 */
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  box-sizing: border-box;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover; /* 이미지가 잘리지 않고 비율에 맞게 */
+}
 
-.sub-link {
-  padding: 8px 15px;
-  background-color: #fafafa;
-  border: none;
+.card.flipped {
+  transform: rotateY(180deg); /* 카드 뒤집기 */
+}
+
+/* 카드 앞면 */
+.card-front {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* 카드가 뒤집힐 때 뒷면이 보이지 않도록 설정 */
+}
+
+/* 카드 뒷면 */
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);  /* 카드 뒷면 뒤집기 */
+}
+
+/* 카드 뒷면 내용 */
+.card-back h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.card-back p {
+  font-size: 16px;
+  color: #777;
+}
+
+.card h3 {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.card .price {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* 찜 버튼 중앙 배치 */
+.card .wishlist-btn {
+  margin-top: 10px; /* 가격 밑에 적당한 여백 추가 */
+  text-align: center;
+}
+
+.card .wishlist-btn img {
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  display: block;
+  margin: 0 auto; /* 찜 버튼을 중앙에 정렬 */
 }
 
-.sub-link:hover {
-  background-color: #ddd;
-}
-
-/* 하위 카테고리가 기본적으로 숨겨진 상태 */
-.sub-category[style="display: block;"] {
-  opacity: 1;
-}
-
-/* 카드 스타일 (모바일 화면) */
 @media (max-width: 768px) {
+  /* 카드 리스트를 그리드 레이아웃으로 설정하여 한 줄에 2개씩 배치 */
+  .card-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 한 줄에 2개의 열 */
+    gap: 10px; /* 카드 사이 간격 */
+    padding: 10px;
+  }
+
+  /* 카드 스타일 */
   .card {
     display: flex;
-    flex-direction: row;
+    flex-direction: column; /* 카드 내용이 세로로 쌓이도록 설정 */
     align-items: center;
-    width: 95%;
-    max-width: 700px;
-    height: auto;
-    padding: 15px;
-    margin-bottom: 15px;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
     box-sizing: border-box;
     border: 1px solid #ddd;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    position: relative;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
-  
-  /* 이미지가 왼쪽에 위치하며 크기를 크게 설정 */
+
+  /* 이미지 스타일 */
   .card img.drink-image {
-    width: 120px;
-    height: 120px;
+    width: 100%;
+    height: 150px;
     object-fit: cover;
-    border-radius: 12px;
-    margin-right: 20px;
+    border-radius: 8px;
+    margin-bottom: 10px;
   }
-  
-  /* 텍스트 정보는 이미지 오른쪽에 위치하며 왼쪽 정렬 */
+
+  /* 카드 정보: 이름과 가격을 중앙에 정확히 배치 */
   .card .card-info {
-    display: flex;
-    flex-direction: column;
-    width: calc(100% - 160px);
-    text-align: left; /* 왼쪽 정렬 */
+    text-align: center;
   }
-  
+
+  /* 술 이름과 가격 중앙 정렬 */
   .card .card-info h3 {
     font-size: 1.1rem;
     font-weight: bold;
-    margin: 0 0 5px;
+    margin: 0 0 5px 0;
   }
-  
+
   .card .card-info .price {
     font-size: 1rem;
     color: #333;
-    margin: 5px 0;
+    margin: 0;
   }
-  
-  .card .card-info .details {
-    font-size: 0.9rem;
-    color: #555;
-    margin: 3px 0; /* 텍스트 간격 추가 */
-  }
-  
-  /* 평점을 텍스트 아래에 추가 */
-  .card .card-info .rating {
-    font-size: 0.9rem;
-    color: #555;
-    margin-top: 8px;
-  }
-  
-  /* 찜 버튼을 카드의 오른쪽 중앙에 위치 */
+
+  /* 찜 버튼을 카드 하단에 배치 */
   .card .wishlist-btn {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
+    margin-top: 10px;
   }
 
   .card .wishlist-btn img {
@@ -299,4 +262,3 @@
     height: 28px;
   }
 }
-
