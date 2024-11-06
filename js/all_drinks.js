@@ -113,7 +113,6 @@ function loadDrinkCards(drinks, page, cardsPerPage) {
   document.getElementById('current-page').textContent = page;
 }
 
-// 카드 추가 함수
 function addDrinkCard(drink) {
   const cardList = document.getElementById('drink-card-list');
   const card = document.createElement('div');
@@ -123,41 +122,44 @@ function addDrinkCard(drink) {
     ? 'img/icon/heart-icon.png'
     : 'img/icon/heart-bin-icon.png';
 
-  let cardContent;
-  if (window.innerWidth > 768) {
-    // PC 환경: 카드가 뒤집힘
-    cardContent = `
-      <div class="card-front">
-        <img src="${drink.image}" alt="${drink.name}">
-        <h3>${drink.name}</h3>
-        <p class="price">${drink.price}원</p>
-        <div class="wishlist-btn">
-          <img src="${wishlistIcon}" alt="찜하기" class="wishlist-icon" />
-        </div>
-      </div>
-      <div class="card-back">
-        <h3>알코올 도수: ${drink.alcohol}%</h3>
-        <p>평점: ${drink.rating} / 5</p>
-      </div>
-    `;
-  } else {
-    // 모바일 환경: 이미지, 이름, 가격, 알코올 도수, 평점만 표시
-    cardContent = `
-      <div class="card-front card-list-mode">
-      <img src="${drink.image}" alt="${drink.name}" class="drink-image">
-      <div class="card-info">
-        <h3>${drink.name}</h3>
-        <p class="price">${drink.price}원</p>
-      </div>
+  // 카드 앞면과 뒷면 HTML 구조
+  let cardContent = `
+    <div class="card-front">
+      <img src="${drink.image}" alt="${drink.name}">
+      <h3>${drink.name}</h3>
+      <p class="price">${drink.price}원</p>
       <div class="wishlist-btn">
         <img src="${wishlistIcon}" alt="찜하기" class="wishlist-icon" />
       </div>
     </div>
+    <div class="card-back">
+      <h3>알코올 도수: ${drink.alcohol}%</h3>
+      <p>평점: ${drink.rating} / 5</p>
+    </div>
   `;
-  }
 
   card.innerHTML = cardContent;
   cardList.appendChild(card);
+
+  // 모바일이 아닌 경우에만 카드 뒤집기 이벤트 추가
+  if (window.innerWidth > 768) {
+    let flipTimeout;
+    card.addEventListener('mouseenter', function() {
+      flipTimeout = setTimeout(() => {
+        card.classList.add('flipped');
+      }, 1500);
+    });
+
+    card.addEventListener('mouseleave', function() {
+      clearTimeout(flipTimeout);
+      card.classList.remove('flipped');
+    });
+  }
+
+  // 카드 클릭 시 상세 페이지로 이동
+  card.addEventListener('click', function () {
+    window.location.href = `drink_detail.html?product=${encodeURIComponent(drink.name)}`;
+  });
 }
 
 // 찜 리스트에 추가/제거하는 함수

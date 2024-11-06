@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
          .sort((a, b) => b.rating - a.rating); // 평점 높은 순서대로 정렬
    
        displayTopThree(sortedDrinks);
-       displayOtherDrinks(sortedDrinks.slice(3, 20)); // 4위부터 20위까지
+       displayOtherDrinks(sortedDrinks.slice(3, 50)); // 4위부터 50위까지
      }
    
      // 찜 랭킹에 따라 리스트 정렬 및 표시
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
          .sort((a, b) => b.wishlistCount - a.wishlistCount); // 찜 개수 많은 순서대로 정렬
    
        displayTopThree(sortedDrinks);
-       displayOtherDrinks(sortedDrinks.slice(3, 20)); // 4위부터 20위까지
+       displayOtherDrinks(sortedDrinks.slice(3, 50)); // 4위부터 50위까지
      }
    
      // 1위~3위 표시

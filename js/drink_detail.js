@@ -29,9 +29,6 @@ document.addEventListener('DOMContentLoaded', function() {
           document.getElementById('main-category-link').href = `all_drinks.html?category=${product.category}&subCategory=all`;
           document.getElementById('main-category-link').textContent = product.category;
       
-          document.getElementById('sub-category-link').href = `all_drinks.html?category=${product.category}&subCategory=${product.subCategory}`;
-          document.getElementById('sub-category-link').textContent = product.subCategory;
-
           document.getElementById('product-name-link').textContent = product.name;
 
           // 상품 상세 정보 업데이트
@@ -66,10 +63,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
               if (wishlistIcon.src.includes('heart-bin-icon')) {
                   wishlistIcon.src = 'img/icon/heart-icon.png'; // 하트 채우기
-                  showPopupMessage('위시리스트에 추가되었습니다.');
+                  showPopupMessage(`${product.name}이(가) 위시리스트에 추가되었습니다.`);
               } else {
                   wishlistIcon.src = 'img/icon/heart-bin-icon.png'; // 하트 비우기
-                  showPopupMessage('위시리스트에서 삭제되었습니다.');
+                  showPopupMessage(`${product.name}이(가) 위시리스트에서 삭제되었습니다.`);
               }
           });
       } else {
