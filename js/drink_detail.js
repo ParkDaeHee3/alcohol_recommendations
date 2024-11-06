@@ -77,24 +77,39 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// 배열을 무작위로 섞는 함수
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; // 요소 위치를 교환
+  }
+  return array;
+}
+
 // 비슷한 상품 추천 카드 표시 함수
 function loadSimilarProducts(similarDrinks) {
   const similarList = document.createElement('div');
   similarList.classList.add('similar-products-list');
-  similarDrinks.forEach(drink => {
-      const card = document.createElement('div');
-      card.classList.add('similar-product-card');
-      card.innerHTML = `
-          <img src="${drink.image}" alt="${drink.name}">
-          <p><strong>${drink.name}</strong></p> <!-- 이름을 굵게 표시 -->
-      `;
-      card.addEventListener('click', () => {
-          window.location.href = `drink_detail.html?product=${encodeURIComponent(drink.name)}`;
-      });
-      similarList.appendChild(card);
+
+  // 배열을 무작위로 섞고, 처음 5개 선택
+  const randomDrinks = shuffleArray(similarDrinks).slice(0, 5);
+
+  randomDrinks.forEach(drink => {
+    const card = document.createElement('div');
+    card.classList.add('similar-product-card');
+    card.innerHTML = `
+      <img src="${drink.image}" alt="${drink.name}">
+      <p><strong>${drink.name}</strong></p> <!-- 이름을 굵게 표시 -->
+    `;
+    card.addEventListener('click', () => {
+      window.location.href = `drink_detail.html?product=${encodeURIComponent(drink.name)}`;
+    });
+    similarList.appendChild(card);
   });
-  document.querySelector('.product-container').after(similarList);  // 상품 상세 정보 아래에 추가
+
+  document.querySelector('.product-container').after(similarList); // 상품 상세 정보 아래에 추가
 }
+
 
 // 팝업 메시지 표시 함수 (화면 상단에 팝업 표시)
 function showPopupMessage(message) {

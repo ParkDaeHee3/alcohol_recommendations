@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
        `;
      }
    
-     // 4위~20위 표시
+     // 4위~50위 표시
      function displayOtherDrinks(drinks) {
        const otherDrinksContainer = document.querySelector('.ranking-content.active .other-drinks-container');
        const productGrid = document.createElement('div');
