@@ -26,7 +26,7 @@
     width: 24px;
     height: 24px;
   }
-
+  
 /* 전체 레이아웃 정렬을 위한 부모 컨테이너 */
 .tabs-and-dropdown {
   display: flex;

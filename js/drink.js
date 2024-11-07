@@ -1302,7 +1302,7 @@ function getDrinkData() {
   "tasteDescription": "잘 익은 체리와 라즈베리의 풍부한 과일 향과 부드러운 탄닌",
   "image": "https://files.vitis.co.kr/prod/images/vitis_0080e4382d4445aa907476a7f9e8aaad.jpg"
 },
-      //증류주 50개(이제10개 넣음)
+      //증류주 50개
       {
         name: "글렌피딕 12년산",
         type: "싱글 몰트",
@@ -1444,7 +1444,7 @@ function getDrinkData() {
         "description": "독특한 오이와 장미 향이 어우러진 프리미엄 진으로, 칵테일 베이스로 인기가 많습니다.",
         "price": 55000,
         "tasteDescription": "오이와 장미, 허브",
-        "image": "https://example.com/hendricks_gin.jpg"
+        "image": "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb2FSHe%2Fbtr1Wl2BBdK%2F2Q98AM2xSGd8lDGRohiqCK%2Fimg.png"
     },
     {
         "name": "레미 마르탱 XO",
@@ -1457,7 +1457,7 @@ function getDrinkData() {
         "description": "깊은 과일 향과 오크 향이 조화를 이루는 프랑스 코냑으로, 프리미엄 XO 등급입니다.",
         "price": 250000,
         "tasteDescription": "자두와 건포도, 오크",
-        "image": "https://example.com/remy_martin_xo.jpg"
+        "image": "https://duty-free-japan.jp/haneda/ko/images/item/5101200016.jpg"
     },
     {
         "name": "벨베데레 보드카",
@@ -1470,7 +1470,7 @@ function getDrinkData() {
         "description": "고급 수수로 만든 부드러운 보드카로, 깨끗한 맛과 은은한 곡물 향이 특징입니다.",
         "price": 45000,
         "tasteDescription": "깨끗한 곡물 향",
-        "image": "https://example.com/belvedere_vodka.jpg"
+        "image": "https://lh4.googleusercontent.com/proxy/dlTqNV07eQPxa3zdXn9kGq2q_XarBkqjEx7Jv2l3I4rtKPhlDNxUwvY40aaR4eGt2dAzptrOTWpJDs7I1PY_NX13oqK5ZbQk5SpAur3J2R4T0AFuQFQUmj8gGzQ1Wg"
     },
     {
         "name": "제임슨 아이리시 위스키",
@@ -1483,7 +1483,7 @@ function getDrinkData() {
         "description": "아일랜드의 대표적인 부드럽고 달콤한 몰트 맛이 특징인 아이리시 위스키입니다.",
         "price": 40000,
         "tasteDescription": "부드러운 몰트와 약간의 과일 향",
-        "image": "https://example.com/jameson_irish_whiskey.jpg"
+        "image": "https://m.goldcompany.co.kr/web/product/big/202211/3f9ce47ea102e62cbc2394e36bc1ce0e.jpg"
     },
     {
         "name": "피스코 소우어",
@@ -1496,7 +1496,7 @@ function getDrinkData() {
         "description": "페루에서 유래한 피스코로, 상큼한 과일 향과 부드러운 마무리가 특징입니다.",
         "price": 50000,
         "tasteDescription": "상큼한 과일 향",
-        "image": "https://example.com/pisco_sour.jpg"
+        "image": "https://cdn.veluga.kr/files/supplier/undefined/drinks/34.%E1%84%8B%E1%85%B2%E1%84%91%E1%85%B5%E1%86%A8_%E1%84%90%E1%85%A1%E1%84%87%E1%85%A6%E1%84%85%E1%85%B3%E1%84%82%E1%85%A6%E1%84%85%E1%85%A9_%E1%84%91%E1%85%B5%E1%84%89%E1%85%B3%E1%84%8F%E1%85%A9_%E1%84%8B%E1%85%A1%E1%84%8E%E1%85%A9%E1%84%85%E1%85%A1%E1%84%83%E1%85%A9.png"
     },
     {
         "name": "샤르트뢰즈",
@@ -1509,7 +1509,7 @@ function getDrinkData() {
         "description": "수도승이 만든 프랑스의 고급 리큐어로, 약초와 스파이스가 어우러진 풍미가 특징입니다.",
         "price": 70000,
         "tasteDescription": "약초와 스파이스의 깊은 향",
-        "image": "https://example.com/chartreuse.jpg"
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvq-r27BIgTiOotsSOls0QXdWzuGeBzWhSaQ&s"
     },
     {
         "name": "애플턴 에스테이트 자메이카 럼",
@@ -1522,7 +1522,7 @@ function getDrinkData() {
         "description": "자메이카의 전통 럼으로, 진한 카라멜과 열대 과일 향이 특징입니다.",
         "price": 35000,
         "tasteDescription": "카라멜과 열대 과일",
-        "image": "https://example.com/appleton_estate_rum.jpg"
+        "image": "https://mcgrocer.com/cdn/shop/products/348955011_0_640x640_9514414e-9340-4e3b-9f66-99948de9e9f7.jpg?v=1670001876"
     },
     {
         "name": "불러바드 쿤스 리큐어",
@@ -1563,7 +1563,396 @@ function getDrinkData() {
         "tasteDescription": "시트러스와 허브의 상쾌한 향",
         "image": "https://example.com/tanqueray_no_ten.jpg"
     },
-    
+    {
+      "name": "버팔로 트레이스 버번",
+      "type": "버번 위스키",
+      "category": "증류주",
+      "subCategory": "위스키",
+      "origin": "미국",
+      "alcohol": 45,
+      "rating": 4.5,
+      "description": "미국에서 생산된 전통적인 버번으로, 바닐라와 카라멜, 스파이스 향이 조화를 이룹니다.",
+      "price": 40000,
+      "tasteDescription": "바닐라, 카라멜, 스파이스",
+      "image": "https://example.com/buffalo_trace.jpg"
+  },
+  {
+      "name": "미도리 멜론 리큐어",
+      "type": "리큐어",
+      "category": "증류주",
+      "subCategory": "리큐어",
+      "origin": "일본",
+      "alcohol": 20,
+      "rating": 4.3,
+      "description": "멜론의 달콤한 풍미로 유명한 일본산 리큐어로, 칵테일에 사용되며 달콤한 맛이 매력적입니다.",
+      "price": 25000,
+      "tasteDescription": "달콤한 멜론 향",
+      "image": "https://example.com/midori_liqueur.jpg"
+  },
+  {
+      "name": "와일드 터키 101",
+      "type": "버번 위스키",
+      "category": "증류주",
+      "subCategory": "위스키",
+      "origin": "미국",
+      "alcohol": 50.5,
+      "rating": 4.7,
+      "description": "높은 도수의 강렬한 버번으로, 스파이스와 캐러멜의 진한 풍미가 특징입니다.",
+      "price": 60000,
+      "tasteDescription": "스파이스, 캐러멜, 오크",
+      "image": "https://example.com/wild_turkey_101.jpg"
+  },
+  {
+      "name": "시에라 실버 테킬라",
+      "type": "테킬라",
+      "category": "증류주",
+      "subCategory": "테킬라",
+      "origin": "멕시코",
+      "alcohol": 38,
+      "rating": 4.3,
+      "description": "멕시코산 실버 테킬라로, 아가베의 상큼함과 가벼운 허브 향이 어우러집니다.",
+      "price": 35000,
+      "tasteDescription": "아가베, 허브, 상쾌함",
+      "image": "https://example.com/sierra_silver_tequila.jpg"
+  },
+  {
+      "name": "카르타 블랑카",
+      "type": "럼",
+      "category": "증류주",
+      "subCategory": "럼",
+      "origin": "쿠바",
+      "alcohol": 37.5,
+      "rating": 4.2,
+      "description": "쿠바에서 생산되는 클래식 화이트 럼으로, 상쾌한 바닐라와 가벼운 오크 향이 특징입니다.",
+      "price": 30000,
+      "tasteDescription": "바닐라와 오크의 상쾌함",
+      "image": "https://example.com/carta_blanca.jpg"
+  },
+  {
+      "name": "바네스 오리지널",
+      "type": "보드카",
+      "category": "증류주",
+      "subCategory": "보드카",
+      "origin": "러시아",
+      "alcohol": 40,
+      "rating": 4.5,
+      "description": "러시아의 고급 보드카로, 깨끗하고 부드러운 맛이 특징이며, 약간의 곡물 향을 느낄 수 있습니다.",
+      "price": 32000,
+      "tasteDescription": "깨끗한 곡물 향",
+      "image": "https://example.com/banes_original.jpg"
+  },
+  {
+      "name": "바이욘 브랜디",
+      "type": "브랜디",
+      "category": "증류주",
+      "subCategory": "브랜디",
+      "origin": "스페인",
+      "alcohol": 38,
+      "rating": 4.4,
+      "description": "스페인산 브랜디로, 건포도와 오크 향이 잘 어우러진 깊은 풍미가 특징입니다.",
+      "price": 45000,
+      "tasteDescription": "건포도와 오크 향",
+      "image": "https://example.com/bayon_brandy.jpg"
+  },
+  {
+      "name": "디사로노 아마레토",
+      "type": "리큐어",
+      "category": "증류주",
+      "subCategory": "리큐어",
+      "origin": "이탈리아",
+      "alcohol": 28,
+      "rating": 4.6,
+      "description": "이탈리아산 아마레토 리큐어로, 아몬드와 바닐라의 달콤한 향이 특징입니다.",
+      "price": 40000,
+      "tasteDescription": "아몬드와 바닐라",
+      "image": "https://example.com/disaronno_amaretto.jpg"
+  },
+  {
+      "name": "빌스코치 블랙",
+      "type": "블렌디드 스카치 위스키",
+      "category": "증류주",
+      "subCategory": "위스키",
+      "origin": "스코틀랜드",
+      "alcohol": 40,
+      "rating": 4.4,
+      "description": "스코틀랜드산 블렌디드 스카치로, 스모키와 과일 향이 조화를 이루는 균형 잡힌 위스키입니다.",
+      "price": 55000,
+      "tasteDescription": "스모키, 과일, 오크",
+      "image": "https://example.com/billscotch_black.jpg"
+  },
+  {
+      "name": "베네딕틴 D.O.M 리큐어",
+      "type": "리큐어",
+      "category": "증류주",
+      "subCategory": "리큐어",
+      "origin": "프랑스",
+      "alcohol": 40,
+      "rating": 4.5,
+      "description": "프랑스의 허브 리큐어로, 다양한 허브와 스파이스가 조화를 이루며 달콤한 맛이 특징입니다.",
+      "price": 60000,
+      "tasteDescription": "허브와 스파이스, 달콤함",
+      "image": "https://example.com/benedictine_dom.jpg"
+  },
+  {
+    "name": "포트 샬럿 10년",
+    "type": "싱글 몰트 위스키",
+    "category": "증류주",
+    "subCategory": "위스키",
+    "origin": "스코틀랜드",
+    "alcohol": 50,
+    "rating": 4.6,
+    "description": "아일라 섬에서 생산된 강렬한 피트 향과 복합적인 풍미가 특징인 싱글 몰트 위스키입니다.",
+    "price": 120000,
+    "tasteDescription": "피트, 스모크, 오크",
+    "image": "https://example.com/port_charlotte_10.jpg"
+},
+{
+    "name": "라가불린 16년",
+    "type": "싱글 몰트 위스키",
+    "category": "증류주",
+    "subCategory": "위스키",
+    "origin": "스코틀랜드",
+    "alcohol": 43,
+    "rating": 4.8,
+    "description": "강렬한 피트와 스모키한 맛이 특징인 아이코닉 싱글 몰트 위스키.",
+    "price": 160000,
+    "tasteDescription": "피트, 스모크, 오크",
+    "image": "https://example.com/lagavulin_16.jpg"
+},
+{
+    "name": "하바나 클럽 7년",
+    "type": "럼",
+    "category": "증류주",
+    "subCategory": "럼",
+    "origin": "쿠바",
+    "alcohol": 40,
+    "rating": 4.5,
+    "description": "쿠바산 프리미엄 럼으로, 깊고 진한 과일 향과 오크 풍미가 조화롭습니다.",
+    "price": 45000,
+    "tasteDescription": "과일, 오크, 바닐라",
+    "image": "https://example.com/havana_club_7.jpg"
+},
+{
+    "name": "그랑 마니에르 코디알",
+    "type": "리큐어",
+    "category": "증류주",
+    "subCategory": "리큐어",
+    "origin": "프랑스",
+    "alcohol": 40,
+    "rating": 4.7,
+    "description": "오렌지와 코냑이 조화를 이루는 프랑스산 리큐어로, 깊은 오렌지 향이 특징입니다.",
+    "price": 60000,
+    "tasteDescription": "오렌지, 코냑",
+    "image": "https://example.com/grand_marnier.jpg"
+},
+{
+    "name": "럼 차타",
+    "type": "리큐어",
+    "category": "증류주",
+    "subCategory": "리큐어",
+    "origin": "미국",
+    "alcohol": 13.75,
+    "rating": 4.6,
+    "description": "크림과 시나몬, 바닐라의 풍미가 조화를 이루는 달콤한 리큐어입니다.",
+    "price": 30000,
+    "tasteDescription": "시나몬, 바닐라, 크림",
+    "image": "https://example.com/rum_chata.jpg"
+},
+{
+    "name": "발레로스 블랙 라벨",
+    "type": "블렌디드 스카치",
+    "category": "증류주",
+    "subCategory": "위스키",
+    "origin": "스코틀랜드",
+    "alcohol": 40,
+    "rating": 4.4,
+    "description": "풍부한 과일과 스모키함이 어우러진 블렌디드 스카치 위스키.",
+    "price": 55000,
+    "tasteDescription": "과일, 스모크, 오크",
+    "image": "https://example.com/ballers_black.jpg"
+},
+{
+    "name": "다빈치 에스프레소 리큐어",
+    "type": "리큐어",
+    "category": "증류주",
+    "subCategory": "리큐어",
+    "origin": "이탈리아",
+    "alcohol": 28,
+    "rating": 4.5,
+    "description": "깊은 에스프레소 향과 달콤함이 조화를 이룬 커피 리큐어입니다.",
+    "price": 35000,
+    "tasteDescription": "커피, 초콜릿",
+    "image": "https://example.com/da_vinci_espresso.jpg"
+},
+{
+    "name": "피츠 제럴드 오리지널",
+    "type": "버번 위스키",
+    "category": "증류주",
+    "subCategory": "위스키",
+    "origin": "미국",
+    "alcohol": 45,
+    "rating": 4.6,
+    "description": "미국산 클래식 버번으로, 달콤한 바닐라와 오크의 풍미가 특징입니다.",
+    "price": 50000,
+    "tasteDescription": "바닐라, 오크",
+    "image": "https://example.com/fitzgerald_original.jpg"
+},
+{
+    "name": "윌렛 포트 포유",
+    "type": "싱글 배럴 버번",
+    "category": "증류주",
+    "subCategory": "위스키",
+    "origin": "미국",
+    "alcohol": 63,
+    "rating": 4.7,
+    "description": "단일 배럴에서 나오는 독특한 풍미와 강렬한 맛이 특징인 버번 위스키.",
+    "price": 90000,
+    "tasteDescription": "스파이스, 오크, 캐러멜",
+    "image": "https://example.com/willett_pot.jpg"
+},
+{
+    "name": "마르니에 피치 리큐어",
+    "type": "리큐어",
+    "category": "증류주",
+    "subCategory": "리큐어",
+    "origin": "프랑스",
+    "alcohol": 35,
+    "rating": 4.6,
+    "description": "복숭아와 오렌지 향이 어우러진 달콤한 리큐어입니다.",
+    "price": 30000,
+    "tasteDescription": "복숭아, 오렌지",
+    "image": "https://example.com/marnier_peach.jpg"
+},
+{
+    "name": "엘도라도 15년",
+    "type": "럼",
+    "category": "증류주",
+    "subCategory": "럼",
+    "origin": "가이아나",
+    "alcohol": 43,
+    "rating": 4.8,
+    "description": "가이아나산 프리미엄 럼으로, 복합적인 과일과 스파이스 풍미가 깊이감 있게 어우러집니다.",
+    "price": 100000,
+    "tasteDescription": "과일, 스파이스, 오크",
+    "image": "https://example.com/eldorado_15.jpg"
+},
+{
+    "name": "킨토리 진",
+    "type": "진",
+    "category": "증류주",
+    "subCategory": "진",
+    "origin": "일본",
+    "alcohol": 43,
+    "rating": 4.7,
+    "description": "산뜻한 시트러스 향과 허브가 조화를 이룬 일본산 진.",
+    "price": 65000,
+    "tasteDescription": "시트러스, 허브",
+    "image": "https://example.com/kintory_gin.jpg"
+},
+{
+    "name": "그레이 구스",
+    "type": "보드카",
+    "category": "증류주",
+    "subCategory": "보드카",
+    "origin": "프랑스",
+    "alcohol": 40,
+    "rating": 4.8,
+    "description": "프랑스의 프리미엄 보드카로, 부드럽고 깨끗한 맛이 특징입니다.",
+    "price": 60000,
+    "tasteDescription": "깨끗한 곡물 향",
+    "image": "https://example.com/grey_goose.jpg"
+},
+{
+    "name": "플레멩코 테킬라",
+    "type": "테킬라",
+    "category": "증류주",
+    "subCategory": "테킬라",
+    "origin": "멕시코",
+    "alcohol": 38,
+    "rating": 4.4,
+    "description": "멕시코의 고급 테킬라로, 아가베의 달콤함과 시트러스 향이 조화롭습니다.",
+    "price": 55000,
+    "tasteDescription": "아가베, 시트러스",
+    "image": "https://example.com/flamenco_tequila.jpg"
+},
+{
+    "name": "바이쏘보드카",
+    "type": "보드카",
+    "category": "증류주",
+    "subCategory": "보드카",
+    "origin": "폴란드",
+    "alcohol": 40,
+    "rating": 4.3,
+    "description": "폴란드산 보드카로, 전통 수수로 만들어 부드럽고 깨끗한 맛이 특징입니다.",
+    "price": 35000,
+    "tasteDescription": "부드럽고 깨끗한 곡물 향",
+    "image": "https://example.com/bison_vodka.jpg"
+},
+{
+    "name": "쿠바 리브레 럼",
+    "type": "럼",
+    "category": "증류주",
+    "subCategory": "럼",
+    "origin": "쿠바",
+    "alcohol": 38,
+    "rating": 4.5,
+    "description": "쿠바산 럼으로, 진한 캐러멜과 스파이스가 조화를 이루는 매력적인 맛입니다.",
+    "price": 40000,
+    "tasteDescription": "캐러멜, 스파이스",
+    "image": "https://example.com/cuba_libre_rum.jpg"
+},
+{
+    "name": "칼라스 리큐어",
+    "type": "리큐어",
+    "category": "증류주",
+    "subCategory": "리큐어",
+    "origin": "이탈리아",
+    "alcohol": 20,
+    "rating": 4.2,
+    "description": "허브와 약초의 풍미가 돋보이는 이탈리아산 리큐어.",
+    "price": 28000,
+    "tasteDescription": "허브, 약초",
+    "image": "https://example.com/calas_liqueur.jpg"
+},
+{
+    "name": "블루라군 진",
+    "type": "진",
+    "category": "증류주",
+    "subCategory": "진",
+    "origin": "영국",
+    "alcohol": 47,
+    "rating": 4.5,
+    "description": "상쾌한 시트러스와 진베리의 풍미가 돋보이는 영국산 프리미엄 진.",
+    "price": 48000,
+    "tasteDescription": "시트러스, 진베리",
+    "image": "https://example.com/blue_lagoon_gin.jpg"
+},
+{
+    "name": "페레라보드카",
+    "type": "보드카",
+    "category": "증류주",
+    "subCategory": "보드카",
+    "origin": "러시아",
+    "alcohol": 40,
+    "rating": 4.5,
+    "description": "러시아산 프리미엄 보드카로, 깔끔하고 부드러운 맛이 특징입니다.",
+    "price": 45000,
+    "tasteDescription": "깔끔하고 부드러운 맛",
+    "image": "https://example.com/ferrera_vodka.jpg"
+},
+{
+    "name": "콘다도 데 하이타",
+    "type": "브랜디",
+    "category": "증류주",
+    "subCategory": "브랜디",
+    "origin": "스페인",
+    "alcohol": 38,
+    "rating": 4.6,
+    "description": "스페인의 프리미엄 브랜디로, 깊은 과일 향과 오크가 조화롭게 어우러집니다.",
+    "price": 48000,
+    "tasteDescription": "과일, 오크",
+    "image": "https://example.com/condado_brandy.jpg"
+},
       //혼성주 50개(46개 넣어야함.)
       {
         name: "모히또",

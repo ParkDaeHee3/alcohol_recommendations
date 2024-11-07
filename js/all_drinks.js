@@ -202,6 +202,11 @@ function showPopupMessage(message) {
 // 카테고리 필터링
 function openCategory(category) {
   const drinks = getDrinkData();
-  filteredDrinks = drinks.filter(drink => drink.category === category);
+  if (category === '전체') {
+    filteredDrinks = drinks; // 전체 주류 데이터를 필터링 없이 설정
+  } else {
+    filteredDrinks = drinks.filter(drink => drink.category === category);
+  }
   loadDrinkCards(filteredDrinks, 1, 32);
 }
+
