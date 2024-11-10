@@ -45,10 +45,15 @@ document.addEventListener('DOMContentLoaded', function() {
           const productImage = document.getElementById('product-image');
           productImage.innerHTML = `<img src="${product.image}" alt="${product.name}" style="width: 100%; height: auto;">`;
 
-          // 동일한 카테고리의 추천 제품을 랜덤으로 로드
-          const similarDrinks = shuffleArray(drinks.filter(drink => drink.category === product.category && drink.name !== product.name)).slice(0, 5);
+          // 동일한 서브카테리의 추천 제품을 랜덤으로 로드
+          const similarDrinks = shuffleArray(
+          drinks.filter(drink => 
+          drink.subCategory === product.subCategory && // 서브카테고리 조건만 확인
+          drink.name !== product.name
+          )
+          ).slice(0, 5);
           loadSimilarProducts(similarDrinks);
-
+        
           // 찜 버튼 설정 및 상태 연동
           const wishlistBtn = document.getElementById('wishlist-btn');
           const wishlistIcon = document.getElementById('wishlist-icon');
