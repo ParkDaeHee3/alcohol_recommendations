@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const product = drinks.find(drink => drink.name === productName);
 
       if (product) {
-          // 브레드크럼 업데이트
-          document.getElementById('main-category-link').href = `all_drinks.html?category=${product.category}&subCategory=all`;
+          // 브레드크럼 업데이트 (카테고리 페이지로 이동할 수 있도록 링크 수정)
+          document.getElementById('main-category-link').href = `all_drinks.html?category=${encodeURIComponent(product.category)}`;
           document.getElementById('main-category-link').textContent = product.category;
       
           document.getElementById('product-name-link').textContent = product.name;
@@ -45,29 +45,38 @@ document.addEventListener('DOMContentLoaded', function() {
           const productImage = document.getElementById('product-image');
           productImage.innerHTML = `<img src="${product.image}" alt="${product.name}" style="width: 100%; height: auto;">`;
 
-          // 동일한 subCategory 추천 제품 5개 로드
-          const similarDrinks = drinks.filter(drink => drink.subCategory === product.subCategory && drink.name !== product.name).slice(0, 5);
+          // 동일한 카테고리의 추천 제품을 랜덤으로 로드
+          const similarDrinks = shuffleArray(drinks.filter(drink => drink.category === product.category && drink.name !== product.name)).slice(0, 5);
           loadSimilarProducts(similarDrinks);
 
-          // 찜 버튼 설정
+          // 찜 버튼 설정 및 상태 연동
           const wishlistBtn = document.getElementById('wishlist-btn');
           const wishlistIcon = document.getElementById('wishlist-icon');
-          const isLoggedIn = checkLoginStatus(); // 로그인 여부 확인
+          let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+          if (wishlist.includes(product.name)) {
+              wishlistIcon.src = 'img/icon/heart-icon.png'; // 찜 아이콘 채우기
+          }
+
           wishlistBtn.addEventListener('click', function(event) {
               event.stopPropagation(); // 기본 동작 중지
 
-              if (!isLoggedIn) {
+              if (!checkLoginStatus()) {
                   showPopupMessage('로그인 후 눌러주세요.');
                   return;
               }
 
-              if (wishlistIcon.src.includes('heart-bin-icon')) {
-                  wishlistIcon.src = 'img/icon/heart-icon.png'; // 하트 채우기
-                  showPopupMessage(`${product.name}이(가) 위시리스트에 추가되었습니다.`);
-              } else {
-                  wishlistIcon.src = 'img/icon/heart-bin-icon.png'; // 하트 비우기
+              if (wishlist.includes(product.name)) {
+                  wishlist = wishlist.filter(item => item !== product.name);
+                  wishlistIcon.src = 'img/icon/heart-bin-icon.png'; // 찜 아이콘 비우기
                   showPopupMessage(`${product.name}이(가) 위시리스트에서 삭제되었습니다.`);
+              } else {
+                  wishlist.push(product.name);
+                  wishlistIcon.src = 'img/icon/heart-icon.png'; // 찜 아이콘 채우기
+                  showPopupMessage(`${product.name}이(가) 위시리스트에 추가되었습니다.`);
               }
+
+              localStorage.setItem('wishlist', JSON.stringify(wishlist));
           });
       } else {
           console.error('해당 제품을 찾을 수 없습니다.');
@@ -77,24 +86,15 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// 배열을 무작위로 섞는 함수
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]]; // 요소 위치를 교환
-  }
-  return array;
-}
-
 // 비슷한 상품 추천 카드 표시 함수
 function loadSimilarProducts(similarDrinks) {
-  const similarList = document.createElement('div');
-  similarList.classList.add('similar-products-list');
+  const similarList = document.getElementById('similar-products-container');
+  similarList.style.display = 'flex'; // 가로 정렬 설정
+  similarList.style.overflowX = 'auto'; // 가로 스크롤 가능하도록 설정
+  similarList.style.gap = '20px'; // 카드 간격 설정
+  similarList.innerHTML = ''; // 기존 콘텐츠 초기화
 
-  // 배열을 무작위로 섞고, 처음 5개 선택
-  const randomDrinks = shuffleArray(similarDrinks).slice(0, 5);
-
-  randomDrinks.forEach(drink => {
+  similarDrinks.forEach(drink => {
     const card = document.createElement('div');
     card.classList.add('similar-product-card');
     card.innerHTML = `
@@ -106,10 +106,16 @@ function loadSimilarProducts(similarDrinks) {
     });
     similarList.appendChild(card);
   });
-
-  document.querySelector('.product-container').after(similarList); // 상품 상세 정보 아래에 추가
 }
 
+// 배열을 무작위로 섞는 함수
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; // 요소 위치를 교환
+  }
+  return array;
+}
 
 // 팝업 메시지 표시 함수 (화면 상단에 팝업 표시)
 function showPopupMessage(message) {

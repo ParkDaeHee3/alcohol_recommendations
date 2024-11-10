@@ -64,7 +64,6 @@ body {
     max-height: 500px; /* 세로 크기도 500px로 고정 */
 }
 
-
 /* 우측 상품 정보 영역 */
 .product-info {
     flex: 1;
@@ -133,17 +132,19 @@ body {
     display: none; /* 기본적으로 숨김 */
     z-index: 1000; /* 팝업이 다른 요소 위에 나타나도록 설정 */
 }
-  
+
 /* 비슷한 상품 추천 카드 스타일 */
 .similar-products-list {
     display: flex;
-    justify-content: center;
+    flex-direction: row; /* 가로로 나열되도록 설정 */
+    flex-wrap: nowrap;
+    overflow-x: auto; /* 넘칠 경우 가로 스크롤 가능 */
     gap: 20px;
     padding: 20px 0;
 }
 
 .similar-product-card {
-    width: 180px; /* 고정된 카드 너비 */
+    min-width: 180px; /* 카드 최소 너비 설정 */
     height: 250px; /* 고정된 카드 높이 */
     text-align: center;
     cursor: pointer;
