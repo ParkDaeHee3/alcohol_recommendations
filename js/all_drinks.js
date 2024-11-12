@@ -4,6 +4,12 @@ let currentPage = 1;
 const cardsPerPage = 32; // 한 페이지에 32개의 카드 표시
 
 document.addEventListener('DOMContentLoaded', function() {
+  // 항상 기본 상태로 "전체" 카테고리와 기본 정렬로 설정
+  const initialCategory = '전체';
+  const initialSortOrder = null; // 정렬 순서는 사용자가 선택하기 전까지 기본으로 설정
+  
+  wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
   // Header 불러오기
   fetch('header.html')
     .then(response => response.text())
@@ -23,27 +29,47 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     .catch(error => console.log('Header 불러오기 에러:', error));
 
-  // URL에서 카테고리 파라미터 확인
-  const urlParams = new URLSearchParams(window.location.search);
-  const category = urlParams.get('category');
-
   const drinks = getDrinkData();
 
-  if (category) {
-      console.log("URL에서 받은 카테고리:", category);
-      filteredDrinks = drinks.filter(drink => drink.category === category);
-  } else {
-      filteredDrinks = drinks;
-  }
-  loadDrinkCards(filteredDrinks, currentPage, cardsPerPage);
-  createPagination(filteredDrinks.length, cardsPerPage);
+  // URL에서 카테고리 파라미터 확인
+  const urlParams = new URLSearchParams(window.location.search);
+  const category = urlParams.get('category') || initialCategory;
 
-  // 정렬 기준 변경 시
+  // 브라우저 히스토리의 상태를 확인하고, 복원할 상태가 있으면 해당 상태로 설정
+  const state = history.state;
+  if (state) {
+    currentPage = state.page || 1;
+    filteredDrinks = state.filteredDrinks || drinks;
+    loadDrinkCards(filteredDrinks, currentPage, cardsPerPage);
+    createPagination(filteredDrinks.length, cardsPerPage);
+
+    if (state.category) {
+      document.querySelectorAll('.tab-item').forEach(tab => {
+        tab.classList.toggle('active', tab.dataset.category === state.category);
+      });
+    }
+    
+    if (state.sortOrder) {
+      document.getElementById('sort-order').value = state.sortOrder;
+      filteredDrinks = sortDrinks(filteredDrinks, state.sortOrder);
+    }
+  } else {
+    // 처음 로드할 때는 "전체" 카테고리를 보여주기 위해 기본 상태로 설정
+    filteredDrinks = category === '전체' ? drinks : drinks.filter(drink => drink.category === category);
+    loadDrinkCards(filteredDrinks, currentPage, cardsPerPage);
+    createPagination(filteredDrinks.length, cardsPerPage);
+  }
+
+  // 정렬 기준 변경 시 상태를 저장하고 카드 목록을 갱신
   document.getElementById('sort-order').addEventListener('change', function() {
     const sortOrder = this.value;
+    localStorage.setItem('currentSortOrder', sortOrder);
     const sortedDrinks = sortDrinks(filteredDrinks, sortOrder);
     loadDrinkCards(sortedDrinks, currentPage, cardsPerPage);
     createPagination(sortedDrinks.length, cardsPerPage);
+
+    // 현재 상태를 브라우저 히스토리에 저장
+    saveState(currentPage, category, sortOrder, filteredDrinks);
   });
 
   // 카드 리스트 클릭 이벤트 (DOM 위임 방식)
@@ -62,6 +88,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const card = target.closest('.card');
     if (card && !target.classList.contains('wishlist-icon')) {
       const drinkName = card.querySelector('h3').textContent;
+
+      // 상세 페이지로 이동하기 전에 현재 상태를 히스토리에 저장
+      saveState(currentPage, category, document.getElementById('sort-order').value, filteredDrinks);
       window.location.href = `drink_detail.html?product=${encodeURIComponent(drinkName)}`;
     }
   });
@@ -71,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
   tabItems.forEach(item => {
     item.addEventListener('click', function() {
       const selectedCategory = this.dataset.category || this.textContent.trim(); // dataset 속성 우선 사용
+      localStorage.setItem('currentCategory', selectedCategory); // 현재 카테고리 저장
       currentPage = 1; // 카테고리 변경 시 페이지를 첫 페이지로 초기화
 
       // 모든 탭의 'active' 클래스 제거 후, 현재 탭에 추가
@@ -81,6 +111,9 @@ document.addEventListener('DOMContentLoaded', function() {
       openCategory(selectedCategory);
       loadDrinkCards(filteredDrinks, currentPage, cardsPerPage);
       createPagination(filteredDrinks.length, cardsPerPage);
+
+      // 현재 상태를 히스토리에 저장
+      saveState(currentPage, selectedCategory, document.getElementById('sort-order').value, filteredDrinks);
     });
   });
 
@@ -88,7 +121,35 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('resize', function() {
     loadDrinkCards(filteredDrinks, currentPage, cardsPerPage);
   });
+  
+  // 뒤로 가기 시 이전 히스토리 상태 복원
+  window.addEventListener('popstate', function(event) {
+    if (event.state) {
+      currentPage = event.state.page || 1;
+      filteredDrinks = event.state.filteredDrinks || drinks;
+      loadDrinkCards(filteredDrinks, currentPage, cardsPerPage);
+      createPagination(filteredDrinks.length, cardsPerPage);
+      
+      // 저장된 카테고리가 있을 경우 해당 카테고리를 활성화
+      if (event.state.category) {
+        document.querySelectorAll('.tab-item').forEach(tab => {
+          tab.classList.toggle('active', tab.dataset.category === event.state.category);
+        });
+      }
+      
+      // 저장된 정렬 순서가 있을 경우 이를 설정
+      if (event.state.sortOrder) {
+        document.getElementById('sort-order').value = event.state.sortOrder;
+        filteredDrinks = sortDrinks(filteredDrinks, event.state.sortOrder);
+      }
+    }
+  });
 });
+
+// 현재 상태를 히스토리에 저장하는 함수
+function saveState(page, category, sortOrder, drinks) {
+  history.pushState({ page, category, sortOrder, filteredDrinks: drinks }, '', '');
+}
 
 // 정렬 함수
 function sortDrinks(drinks, order) {
@@ -185,7 +246,7 @@ function createPagination(totalItems, itemsPerPage) {
   paginationContainer.innerHTML += `<li><a href="#" class="${currentPage === totalPages ? 'disabled' : ''}" data-page="${totalPages}">&raquo;&raquo;</a></li>`;
 }
 
-// 페이지네이션 이벤트 핸들러
+// 페이지네이션 클릭 이벤트 처리
 function handlePaginationClick(e) {
   e.preventDefault();
   const target = e.target;
@@ -196,33 +257,38 @@ function handlePaginationClick(e) {
       currentPage = selectedPage;
       loadDrinkCards(filteredDrinks, currentPage, cardsPerPage);
       createPagination(filteredDrinks.length, cardsPerPage);
+
+      // 현재 상태를 히스토리에 저장
+      saveState(currentPage, localStorage.getItem('currentCategory'), document.getElementById('sort-order').value, filteredDrinks);
     }
   }
 }
 
-// 페이지네이션 컨테이너에 이벤트 리스너 추가
+// 페이지네이션 이벤트 리스너 추가
 document.querySelector('.pagination').addEventListener('click', handlePaginationClick);
 
 // 찜 리스트에 추가/제거하는 함수
 function toggleWishlist(drinkName) {
   if (!checkLoginStatus()) {
-    showPopupMessage("로그인 후 이용해주세요.");
-    return;
+      showPopupMessage("로그인 후 이용해주세요.");
+      return;
   }
 
+  let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
   if (wishlist.includes(drinkName)) {
-    wishlist = wishlist.filter(item => item !== drinkName);
-    showPopupMessage(`${drinkName}가(이) 위시리스트에서 제거되었습니다.`);
+      wishlist = wishlist.filter(item => item !== drinkName);
+      showPopupMessage(`${drinkName}가(이) 위시리스트에서 제거되었습니다.`);
   } else {
-    wishlist.push(drinkName);
-    showPopupMessage(`${drinkName}가(이) 위시리스트에 추가되었습니다.`);
+      wishlist.push(drinkName);
+      showPopupMessage(`${drinkName}가(이) 위시리스트에 추가되었습니다.`);
   }
+  localStorage.setItem('wishlist', JSON.stringify(wishlist)); // 로컬스토리지 업데이트
 
   // 특정 카드의 찜 아이콘만 업데이트
   const card = Array.from(document.querySelectorAll('.card')).find(card => card.querySelector('h3').textContent === drinkName);
   if (card) {
-    const wishlistIcon = card.querySelector('.wishlist-icon');
-    wishlistIcon.src = wishlist.includes(drinkName) ? 'img/icon/heart-icon.png' : 'img/icon/heart-bin-icon.png';
+      const wishlistIcon = card.querySelector('.wishlist-icon');
+      wishlistIcon.src = wishlist.includes(drinkName) ? 'img/icon/heart-icon.png' : 'img/icon/heart-bin-icon.png';
   }
 }
 
@@ -248,11 +314,7 @@ function showPopupMessage(message) {
 // 카테고리 필터링 함수 수정
 function openCategory(category) {
   const drinks = getDrinkData();
-  console.log("선택된 카테고리:", category);
-  if (category === '전체') {
-    filteredDrinks = drinks;
-  } else {
-    filteredDrinks = drinks.filter(drink => drink.category === category);
-  }
-  console.log("필터링된 데이터:", filteredDrinks);
+  filteredDrinks = category === '전체' ? drinks : drinks.filter(drink => drink.category === category);
+  loadDrinkCards(filteredDrinks, currentPage, cardsPerPage);
+  createPagination(filteredDrinks.length, cardsPerPage);
 }
