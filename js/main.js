@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             true, 
             'img/banner/main-banner.png', 
             'Tastify에 오신 걸 환영합니다.', 
-            '해당 사이트의 기능: 음식에 맞는 술 추천 및 술 검색 인기 술 정보 제공', 
+            '해당 사이트의 기능: 음식에 맞는 술 추천 및 술 리스트 & 인기 술 정보 제공', 
             '*추가예정* 술 이벤트 및 행사 관련 달력 기능'
           );
         }, 0);
