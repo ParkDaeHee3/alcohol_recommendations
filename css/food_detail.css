@@ -198,4 +198,45 @@ body {
         text-align: left; /* 상품 정보는 왼쪽 정렬 */
         margin-top: 20px; /* 이미지와 정보 사이에 간격 추가 */
     }
+
+    /* 추천 섹션을 목록형으로 변환 */
+.recommendation-container {
+    flex-direction: column;
+  }
+
+  .polaroid-card {
+    display: flex; /* 카드 내용을 가로 배치 */
+    flex-direction: row; /* 이미지와 텍스트를 가로로 배치 */
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .polaroid-card img {
+    width: 100px; /* 이미지 크기 조절 */
+    height: 100px;
+    margin-right: 10px; /* 이미지와 텍스트 사이 간격 */
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .polaroid-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .polaroid-info h4 {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .polaroid-info p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 10px 0 0; /* 간격 조정: 이름과 정보 사이에 10px 여백 추가 */
+  }
 }
+
