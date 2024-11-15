@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // 회원가입 폼 처리
+    // 회원가입 페이지에서 실행할 코드
     const registerForm = document.getElementById('register-form');
     if (registerForm) {
         registerForm.addEventListener('submit', function(event) {
@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const birthdate = document.getElementById('birthdate').value;
 
             if (password.length >= 8 && birthdate.match(/^\d{6}$/)) {
-                // 사용자 정보 저장 (세션 스토리지에 저장)
-                sessionStorage.setItem('name', name);
-                sessionStorage.setItem('nickname', nickname);
-                sessionStorage.setItem('email', email);
-                sessionStorage.setItem('password', password);
-                sessionStorage.setItem('isLoggedIn', 'true');  // 로그인 상태 저장
+                // 사용자 정보 저장 (로컬 스토리지에 저장)
+                localStorage.setItem('name', name);
+                localStorage.setItem('nickname', nickname);
+                localStorage.setItem('email', email);
+                localStorage.setItem('password', password);  // 비밀번호도 저장
+                localStorage.setItem('isLoggedIn', 'false');  // 로그인 상태를 false로 초기 설정
 
                 alert("회원가입이 완료되었습니다! 로그인 페이지로 이동합니다.");
                 window.location.href = "login.html";
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 로그인 폼 처리
+    // 로그인 페이지에서 실행할 코드
     const loginForm = document.getElementById('login-form');
     if (loginForm) {
         loginForm.addEventListener('submit', function(event) {
@@ -37,11 +37,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const password = document.getElementById('login-password').value;
 
             // 저장된 사용자 정보와 비교
-            const storedEmail = sessionStorage.getItem('email');
-            const storedPassword = sessionStorage.getItem('password');
+            const storedEmail = localStorage.getItem('email');
+            const storedPassword = localStorage.getItem('password');
 
             if (email === storedEmail && password === storedPassword) {
-                sessionStorage.setItem('isLoggedIn', 'true'); // 로그인 상태 저장
+                localStorage.setItem('isLoggedIn', 'true'); // 로그인 상태 저장
                 alert("로그인 성공! 메인 페이지로 이동합니다.");
                 window.location.href = "main.html"; // 메인 페이지로 이동
             } else {
@@ -50,17 +50,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 로그인 상태 유지 기능 추가
-    function checkLoginStatus() {
-        const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-        if (isLoggedIn === 'true') {
-            document.getElementById('user-section').style.display = 'block';
-            document.getElementById('guest-section').style.display = 'none';
-            document.getElementById('user-name').textContent = sessionStorage.getItem('name');
-            document.getElementById('user-email').textContent = sessionStorage.getItem('email');
+    // 로그인 상태 유지 및 정보 표시 기능
+    function updateLoginStatus() {
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+        const userSection = document.getElementById('user-section');
+        const guestSection = document.getElementById('guest-section');
+        
+        if (userSection && guestSection) {  // 요소가 존재할 때만 실행
+            if (isLoggedIn) {
+                userSection.style.display = 'block';
+                guestSection.style.display = 'none';
+                document.getElementById('user-name').textContent = localStorage.getItem('name');
+                document.getElementById('user-email').textContent = localStorage.getItem('email');
+            } else {
+                userSection.style.display = 'none';
+                guestSection.style.display = 'block';
+            }
         } else {
-            document.getElementById('guest-section').style.display = 'block';
-            document.getElementById('user-section').style.display = 'none';
+            console.error("필요한 요소가 존재하지 않습니다. 'guest-section' 또는 'user-section'을 확인하세요.");
         }
     }
 
@@ -68,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const userIcon = document.querySelector('.user-icon a');
     if (userIcon) {
         userIcon.addEventListener('click', function(event) {
-            const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
             if (isLoggedIn === 'true') {
                 event.preventDefault();  // 기본 링크 방지
                 window.location.href = 'mypage.html';  // 마이페이지로 이동
@@ -78,43 +85,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 사이드바에서 로그인 정보 표시
-    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-    if (isLoggedIn === 'true') {
-        const userSection = document.getElementById('user-section');
-        const guestSection = document.getElementById('guest-section');
-        const userName = document.getElementById('user-name');
-        const userEmail = document.getElementById('user-email');
-
-        userSection.style.display = 'block';
-        guestSection.style.display = 'none';
-
-        userName.textContent = sessionStorage.getItem('name');
-        userEmail.textContent = sessionStorage.getItem('email');
-    } else {
-        document.getElementById('guest-section').style.display = 'block';
-    }
-
-    // 시뮬레이터 로그인 버튼 클릭 시
-    window.simulateLogin = function() {
-        sessionStorage.setItem('name', 'Simulated User');
-        sessionStorage.setItem('email', 'simulated@example.com');
-        sessionStorage.setItem('nickname', 'SimUser');
-        sessionStorage.setItem('isLoggedIn', 'true');
-        alert('시뮬레이터 로그인 완료!');
-        window.location.reload();  // 페이지 새로고침
-    };
-
     // 로그아웃 기능 추가
     window.logout = function() {
-        sessionStorage.removeItem('isLoggedIn'); // 로그인 상태 삭제
-        sessionStorage.removeItem('name');        // 유저 이름 삭제
-        sessionStorage.removeItem('email');       // 유저 이메일 삭제
-        sessionStorage.removeItem('nickname');    // 유저 닉네임 삭제
+        localStorage.setItem('isLoggedIn', 'false');  // 로그인 상태만 초기화
         alert('로그아웃 되었습니다!');
         window.location.href = 'main.html'; // 메인 페이지로 이동
     };
 
     // 페이지 로드 시 로그인 상태 확인
-    checkLoginStatus();
+    updateLoginStatus();
 });

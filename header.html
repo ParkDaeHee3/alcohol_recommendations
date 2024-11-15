@@ -61,35 +61,30 @@
     
 <!-- 유저 프로필 영역 -->
 <div id="user-section" style="display:none;">
-    <div class="user-info">
-        <img src="img/icon/user-icon.png" alt="User Icon" class="profile-icon" />
-        <div class="user-details">
-            <h4 id="user-name"></h4>
-            <p id="user-email"></p>
-        </div>
-        <button class="menu-dots-icon" onclick="toggleUserMenu()">
-            <img src="img/icon/menu-dots-icon.png" alt="Menu Icon" />
-        </button>
+  <div class="user-info">
+    <img src="img/icon/user-icon.png" alt="User Icon" class="profile-icon" />
+    <div class="user-details">
+      <h4 id="user-name"></h4>
+      <p id="user-email"></p>
     </div>
-    <!-- 유저 메뉴 (Dropdown) -->
-    <ul id="user-menu" class="user-menu" style="display: none;">
-        <li onclick="window.location.href='mypage.html'">마이페이지</li>
-        <li onclick="window.location.href='wishlist.html'">위시리스트</li>
-        <li onclick="window.location.href='mypage.html#search-history'">검색기록</li>
-        <li onclick="logout()">로그아웃</li>
-    </ul>
+    <button class="menu-dots-icon" onclick="toggleUserMenu()">
+      <img src="img/icon/menu-dots-icon.png" alt="Menu Icon" />
+    </button>
+  </div>
+  <!-- 유저 메뉴 (Dropdown) -->
+  <ul id="user-menu" class="user-menu" style="display: none;">
+    <li onclick="window.location.href='mypage.html'">마이페이지</li>
+    <li onclick="window.location.href='wishlist.html'">위시리스트</li>
+    <li onclick="window.location.href='mypage.html#search-history'">검색기록</li>
+    <li onclick="logout()">로그아웃</li>
+  </ul>
 </div>
 
 <!-- 로그인 필요 상태 -->
 <div id="guest-section">
-    <h3>로그인이 필요합니다.</h3>
-    <button class="login-btn" onclick="window.location.href='login.html'">로그인</button>
+  <h3>로그인이 필요합니다.</h3>
+  <button class="login-btn" onclick="window.location.href='login.html'">로그인</button>
 </div>
-
-
-    <!-- 로그인 시뮬레이터 -->
-<button onclick="simulateLogin()">시뮬레이터 로그인</button>
-
 
     <ul class="menu-list">
       <li onclick="window.location.href='all_food.html'">음식 추천</li>
