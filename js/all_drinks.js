@@ -365,4 +365,3 @@ function openCategory(category) {
   loadDrinkCards(filteredDrinks, currentPage, cardsPerPage);
   createPagination(filteredDrinks.length, cardsPerPage);
 }
-
