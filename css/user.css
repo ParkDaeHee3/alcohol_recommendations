@@ -137,18 +137,6 @@ p.account {
   text-align: center;
 }
 
-/* 텍스트를 한국어로 번역 */
-.login-form h2::before {
-  content: "로그인"; /* 'Log In'을 '로그인'으로 번역 */
-}
-
-p.account::before {
-  content: "계정이 없으신가요? "; /* 'Don't Have An Account?' 번역 */
-}
-
-p.account a::before {
-  content: "회원가입"; /* 'Register'를 '회원가입'으로 번역 */
-}
 
 @media (max-width: 736px) {
   .login-form .main {
