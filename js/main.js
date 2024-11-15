@@ -46,7 +46,7 @@ function recommendDrinks() {
   // 카테고리별 추천 술 필터링
   const brewing = drinks.filter(drink => drink.category === '양조주');
   const distilled = drinks.filter(drink => drink.category === '증류주');
-  const mixed = drinks.filter(drink => drink.category === '혼성주');
+  const mixed = drinks.filter(drink => drink.category === '혼합주');
   const traditional = drinks.filter(drink => drink.category === '전통주');
 
   // 랜덤으로 각 카테고리에서 하나씩 추천
