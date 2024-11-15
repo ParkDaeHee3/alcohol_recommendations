@@ -16,8 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
     .then(data => {
       document.getElementById('header-container').innerHTML = data;
 
-      // 배너 설정이 header.html이 로드된 후에 실행되도록 보장
+      // 헤더가 로드된 후 로그인 상태 확인 및 배너 설정
       setTimeout(() => {
+        checkLoginStatus();
+        setupSidebarLogin(); // 사이드바 로그인 상태 설정
         setBanner(
           true, 
           'img/banner/all_drinks-banner.gif', 
@@ -145,6 +147,51 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// 사이드바에서 로그인 상태 설정 함수
+function setupSidebarLogin() {
+  const guestSection = document.getElementById('guest-section');
+  const userSection = document.getElementById('user-section');
+
+  if (guestSection && userSection) {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+    if (isLoggedIn) {
+      guestSection.style.display = 'none';
+      userSection.style.display = 'flex';
+      document.getElementById('user-name').textContent = localStorage.getItem('name');
+      document.getElementById('user-email').textContent = localStorage.getItem('email');
+    } else {
+      guestSection.style.display = 'flex';
+      userSection.style.display = 'none';
+    }
+  } else {
+    console.error("사이드바의 'guest-section' 또는 'user-section' 요소가 존재하지 않습니다.");
+  }
+}
+
+// 로그인 상태 확인 함수
+function checkLoginStatus() {
+  const guestSection = document.getElementById('guest-section');
+  const userSection = document.getElementById('user-section');
+
+  if (guestSection && userSection) {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+
+    if (isLoggedIn) {
+      guestSection.style.display = 'none';
+      userSection.style.display = 'flex';
+
+      document.getElementById('user-name').textContent = localStorage.getItem('name');
+      document.getElementById('user-email').textContent = localStorage.getItem('email');
+    } else {
+      guestSection.style.display = 'flex';
+      userSection.style.display = 'none';
+    }
+  } else {
+    console.error("필요한 요소가 존재하지 않습니다. 'guest-section' 또는 'user-section'을 확인하세요.");
+  }
+}
 
 // 현재 상태를 히스토리에 저장하는 함수
 function saveState(page, category, sortOrder, drinks) {
@@ -318,3 +365,4 @@ function openCategory(category) {
   loadDrinkCards(filteredDrinks, currentPage, cardsPerPage);
   createPagination(filteredDrinks.length, cardsPerPage);
 }
+
