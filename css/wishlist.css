@@ -1,60 +1,113 @@
-/* 페이지의 기본 스타일 */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-  
-  /* 페이지 타이틀 스타일 */
-  h1 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-  
-  /* 위시리스트 항목들이 표시될 컨테이너 */
-  #wishlist-container {
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* 위시리스트 항목 목록 */
-  #wishlist-items {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  /* 위시리스트 항목 스타일 */
-  #wishlist-items li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  /* 비어있을 때의 메시지 */
-  #empty-message {
-    text-align: center;
-    color: #777;
-    display: none; /* 기본적으로 숨김 */
-  }
-  
-  /* 위시리스트 초기화 버튼 스타일 */
-  #clear-wishlist {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #ff4d4d;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  /* 초기화 버튼 hover 시 색상 변경 */
-  #clear-wishlist:hover {
-    background-color: #ff3333;
-  }
-  
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 마이페이지와 위시리스트를 나란히 배치하기 위한 flex 레이아웃 */
+.mypage-container {
+  display: flex;
+  justify-content: center; /* 왼쪽으로 배치 */
+  padding: 0 50px; /* 내부 패딩 */
+}
+
+/* 마이페이지 메뉴 스타일 */
+aside.menu {
+  width: 250px;
+  background-color: #fff;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+}
+
+/* 각 메뉴의 스타일 및 옅은 회색 선으로 구분 */
+.menu-item {
+  margin-bottom: 20px;
+  padding-bottom: 10px; /* 메뉴 간 여백 추가 */
+}
+
+.menu-item a {
+  display: block; /* 블록 요소로 변경하여 가로로 메뉴를 표시 */
+  font-size: 18px; /* 메뉴 글씨 크기 */
+  text-decoration: none; /* 밑줄 제거 */
+  color: #000; /* 기본 글자색 */
+}
+
+.content {
+  flex-grow: 1;
+  max-width: 800px;
+  padding: 20px;
+}
+
+/* 위시리스트 섹션 스타일 */
+.wishlist-section {
+  flex: 1; /* 위시리스트 섹션이 나머지 공간을 차지 */
+  max-width: 800px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 0; /* 메뉴와의 공백 제거 */
+}
+
+/* 페이지 타이틀 스타일 */
+h1 {
+  text-align: left;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* 위시리스트 항목들이 표시될 컨테이너 */
+#wishlist-container {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 위시리스트 항목 목록 */
+#wishlist-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* 각 위시리스트 항목 스타일 */
+#wishlist-items li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 비어있을 때의 메시지 */
+#empty-message {
+  text-align: center;
+  color: #777;
+  display: none;
+}
+
+/* 위시리스트 초기화 버튼 */
+#clear-wishlist {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#clear-wishlist:hover {
+  background-color: #ff3333;
+}
+
+/* 개별 삭제 버튼 */
+#wishlist-items button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+#wishlist-items button:hover {
+  background-color: #ff3333;
+}
