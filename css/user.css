@@ -137,7 +137,6 @@ p.account {
   text-align: center;
 }
 
-
 @media (max-width: 736px) {
   .login-form .main {
     flex-direction: column;

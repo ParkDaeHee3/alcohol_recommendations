@@ -5,36 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>로그인</title>
   <link rel="stylesheet" href="css/user.css">
-  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/header2.css">
 </head>
 <body>
-  <!-- 상단 바 -->
-  <header>
-    <div class="top-bar">
-      <!-- 메뉴 아이콘 (사이드바 연결) -->
-      <div class="menu-icon">
-        <img src="img/icon/menu-icon.png" alt="메뉴 아이콘" onclick="toggleSidebar()">
-      </div>
 
-      <!-- 로고 (메인 페이지로 이동) -->
-      <div class="logo">
-        <a href="main.html"><img src="img/logo.png" alt="로고"></a>
-      </div>
-
-      <!-- 검색 아이콘 -->
-      <div class="search-icon">
-        <img src="img/icon/search-icon.png" alt="검색 아이콘" onclick="openSearch()">
-      </div>
-
-      <!-- 유저 아이콘 (로그인 또는 마이페이지로 이동) -->
-      <div class="user-icon">
-        <a href="login.html"><img src="img/icon/user-icon.png" alt="유저 아이콘"></a>
-      </div>
-    </div>
-
-    <!-- 구분선 -->
-    <hr class="header-separator">
-  </header>
+  <!-- Header 영역 -->
+  <div id="header-container"></div>
 
   <div class="login-form">
     <h1>로그인</h1>
@@ -57,5 +33,6 @@
   </div>
 
   <script src="js/user.js"></script>
+  <script src="js/header.js"></script>
 </body>
 </html>
