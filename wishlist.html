@@ -8,21 +8,55 @@
   <link rel="stylesheet" href="css/header2.css"> <!-- header 스타일 -->
 </head>
 <body>
-        <!-- Header -->
-        <div id="header-container"></div>
-    </header>
-    <script src="js/header.js"></script>
-  <!-- 위시리스트 페이지 타이틀 -->
-  <h1>위시리스트</h1>
-  
-  <!-- 위시리스트 항목을 표시할 영역 -->
-  <div id="wishlist-container">
-    <p id="empty-message">위시리스트가 비어있습니다.</p>
-    <ul id="wishlist-items"></ul>
-  </div>
+  <!-- Header -->
+  <div id="header-container"></div>
+  <script src="js/header.js"></script>
 
-  <!-- 위시리스트 초기화 버튼 -->
-  <button id="clear-wishlist">위시리스트 초기화</button>
+  <!-- 마이페이지 영역 -->
+  <div class="mypage-container">
+    <aside class="menu">
+      <h2>마이페이지</h2>
+      <hr> <!-- 메뉴와 검색 기록 사이의 구분선 -->
+      <h3>검색기록</h3>
+      <ul id="searchHistoryList">
+        <!-- 검색 기록이 여기에 추가됩니다 -->
+      </ul>
+      <hr> <!-- 메뉴와 위시리스트 사이의 구분선 -->
+      <div class="menu-item">
+        <a href="wishlist.html">위시리스트</a>
+      </div>
+      <hr> <!-- 위시리스트와 고객센터 사이의 구분선 -->
+      <div class="menu-item">
+        고객센터
+        <ul>
+          <li><a href="notice.html">1:1 문의&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+        </ul>
+      </div>
+      <hr> <!-- 고객센터와 회원정보 사이의 구분선 -->
+      <div class="menu-item">
+        회원정보
+        <ul>
+          <li><a href="mypage.html" class="active">회원정보 변경</a></li>
+          <li><a href="delete-account.html">회원 탈퇴</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- 위시리스트 영역 -->
+    <div class="wishlist-section">
+      <!-- 위시리스트 페이지 타이틀 -->
+      <h1>위시리스트</h1>
+  
+      <!-- 위시리스트 항목을 표시할 영역 -->
+      <div id="wishlist-container">
+        <p id="empty-message">위시리스트가 비어있습니다.</p>
+        <ul id="wishlist-items"></ul>
+      </div>
+
+      <!-- 위시리스트 초기화 버튼 -->
+      <button id="clear-wishlist">위시리스트 초기화</button>
+    </div>
+  </div>
 
   <script src="js/wishlist.js"></script>
   <script src="js/product-list.js"></script>

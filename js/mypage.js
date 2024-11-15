@@ -105,6 +105,26 @@ function loadSearchHistory() {
         });
     }
 }
+// 메뉴 항목을 클릭할 때 동적으로 'active' 클래스를 추가하고 기존 활성화 항목에서 제거하는 함수
+const menuLinks = document.querySelectorAll('.menu-link');
+
+// 모든 메뉴 항목에 클릭 이벤트를 추가
+menuLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+        // 기본 동작 방지 (페이지 새로고침 방지)
+        event.preventDefault();
+
+        // 모든 메뉴 링크에서 'active' 클래스 제거하여 기존 활성화 항목 초기화
+        menuLinks.forEach(menuLink => menuLink.classList.remove('active'));
+
+        // 클릭한 링크에만 'active' 클래스 추가하여 파란색으로 표시
+        this.classList.add('active');
+
+        // 링크에 지정된 페이지로 이동 (주석 해제 시 실제로 페이지 이동)
+        // window.location.href = this.getAttribute('href');
+    });
+});
+
 
 // 페이지가 로드될 때 검색 기록을 불러옵니다.
 window.addEventListener('load', loadSearchHistory);
