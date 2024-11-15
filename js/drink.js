@@ -1,6 +1,7 @@
 function getDrinkData() {
     return [
-      //양조주 50개
+      //양조주 100개 (맥주50개, 와인50개)
+      //양조주 맥주 - 50개
       {
         name: "버드와이저",
         type: "라거",
@@ -2371,7 +2372,7 @@ function getDrinkData() {
   description: "고급 수수로 만든 부드러운 보드카로, 깨끗한 맛과 은은한 곡물 향이 특징입니다.",
   price: 45000,
   tasteDescription: "깨끗한 곡물 향",
-  image: "https://lh4.googleusercontent.com/proxy/dlTqNV07eQPxa3zdXn9kGq2q_XarBkqjEx7Jv2l3I4rtKPhlDNxUwvY40aaR4eGt2dAzptrOTWpJDs7I1PY_NX13oqK5ZbQk5SpAur3J2R4T0AFuQFQUmj8gGzQ1Wg"
+  image: "https://www.gloriawines.com/cdn/shop/products/BELVEDERE_29fb2dcd-a2c2-4d0c-98ee-5e71c1725da5_400x.jpg?v=1663778346"
 },
 {
   name: "스미노프 레드 라벨",
@@ -2683,7 +2684,7 @@ function getDrinkData() {
   "description": "프랑스산 보드카로, 부드럽고 세련된 맛이 특징입니다.",
   "price": 45000,
   "tasteDescription": "곡물, 깔끔한 피니시",
-  "image": "https://06vodka.com/cdn/shop/files/06Vodka-Bottle-Packshot-1_transparent_580x630.png?v=1727361350"
+  "image": "https://delhidutyfree.co.in/media/catalog/product/cache/5ff66bb5a4adad7b645cd68f0e635d8a/0/6/06_vodka.jpg"
 },
 {
   "name": "벨루가 노블 보드카",
@@ -3283,7 +3284,7 @@ function getDrinkData() {
   "description": "프랑스산 브랜디로, 부드럽고 은은한 과일 향과 오크 향이 특징입니다.",
   "price": 35000,
   "tasteDescription": "부드러운 과일 향, 오크",
-  "image": "https://images-svetnapojov-cdn.rshop.sk/twitter/products/227b2f6af6f8703cef0da61fa594612b.png"
+  "image": "https://www.topdrinks.nl/media/catalog/product/L/_/L_62_368_00_2_6e39.png?optimize=medium&fit=bounds&height=512&width=460&canvas=460:512"
 },
 {
   "name": "드래곤 XO",
@@ -3650,7 +3651,7 @@ function getDrinkData() {
   "tasteDescription": "청량하고 상쾌한 맛",
   "image": "https://cdn.veluga.kr/drinks/0/main/0125e07e14cf4459a179abbf6ef7166a_%EB%AC%B4%ED%95%99_%ED%99%94%EC%9D%B4%ED%8A%B8%EC%86%8C%EC%A3%BC.png"
 },
-//혼합주(칵테일50개, 하이볼50개)
+//혼합주 66개(칵테일 36개, 하이볼 30개 )
 //칵테일 36개
 {
   "name": "모히토",
@@ -4392,7 +4393,7 @@ function getDrinkData() {
   "description": "일본 코슈 와인을 활용한 독특하고 부드러운 맛이 특징인 하이볼입니다.",
   "price": 4500,
   "tasteDescription": "코슈 와인의 과일향과 청량감",
-  "image": "https://example.com/koshu_highball.jpg"
+  "image": "https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F5796%2F2023%2F02%2F24%2F0000027101_001_20230224201403116.jpeg&type=sc960_832"
 },
 {
   "name": "재패니즈위스키 하이볼",
@@ -4405,7 +4406,7 @@ function getDrinkData() {
   "description": "고급 일본 위스키와 탄산수가 조화를 이루며 부드럽고 세련된 맛을 자랑하는 하이볼입니다.",
   "price": 5000,
   "tasteDescription": "섬세한 일본 위스키와 청량한 탄산",
-  "image": "https://example.com/japanesewhisky_highball.jpg"
+  "image": "https://img.gqkorea.co.kr/gq/2024/01/style_65b0c4780e03b.jpg"
 },
 {
   "name": "로얄 오크 프리미엄 하이볼",
@@ -4418,7 +4419,7 @@ function getDrinkData() {
   "description": "로얄 오크 위스키를 베이스로 한 프리미엄 하이볼로, 깊은 풍미와 상쾌한 맛이 돋보입니다.",
   "price": 6000,
   "tasteDescription": "깊고 풍부한 위스키의 맛과 청량감",
-  "image": "https://example.com/royaloak_highball.jpg"
+  "image": "https://asset.m-gs.kr/prod/1032685628/1/550"
 },
 {
   "name": "고베 쿄류치 하이볼",
@@ -4431,7 +4432,7 @@ function getDrinkData() {
   "description": "고베 지역의 전통 위스키를 활용해 부드럽고 깔끔한 맛을 강조한 하이볼입니다.",
   "price": 4500,
   "tasteDescription": "부드러운 고베 위스키와 청량한 탄산",
-  "image": "https://example.com/kobe_highball.jpg"
+  "image": "https://img.gqkorea.co.kr/gq/2024/01/style_65b0c470b5631.jpg"
 },
 {
   "name": "하이요 버블리",
@@ -4444,7 +4445,7 @@ function getDrinkData() {
   "description": "한국 전통주를 현대적으로 재해석한 하이볼로, 상쾌한 버블감이 돋보입니다.",
   "price": 3500,
   "tasteDescription": "상쾌한 버블과 부드러운 전통주 맛",
-  "image": "https://example.com/hiyo_bubbly.jpg"
+  "image": "https://img.gqkorea.co.kr/gq/2024/01/style_65b0c4852dbc9.png"
 },
 {
   "name": "생레몬 하이볼",
@@ -4457,7 +4458,7 @@ function getDrinkData() {
   "description": "신선한 생레몬과 탄산수가 조화를 이루며 상큼한 맛을 제공하는 하이볼입니다.",
   "price": 3000,
   "tasteDescription": "상큼한 레몬과 청량한 탄산",
-  "image": "https://example.com/lemon_highball.jpg"
+  "image": "https://www.youthdaily.co.kr/data/photos/20240417/art_17138294815163_1d276e.jpg"
 },
 {
   "name": "생청귤 하이볼",
@@ -4470,7 +4471,7 @@ function getDrinkData() {
   "description": "제주산 청귤의 상큼한 향과 탄산이 어우러진 하이볼로, 신선한 맛이 특징입니다.",
   "price": 3500,
   "tasteDescription": "제주 청귤과 탄산의 상큼한 조화",
-  "image": "https://example.com/jeju_green_tangerine_highball.jpg"
+  "image": "https://cdn.ftoday.co.kr/news/photo/202409/328386_331889_2439.jpeg"
 },
 {
   "name": "생라임 하이볼",
@@ -4483,7 +4484,7 @@ function getDrinkData() {
   "description": "생라임과 탄산수의 조화가 돋보이며 상쾌하고 깔끔한 맛이 특징인 하이볼입니다.",
   "price": 3200,
   "tasteDescription": "라임의 상큼함과 청량감",
-  "image": "https://example.com/lime_highball.jpg"
+  "image": "https://img.biz.sbs.co.kr/upload/2024/06/28/Sda1719530251028-850.png"
 },
 {
   "name": "제주 청귤 하이볼",
@@ -4496,7 +4497,7 @@ function getDrinkData() {
   "description": "제주 청귤과 위스키가 만나 상큼하고 산뜻한 맛을 선사하는 하이볼입니다.",
   "price": 3500,
   "tasteDescription": "제주 청귤의 상큼함과 위스키의 조화",
-  "image": "https://example.com/jeju_green_citrus_highball.jpg"
+  "image": "https://ecimg.cafe24img.com/pg238b27902649086/sevenbrau7/web/product/big/20241008/28c51061c4e03e2d6ce4d334586400bd.jpg"
 },
 {
   "name": "순하리 레몬진 하이볼",
@@ -4509,9 +4510,767 @@ function getDrinkData() {
   "description": "상큼한 레몬 향과 부드러운 진이 어우러진 하이볼로, 가볍고 청량한 맛이 특징입니다.",
   "price": 3200,
   "tasteDescription": "상쾌한 레몬과 부드러운 진의 조화",
-  "image": "https://example.com/soonnari_lemonjin_highball.jpg"
+  "image": "https://dailyshot.co/m/_next/image?url=https%3A%2F%2Fd1e2y5wc27crnp.cloudfront.net%2Fmedia%2Fcore%2Fproduct%2Fthumbnail%2F07a12734-3313-40f8-9fc0-f6e1fc653a58.webp&w=640&q=85"
 },
-//전통주
+//전통주 (탁주 20개, 약.청주 28개, 과실주 10개)
+//탁주 20개 
+{
+  "name": "담은",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 6,
+  "rating": 4.5,
+  "description": "쌀 본연의 맛과 부드러운 질감을 살린 고급 탁주로, 담백하면서도 깔끔한 맛이 특징입니다.",
+  "price": 5000,
+  "tasteDescription": "담백하고 부드러운 쌀의 풍미",
+  "image": "https://assets.business.veluga.kr/media/public/%E1%84%83%E1%85%A1%E1%86%B7%E1%84%8B%E1%85%B3%E1%86%AB_%E1%84%86%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A5%E1%86%AF%E1%84%85%E1%85%B5.png "
+},
+{
+  "name": "붉은 원숭이",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 6.5,
+  "rating": 4.6,
+  "description": "복분자와 막걸리의 조화를 이룬 탁주로, 달콤하면서도 상큼한 맛이 돋보입니다.",
+  "price": 5500,
+  "tasteDescription": "복분자의 달콤함과 쌀의 부드러움",
+  "image": "https://assets.business.veluga.kr/media/public/%E1%84%87%E1%85%AE%E1%86%B0%E1%84%8B%E1%85%B3%E1%86%AB%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%89%E1%85%AE%E1%86%BC%E1%84%8B%E1%85%B5.png"
+},
+{
+  "name": "복순도가 손 막걸리",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 6,
+  "rating": 4.7,
+  "description": "전통적인 방식으로 만든 복순도가의 손 막걸리로, 부드럽고 고소한 쌀의 풍미가 가득합니다.",
+  "price": 7000,
+  "tasteDescription": "부드러운 쌀 풍미와 은은한 단맛",
+  "image": "https://assets.business.veluga.kr/media/public/%E1%84%87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%AE%E1%86%AB%E1%84%83%E1%85%A9%E1%84%80%E1%85%A1_%E1%84%89%E1%85%A9%E1%86%AB%E1%84%86%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A5%E1%86%AF%E1%84%85%E1%85%B5.png"
+},
+{
+  "name": "백련 미스티 막걸리",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 6,
+  "rating": 4.5,
+  "description": "살균 처리로 깔끔한 맛을 살린 막걸리로, 은은한 쌀의 풍미가 특징입니다.",
+  "price": 4500,
+  "tasteDescription": "깔끔하고 청량한 쌀의 맛",
+  "image": "https://dailyshot.co/m/_next/image?url=https%3A%2F%2Fd1e2y5wc27crnp.cloudfront.net%2Fmedia%2Fcore%2Fproduct%2Fthumbnail%2Fb70ea592-d9f4-48f3-9a86-d0762cccf0c1.webp&w=640&q=85"
+},
+{
+  "name": "느린마을 막걸리",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 6,
+  "rating": 4.8,
+  "description": "쌀의 진한 풍미를 살린 프리미엄 막걸리로, 발효의 깊은 맛을 느낄 수 있습니다.",
+  "price": 6000,
+  "tasteDescription": "진한 쌀의 풍미와 부드러운 질감",
+  "image": "https://img.danawa.com/prod_img/500000/706/587/img/5587706_1.jpg?_v=20220428143047"
+},
+{
+  "name": "나루 생 막걸리",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 6,
+  "rating": 4.6,
+  "description": "생막걸리 특유의 신선한 맛과 풍부한 발효 향이 특징인 고급 막걸리입니다.",
+  "price": 5500,
+  "tasteDescription": "신선하고 발효된 쌀의 풍미",
+  "image": "https://www.dafarm.net/data/goods/233/2023/05/922_temp_16849179612382view.jpg"
+},
+{
+  "name": "대대포 블루",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 5.5,
+  "rating": 4.5,
+  "description": "전통적인 막걸리에 청량감을 더한 제품으로, 달콤하면서도 상쾌한 맛이 특징입니다.",
+  "price": 6000,
+  "tasteDescription": "달콤하고 청량한 쌀의 맛",
+  "image": "https://img.danawa.com/prod_img/500000/750/735/img/11735750_1.jpg?_v=20221004091655"
+},
+{
+  "name": "자연담은 복분자 막걸리",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 6.5,
+  "rating": 4.7,
+  "description": "복분자와 막걸리의 조화로 달콤하고 풍부한 맛이 특징인 탁주입니다.",
+  "price": 6500,
+  "tasteDescription": "복분자의 달콤함과 막걸리의 부드러움",
+  "image": "https://m.bokbunjaju.kr/custom/img/main_bg2.jpg"
+},
+{
+  "name": "구름을 벗삼아",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 6,
+  "rating": 4.6,
+  "description": "구름처럼 부드러운 질감과 달콤한 맛이 돋보이는 프리미엄 막걸리입니다.",
+  "price": 5500,
+  "tasteDescription": "부드럽고 달콤한 쌀의 맛",
+  "image": "https://godomall.speedycdn.net/ecde3d55747f2aa4dbec5952a29271fe/goods/1000000174/image/detail/1000000174_detail_044.jpg"
+},
+{
+  "name": "얼떨결에 퍼플",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 5.5,
+  "rating": 4.4,
+  "description": "퍼플컬러의 독특한 비주얼과 풍부한 과일향이 어우러진 개성 있는 막걸리입니다.",
+  "price": 6000,
+  "tasteDescription": "과일향과 막걸리의 상큼함",
+  "image": "https://img.danawa.com/prod_img/500000/226/978/img/19978226_1.jpg?_v=20230428153527&shrink=360:360"
+},
+{
+  "name": "세종 알밤주",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 6,
+  "rating": 4.8,
+  "description": "달콤한 알밤 향이 은은하게 퍼지는 부드러운 맛의 막걸리로, 세종 지역의 특산물로 유명합니다.",
+  "price": 7000,
+  "tasteDescription": "알밤의 은은한 단맛과 부드러운 질감",
+  "image": "https://img.danawa.com/prod_img/500000/690/729/img/11729690_1.jpg?_v=20200703150919"
+},
+{
+  "name": "지란지교 무화과 탁주",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 6.5,
+  "rating": 4.6,
+  "description": "무화과의 달콤함과 막걸리의 부드러움이 어우러진 고급 탁주입니다.",
+  "price": 8000,
+  "tasteDescription": "무화과의 자연스러운 단맛과 막걸리의 고소함",
+  "image": "https://d38cxpfv0ljg7q.cloudfront.net/admin_contents/detail/hkm0-1711422855711-1102.jpeg"
+},
+{
+  "name": "삼양춘 탁주",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 6,
+  "rating": 4.7,
+  "description": "삼양 지역의 전통 레시피로 만들어져 깊고 진한 풍미를 자랑하는 탁주입니다.",
+  "price": 7500,
+  "tasteDescription": "고소하고 진한 곡물의 풍미",
+  "image": "https://img.danawa.com/prod_img/500000/315/113/img/6113315_1.jpg?_v=20200707114313&shrink=360:360"
+},
+{
+  "name": "해창 9%",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 9,
+  "rating": 4.9,
+  "description": "높은 도수에도 불구하고 부드럽고 고소한 맛이 특징인 해창의 대표 막걸리입니다.",
+  "price": 9000,
+  "tasteDescription": "진한 곡물 향과 알코올의 강렬한 조화",
+  "image": "https://img.danawa.com/prod_img/500000/254/354/img/15354254_1.jpg?_v=20211101125350"
+},
+{
+  "name": "선호 생 막걸리",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 6.5,
+  "rating": 4.7,
+  "description": "발효의 신선함을 살린 생막걸리로, 진한 곡물 맛과 부드러운 끝맛이 특징입니다.",
+  "price": 6000,
+  "tasteDescription": "신선한 발효와 곡물의 깊은 맛",
+  "image": "https://img.danawa.com/prod_img/500000/809/730/img/11730809_1.jpg?shrink=360:360"
+},
+{
+  "name": "별산 막걸리",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 5.5,
+  "rating": 4.6,
+  "description": "별처럼 빛나는 깔끔하고 청량한 맛이 특징인 막걸리로, 가볍게 즐기기에 적합합니다.",
+  "price": 5500,
+  "tasteDescription": "청량한 곡물 맛과 은은한 단맛",
+  "image": "https://img.danawa.com/prod_img/500000/482/929/img/19929482_1.jpg?_v=20230425161356&shrink=360:360"
+},
+{
+  "name": "괴산 세종 찰옥수수",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 6,
+  "rating": 4.8,
+  "description": "괴산 지역의 찰옥수수를 사용해 달콤하고 고소한 풍미가 돋보이는 막걸리입니다.",
+  "price": 7000,
+  "tasteDescription": "찰옥수수의 고소함과 막걸리의 부드러운 조화",
+  "image": "https://img.danawa.com/prod_img/500000/478/731/img/11731478_1.jpg?_v=20200703162050&shrink=360:360"
+},
+{
+  "name": "문삼이공 잣",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 5.5,
+  "rating": 4.7,
+  "description": "잣의 고소함과 막걸리의 청량함이 어우러진 고급 탁주입니다.",
+  "price": 7500,
+  "tasteDescription": "잣의 진한 고소함과 부드러운 곡물 맛",
+  "image": "https://cdn.imweb.me/thumbnail/20230707/65e8dfb9af4c0.jpg"
+},
+{
+  "name": "희양산 막걸리",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 6,
+  "rating": 4.6,
+  "description": "희양산의 자연에서 영감을 얻어 제조된 막걸리로, 신선하고 순수한 맛이 특징입니다.",
+  "price": 7000,
+  "tasteDescription": "신선한 곡물과 은은한 단맛",
+  "image": "https://img.29cm.co.kr/next-product/2023/03/06/3c06387019df490882ecc550db31395f_20230306140617.jpg?width=700"
+},
+{
+  "name": "오희",
+  "type": "탁주",
+  "category": "전통주",
+  "subCategory": "막걸리",
+  "origin": "대한민국",
+  "alcohol": 5.5,
+  "rating": 4.5,
+  "description": "오미자와 막걸리가 어우러져 새콤달콤한 맛이 돋보이는 탁주입니다.",
+  "price": 6500,
+  "tasteDescription": "오미자의 새콤함과 막걸리의 부드러움",
+  "image": "https://assets.business.veluga.kr/media/public/%E1%84%8B%E1%85%A9%E1%84%92%E1%85%B4_%E1%84%89%E1%85%B3%E1%84%91%E1%85%A1%E1%84%8F%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%BC_%E1%84%86%E1%85%A1%E1%86%A8%E1%84%80%E1%85%A5%E1%86%AF%E1%84%85%E1%85%B5.png"
+},
+//약.청주 28개
+{
+  "name": "고흥 유자주 8%",
+  "type": "청주",
+  "category": "전통주",
+  "subCategory": "청주",
+  "origin": "대한민국",
+  "alcohol": 8,
+  "rating": 4.7,
+  "description": "고흥산 유자를 사용하여 상큼한 유자 향과 청량감이 특징인 청주입니다.",
+  "price": 8000,
+  "tasteDescription": "유자의 상큼함과 청주의 깔끔한 맛",
+  "image": "https://d1e2y5wc27crnp.cloudfront.net/media/smartorder_reservation/product/thumbnail/bb051883-3384-4082-b48e-1f40f4cbf8e9.webp"
+},
+{
+  "name": "동학 1957",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 16,
+  "rating": 4.8,
+  "description": "동학농민운동의 정신을 담아 만든 약주로, 깊은 풍미와 부드러운 맛이 특징입니다.",
+  "price": 15000,
+  "tasteDescription": "진한 곡물의 풍미와 은은한 단맛",
+  "image": "https://assets.business.veluga.kr/media/public/%E1%84%83%E1%85%A9%E1%86%BC%E1%84%92%E1%85%A1%E1%86%A81957_1.png"
+},
+{
+  "name": "우렁이쌀 청주",
+  "type": "청주",
+  "category": "전통주",
+  "subCategory": "청주",
+  "origin": "대한민국",
+  "alcohol": 12,
+  "rating": 4.6,
+  "description": "우렁이쌀을 사용해 만든 청주로, 고소하고 깔끔한 맛이 특징입니다.",
+  "price": 9000,
+  "tasteDescription": "곡물의 고소함과 청주의 깨끗한 맛",
+  "image": "https://cdn.imweb.me/thumbnail/20220809/2b7571ccb5b61.jpg"
+},
+{
+  "name": "한산 소곡주",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 18,
+  "rating": 4.9,
+  "description": "한산 지역의 전통 레시피로 만든 소곡주로, 깊고 진한 풍미가 특징입니다.",
+  "price": 20000,
+  "tasteDescription": "짙은 곡물의 풍미와 은은한 단맛",
+  "image": "https://cdn.imweb.me/thumbnail/20211122/dd58b956a7423.jpg"
+},
+{
+  "name": "솔송주",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 13,
+  "rating": 4.7,
+  "description": "소나무와 송엽을 첨가하여 은은한 숲 향과 청량감을 더한 약주입니다.",
+  "price": 12000,
+  "tasteDescription": "숲 향과 곡물의 은은한 조화",
+  "image": "https://m.10000wine.co.kr/web/product/big/202301/1d5d92e2f5deab7bf46ab1f60aaccf8b.png"
+},
+{
+  "name": "서설",
+  "type": "청주",
+  "category": "전통주",
+  "subCategory": "청주",
+  "origin": "대한민국",
+  "alcohol": 14,
+  "rating": 4.6,
+  "description": "맑고 깨끗한 맛이 돋보이는 고급 청주로, 세련된 풍미를 자랑합니다.",
+  "price": 15000,
+  "tasteDescription": "깨끗하고 맑은 청주의 맛",
+  "image": "https://img.29cm.co.kr/next-product/2024/04/18/30a9fba5ebfc400ea70f50867b8e80a4_20240418142722.jpg?width=700"
+},
+{
+  "name": "궁중술 왕주",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 16,
+  "rating": 4.8,
+  "description": "왕실에서 즐기던 고급 약주로, 풍부한 향과 깊은 맛이 특징입니다.",
+  "price": 25000,
+  "tasteDescription": "고급 곡물의 풍부한 풍미와 단맛",
+  "image": "https://cafe24.poxo.com/ec01/ksoolmall/HOvhRhvOk+Cp2KY4JuusAnYsWciFHRpyYCR4nIhlRtIClBwn5GFbMvJY0VatJ61zK+8FRJlu+3DzFsrQr+l0SQ==/_/web/product/small/202312/9bca17b8e2dc584ad2b05ffe4fbe1011.jpg"
+},
+{
+  "name": "단상지교",
+  "type": "청주",
+  "category": "전통주",
+  "subCategory": "청주",
+  "origin": "대한민국",
+  "alcohol": 12,
+  "rating": 4.5,
+  "description": "맑고 산뜻한 맛이 돋보이며, 청량감이 매력적인 청주입니다.",
+  "price": 10000,
+  "tasteDescription": "산뜻하고 청량한 맛",
+  "image": "https://godomall.speedycdn.net/1d1eda1c8b51697158d2ca5a3a549f4b/goods/100000201/image/detail/100000201_detail_064.jpg"
+},
+{
+  "name": "능이주",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 15,
+  "rating": 4.6,
+  "description": "능이버섯을 첨가해 깊은 풍미와 독특한 향이 돋보이는 약주입니다.",
+  "price": 18000,
+  "tasteDescription": "능이버섯의 고소함과 곡물의 부드러움",
+  "image": "https://dailyshot.co/m/_next/image?url=https%3A%2F%2Fd1e2y5wc27crnp.cloudfront.net%2Fmedia%2Fcore%2Fproduct%2Fthumbnail%2Fec40ad44-9922-4de9-8f6b-40e704b6ed07.webp&w=640&q=85"
+},
+{
+  "name": "청명주 약주 17",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 17,
+  "rating": 4.7,
+  "description": "고풍스러운 레시피로 만들어진 약주로, 진한 곡물 맛과 알코올의 조화가 특징입니다.",
+  "price": 20000,
+  "tasteDescription": "진한 곡물의 풍미와 강렬한 알코올",
+  "image": "https://godomall.speedycdn.net/ecde3d55747f2aa4dbec5952a29271fe/goods/1000000166/image/detail/1000000166_detail_048.jpg"
+},
+{
+  "name": "니모메",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 13,
+  "rating": 4.6,
+  "description": "맑은 색감과 은은한 단맛이 특징인 약주로, 깔끔하고 깊은 풍미가 돋보입니다.",
+  "price": 12000,
+  "tasteDescription": "은은한 단맛과 깔끔한 곡물 맛",
+  "image": "https://dailyshot.co/m/_next/image?url=https%3A%2F%2Fd1e2y5wc27crnp.cloudfront.net%2Fmedia%2Fcore%2Fproduct%2Fthumbnail%2F8bb094e1-b14a-49bd-b269-103602915714.webp&w=640&q=85"
+},
+{
+  "name": "송이주",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 14,
+  "rating": 4.7,
+  "description": "송이버섯의 독특한 향과 고소함이 어우러진 전통 약주입니다.",
+  "price": 18000,
+  "tasteDescription": "송이버섯의 풍부한 향과 곡물의 부드러움",
+  "image": "https://d1e2y5wc27crnp.cloudfront.net/media/core/product/thumbnail/074e4e82-5be9-49d2-a75d-df0cc17bad6d.webp"
+},
+{
+  "name": "술아 국화주",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 12,
+  "rating": 4.8,
+  "description": "국화의 향긋한 향이 돋보이는 약주로, 은은한 단맛과 부드러운 풍미를 자랑합니다.",
+  "price": 15000,
+  "tasteDescription": "국화 향과 은은한 단맛의 조화",
+  "image": "https://assets.business.veluga.kr/media/public/%E1%84%89%E1%85%AE%E1%86%AF%E1%84%8B%E1%85%A1_%E1%84%80%E1%85%AE%E1%86%A8%E1%84%92%E1%85%AA%E1%84%8C%E1%85%AE_Qbpu5Br.png"
+},
+{
+  "name": "매화깊은밤",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 16,
+  "rating": 4.9,
+  "description": "매화향이 은은하게 퍼지는 고급 약주로, 깊고 진한 맛이 특징입니다.",
+  "price": 20000,
+  "tasteDescription": "매화향과 진한 곡물의 풍미",
+  "image": "https://cdn.imweb.me/thumbnail/20230227/6c565b5d950e5.jpg"
+},
+{
+  "name": "한청",
+  "type": "청주",
+  "category": "전통주",
+  "subCategory": "청주",
+  "origin": "대한민국",
+  "alcohol": 14,
+  "rating": 4.7,
+  "description": "맑고 산뜻한 맛이 매력적인 고급 청주로, 청량감이 돋보입니다.",
+  "price": 17000,
+  "tasteDescription": "맑고 청량한 곡물 맛",
+  "image": "https://gwchild805.firstmall.kr/data/goods/1/2020/08/37311_tmp_3625effb5f4e6be5ca92b04607d578062304large.png"
+},
+{
+  "name": "복단지",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 13,
+  "rating": 4.6,
+  "description": "복분자와 전통 약주의 조화로, 은은한 단맛과 과일향이 특징입니다.",
+  "price": 14000,
+  "tasteDescription": "복분자의 단맛과 곡물의 부드러움",
+  "image": "https://eytzjvrxjleq11337293.cdn.ntruss.com/data/mall_data/images/product/00/00/01/27/61/m_0000012761.gif"
+},
+{
+  "name": "삼양춘 약주",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 15,
+  "rating": 4.8,
+  "description": "고급 쌀과 전통 발효법으로 만들어진 약주로, 깔끔한 맛과 깊은 풍미가 돋보입니다.",
+  "price": 16000,
+  "tasteDescription": "고급 곡물의 깊은 풍미와 깔끔한 맛",
+  "image": "https://d1e2y5wc27crnp.cloudfront.net/media/core/product/thumbnail/b64f8449-cf9d-47ef-8e46-857e068f14ab.webp"
+},
+{
+  "name": "감싸주는 날",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 14,
+  "rating": 4.5,
+  "description": "은은한 단맛과 부드러운 목넘김이 매력적인 약주로, 편안한 음용감을 제공합니다.",
+  "price": 12000,
+  "tasteDescription": "은은한 단맛과 부드러운 곡물 맛",
+  "image": "https://d1e2y5wc27crnp.cloudfront.net/media/core/product/thumbnail/6bc94d23-34d5-4ec3-bde5-8ed5b9bb11b7.webp"
+},
+{
+  "name": "녹파주",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 13,
+  "rating": 4.7,
+  "description": "맑은 녹색빛과 산뜻한 맛이 돋보이는 약주로, 깔끔한 마무리가 특징입니다.",
+  "price": 15000,
+  "tasteDescription": "맑고 산뜻한 곡물 맛",
+  "image": "https://img.danawa.com/prod_img/500000/822/274/img/13274822_1.jpg?_v=20210201133402"
+},
+{
+  "name": "세종대왕어주 약주",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 17,
+  "rating": 4.9,
+  "description": "세종대왕의 이름을 딴 전통 약주로, 깊고 진한 맛과 부드러운 목넘김이 매력적입니다.",
+  "price": 25000,
+  "tasteDescription": "깊고 진한 곡물의 풍미",
+  "image": "https://cdn-pro-web-251-112.cdn-nhncommerce.com/motioneye1_godomall_com/data/goods/21/08/34/500000108/500000108_detail_096.jpg"
+},
+{
+  "name": "하타",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 14,
+  "rating": 4.6,
+  "description": "은은한 곡물의 향과 부드러운 목넘김이 돋보이는 약주로, 전통 방식으로 만들어졌습니다.",
+  "price": 15000,
+  "tasteDescription": "은은한 곡물 향과 부드러운 피니시",
+  "image": "https://cdn.imweb.me/thumbnail/20230224/9680c6cef0ca5.jpg"
+},
+{
+  "name": "문삼이공 약주",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 15,
+  "rating": 4.7,
+  "description": "고소하고 깊은 맛이 특징인 약주로, 한국 전통 양조법으로 빚어진 고급 약주입니다.",
+  "price": 18000,
+  "tasteDescription": "고소한 곡물 맛과 깊은 풍미",
+  "image": "https://dailyshot.co/m/_next/image?url=https%3A%2F%2Fd1e2y5wc27crnp.cloudfront.net%2Fmedia%2Fcore%2Fproduct%2Fthumbnail%2Fccb0e46f-f3d2-4df4-8d24-5b96e61a5119.webp&w=640&q=85"
+},
+{
+  "name": "백련 맑은 술",
+  "type": "청주",
+  "category": "전통주",
+  "subCategory": "청주",
+  "origin": "대한민국",
+  "alcohol": 16,
+  "rating": 4.8,
+  "description": "맑고 청량한 맛이 돋보이는 청주로, 깔끔한 목넘김과 은은한 향을 자랑합니다.",
+  "price": 22000,
+  "tasteDescription": "맑고 청량한 곡물 맛",
+  "image": "https://cdn.imweb.me/thumbnail/20230623/ab9aac9ae745b.jpg"
+},
+{
+  "name": "진양주",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 15,
+  "rating": 4.5,
+  "description": "전통적인 방식으로 만들어진 약주로, 깊고 진한 맛과 부드러운 질감이 특징입니다.",
+  "price": 20000,
+  "tasteDescription": "깊고 진한 곡물의 풍미",
+  "image": "https://dailyshot.co/m/_next/image?url=https%3A%2F%2Fd1e2y5wc27crnp.cloudfront.net%2Fmedia%2Fcore%2Fproduct%2Fthumbnail%2Feb4b0427-4e98-418b-9677-0de6d51566a0.webp&w=640&q=85"
+},
+{
+  "name": "청비성 16%",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 16,
+  "rating": 4.7,
+  "description": "16%의 적당한 도수와 깔끔한 맛으로 인기가 많은 약주로, 고급스러운 향이 돋보입니다.",
+  "price": 25000,
+  "tasteDescription": "깔끔한 곡물 향과 부드러운 맛",
+  "image": "https://image.idus.com/image/files/ada983e8fac9474ea23bae2675a0901a_512.jpg"
+},
+{
+  "name": "대통대잎술",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국 (전라남도 담양)",
+  "alcohol": 15,
+  "rating": 4.7,
+  "description": "대나무 통에서 숙성되어 대나무 향과 한약재의 풍미가 조화를 이루는 고급 약주입니다.",
+  "price": 25000,
+  "tasteDescription": "달콤하고 부드러운 대나무 향과 한약재의 깊은 풍미",
+  "image": "https://assets.business.veluga.kr/media/public/%E1%84%83%E1%85%A2%E1%84%90%E1%85%A9%E1%86%BC_%E1%84%83%E1%85%A2%E1%84%8B%E1%85%B5%E1%87%81%E1%84%89%E1%85%AE%E1%86%AF.png"
+},
+{
+  "name": "매실 향기 담은 술",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 14,
+  "rating": 4.8,
+  "description": "매실의 은은한 향이 어우러진 약주로, 부드럽고 상쾌한 맛이 돋보입니다.",
+  "price": 18000,
+  "tasteDescription": "매실의 상쾌한 향과 곡물의 부드러움",
+  "image": "https://thumbnail9.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/60bf/dcb0f03b25f06c25c4f2dc75abfc78a790fb6a70426907b2068bec6a7a3f.jpg"
+},
+{
+  "name": "동몽",
+  "type": "약주",
+  "category": "전통주",
+  "subCategory": "약주",
+  "origin": "대한민국",
+  "alcohol": 14,
+  "rating": 4.7,
+  "description": "한국 전통 약주의 정수를 담은 제품으로, 진한 풍미와 부드러운 목넘김이 특징입니다.",
+  "price": 19000,
+  "tasteDescription": "진한 곡물 맛과 부드러운 피니시",
+  "image": "https://d38cxpfv0ljg7q.cloudfront.net/admin_contents/detail/niHU-1711424274030-350.jpeg"
+},
+//과실주 20개
+{
+  "name": "혼디주",
+  "type": "과실주",
+  "category": "전통주",
+  "subCategory": "과실주",
+  "origin": "대한민국 (제주)",
+  "alcohol": 12,
+  "rating": 4.5,
+  "description": "제주 유채 꿀과 감귤로 빚은 과실주로, 제주만의 향기와 달콤함을 담은 전통주입니다.",
+  "price": 18000,
+  "tasteDescription": "달콤한 감귤과 은은한 유채 꿀의 조화",
+  "image": "https://assets.business.veluga.kr/media/public/%E1%84%92%E1%85%A9%E1%86%AB%E1%84%83%E1%85%B5%E1%84%8C%E1%85%AE.png"
+},
+{
+  "name": "제주, 유채",
+  "type": "과실주",
+  "category": "전통주",
+  "subCategory": "과실주",
+  "origin": "대한민국 (제주)",
+  "alcohol": 13,
+  "rating": 4.7,
+  "description": "제주 유채꽃의 향기를 담은 상큼하고 부드러운 과실주로, 제주 자연을 느낄 수 있는 술입니다.",
+  "price": 22000,
+  "tasteDescription": "유채꽃의 은은함과 상큼한 과일의 조화",
+  "image": "https://godomall.speedycdn.net/ecde3d55747f2aa4dbec5952a29271fe/goods/1000000763/image/detail/1000000763_detail_080.jpg"
+},
+{
+  "name": "빙탄복",
+  "type": "과실주",
+  "category": "전통주",
+  "subCategory": "과실주",
+  "origin": "대한민국 (경기)",
+  "alcohol": 14,
+  "rating": 4.6,
+  "description": "한국 전통 과실주로, 달콤한 복숭아와 은은한 한약재의 풍미가 특징입니다.",
+  "price": 25000,
+  "tasteDescription": "달콤한 복숭아와 한약재의 깊은 맛",
+  "image": "https://dailyshot.co/m/_next/image?url=https%3A%2F%2Fd1e2y5wc27crnp.cloudfront.net%2Fmedia%2Fcore%2Fproduct%2Fthumbnail%2F1ad4319e-43d2-4a9c-9270-0242b92219aa.webp&w=640&q=85"
+},
+{
+  "name": "신애유자",
+  "type": "과실주",
+  "category": "전통주",
+  "subCategory": "과실주",
+  "origin": "대한민국 (제주)",
+  "alcohol": 10,
+  "rating": 4.8,
+  "description": "제주산 유자를 활용해 상큼하고 달콤한 풍미를 지닌 과실주입니다.",
+  "price": 20000,
+  "tasteDescription": "유자의 신선한 상큼함과 달콤함",
+  "image": "https://cdn.imweb.me/thumbnail/20220311/45ca271b774c0.jpg"
+},
+{
+  "name": "제주, 동백",
+  "type": "과실주",
+  "category": "전통주",
+  "subCategory": "과실주",
+  "origin": "대한민국 (제주)",
+  "alcohol": 12,
+  "rating": 4.7,
+  "description": "제주 동백꽃의 은은한 향기와 과일의 상쾌함을 담은 과실주입니다.",
+  "price": 23000,
+  "tasteDescription": "동백꽃의 은은한 향기와 상큼한 맛",
+  "image": "https://assets.business.veluga.kr/media/public/%EB%8F%99%EB%B0%B1%EA%BD%83_%EC%A0%9C%EC%A3%BC.png"
+},
+{
+  "name": "허니비 와인",
+  "type": "과실주",
+  "category": "전통주",
+  "subCategory": "과실주",
+  "origin": "대한민국 (전북)",
+  "alcohol": 14,
+  "rating": 4.6,
+  "description": "자연산 꿀과 과일로 만들어 달콤하고 고급스러운 풍미를 자랑하는 과실주입니다.",
+  "price": 27000,
+  "tasteDescription": "꿀의 달콤함과 과일의 상쾌함",
+  "image": "https://assets.business.veluga.kr/media/public/%E1%84%92%E1%85%A5%E1%84%82%E1%85%B5%E1%84%87%E1%85%B5_%E1%84%8B%E1%85%AA%E1%84%8B%E1%85%B5%E1%86%AB.png"
+},
+{
+  "name": "선운 복분자주",
+  "type": "과실주",
+  "category": "전통주",
+  "subCategory": "과실주",
+  "origin": "대한민국 (전북)",
+  "alcohol": 15,
+  "rating": 4.8,
+  "description": "전북 고창에서 재배한 복분자로 만든 과실주로, 풍부한 맛과 향이 일품입니다.",
+  "price": 30000,
+  "tasteDescription": "복분자의 진하고 달콤한 풍미",
+  "image": "https://img.danawa.com/prod_img/500000/526/948/img/5948526_1.jpg?_v=20200820161626"
+},
+{
+  "name": "해미 청포도 8%",
+  "type": "과실주",
+  "category": "전통주",
+  "subCategory": "과실주",
+  "origin": "대한민국 (충남)",
+  "alcohol": 8,
+  "rating": 4.5,
+  "description": "충남 해미 지역 청포도를 사용해 상큼하고 산뜻한 맛이 특징인 과실주입니다.",
+  "price": 20000,
+  "tasteDescription": "상큼한 청포도의 신선한 맛",
+  "image": "https://cafe24.poxo.com/ec01/ksoolmall/HOvhRhvOk+Cp2KY4JuusAnYsWciFHRpyYCR4nIhlRtIClBwn5GFbMvJY0VatJ61zK+8FRJlu+3DzFsrQr+l0SQ==/_/web/product/big/202406/b32123969b5aeefa7a102fd6510ad32e.jpg"
+},
+{
+  "name": "몽환주 드림인더애플가든 사과술",
+  "type": "과실주",
+  "category": "전통주",
+  "subCategory": "과실주",
+  "origin": "대한민국 (경북)",
+  "alcohol": 12,
+  "rating": 4.7,
+  "description": "경북 지역 사과로 빚어진 고급 과실주로, 달콤하고 상쾌한 맛이 특징입니다.",
+  "price": 26000,
+  "tasteDescription": "사과의 달콤함과 상큼함",
+  "image": "https://img.29cm.co.kr/item/202407/11ef4a533d2d89438362ebf1ba7bec7a.jpg?width=700"
+},
+{
+  "name": "우주술 클래식 미드나잇",
+  "type": "과실주",
+  "category": "전통주",
+  "subCategory": "과실주",
+  "origin": "대한민국 (강원)",
+  "alcohol": 16,
+  "rating": 4.8,
+  "description": "블루베리와 허브로 만들어 깊고 풍부한 맛과 향을 자랑하는 과실주입니다.",
+  "price": 35000,
+  "tasteDescription": "블루베리와 허브의 깊고 풍부한 맛",
+  "image": "https://img.29cm.co.kr/item/202410/11ef9504530726a5851911dcae1de9cc.jpg?width=700"
+},
+
     ];
   }
   
