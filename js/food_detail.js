@@ -140,3 +140,51 @@ function setupSidebarLogin() {
     console.error("사이드바의 'guest-section' 또는 'user-section' 요소가 존재하지 않습니다.");
   }
 }
+
+// 추천 술 업데이트
+recommendDrinks();
+
+// 오늘의 술 추천 업데이트 함수
+function updateRecommendationCard(cardId, product) {
+  const card = document.getElementById(cardId);
+  card.innerHTML = `
+    <img src="${product.image}" alt="${product.name}" class="drink-image">
+    <h4>${product.name}</h4>
+    <p>${product.tasteDescription}</p>
+  `;
+
+  // 클릭 시 술 상세 페이지로 이동
+  card.addEventListener('click', function () {
+    window.location.href = `drink_detail.html?product=${encodeURIComponent(product.name)}`;
+  });
+}
+
+function recommendDrinks() {
+  const drinks = getDrinkData();
+
+  if (!drinks || drinks.length === 0) {
+    console.error("추천할 술 데이터가 없습니다.");
+    return;
+  }
+
+  const brewing = drinks.filter(drink => drink.category === '양조주');
+  const distilled = drinks.filter(drink => drink.category === '증류주');
+  const mixed = drinks.filter(drink => drink.category === '혼합주');
+  const traditional = drinks.filter(drink => drink.category === '전통주');
+
+  const recommendation1 = brewing.length > 0 ? brewing[Math.floor(Math.random() * brewing.length)] : null;
+  const recommendation2 = distilled.length > 0 ? distilled[Math.floor(Math.random() * distilled.length)] : null;
+  const recommendation3 = mixed.length > 0 ? mixed[Math.floor(Math.random() * mixed.length)] : null;
+  const recommendation4 = traditional.length > 0 ? traditional[Math.floor(Math.random() * traditional.length)] : null;
+
+  if (recommendation1) updateRecommendationCard('recommendation1', recommendation1);
+  if (recommendation2) updateRecommendationCard('recommendation2', recommendation2);
+  if (recommendation3) updateRecommendationCard('recommendation3', recommendation3);
+  if (recommendation4) updateRecommendationCard('recommendation4', recommendation4);
+}
+
+
+// DOMContentLoaded 이벤트에서 실행
+document.addEventListener('DOMContentLoaded', function () {
+  recommendDrinks();
+});
